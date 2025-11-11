@@ -10,7 +10,7 @@ Tags: [[Hibernate & JPA]] [[Java+]]
 
 
 
-#### Transient state
+#### Transient (New) state
 
 Объект пока никак не связан с Hibernate и Hibernate его никак не отслеживает.
 

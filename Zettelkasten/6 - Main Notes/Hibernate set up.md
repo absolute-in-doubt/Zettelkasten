@@ -29,7 +29,7 @@ Tags: [[Hibernate & JPA]]
 
 hibernate.properties
 ```properties
-hibernate.driver.class=org.postgresq.Driver  
+hibernate.driver_class=org.postgresql.Driver  
 hibernate.connection.url=jdbc:postgresql://localhost:5432/people_database_2  
 hibernate.connection.user=postgres  
 hibernate.connection.password=root  

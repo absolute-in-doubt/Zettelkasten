@@ -10,6 +10,10 @@ Tags: [[Spring]]
 
 Обычно POJO класс
 
+Класс, который является кандидатом в создании бина. (В контексте всего Spring)
+
+Или объект созданный и управляемый Spring.
+
 ----
 #### [[Spring Bean - Flashcards|Link to flashcards]]
 

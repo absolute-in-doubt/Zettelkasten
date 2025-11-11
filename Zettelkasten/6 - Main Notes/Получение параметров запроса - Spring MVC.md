@@ -98,6 +98,21 @@ public class PeopleController {
 
 Здесь будет такой url: `.../people/67`, где 67 - предаваемый параметр (id)
 
+### @ModelAttribute
+
+- 📌 **Назначение**: связывает параметры запроса с объектом модели или добавляет объект в `Model` до вызова `@RequestMapping`‑метода.
+
+- 🧩 **В методе контроллера**: не обязательно ставить первым параметром в методе контроллера.
+- 
+- 🛠️ **Если объекта нет в** `Model`: Spring **создаст его автоматически**, используя конструктор и данные из запроса.
+
+```java
+@GetMapping("/new")  
+public String newPerson(@ModelAttribute("person") Person person){  
+    return "people/new";  
+}
+```
+
 ----
 #### [[Параметры GET запроса - Spring MVC - Flashcards|Link to flashcards]]
 

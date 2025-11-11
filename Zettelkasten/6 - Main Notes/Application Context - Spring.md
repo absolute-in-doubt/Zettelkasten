@@ -15,7 +15,7 @@ Tags: [[Spring]]
 
 ![[Pasted image 20251004103150.png]]
 
-## [[Application Context.xml file - Spring]]
+## [[ApplicationContext.xml file - Spring]]
 
 
 ----

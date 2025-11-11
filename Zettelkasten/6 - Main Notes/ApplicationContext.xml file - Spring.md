@@ -6,7 +6,7 @@ Status: #baby
 Tags: [[Spring]]
 
 ---
-# Application Context.xml file - Spring
+# ApplicationContext.xml file - Spring
 
 храним в resources
 
@@ -28,6 +28,9 @@ Tags: [[Spring]]
 	
 	<!-- Автоматическое сканирование компонентов в пакете -->
 	<context:component-scan base-package="com.example.demo"/>
+	
+	<!-- добавляет общий BeanPostProcessor для обработки method-level аннотаций бинов, типа @Autowired, @PostConstruct и т.д. -->
+	<bean class = "org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
 	
 	<bean id="classicalMusic" class="secret.boy.spring.demo.ClassicalMusic" scope="singleton" />
 	<bean id="rockMusic" class="secret.boy.spring.demo.RockMusic"/>
@@ -64,6 +67,30 @@ Tags: [[Spring]]
 >	<constructor-arg index="1" type="int" value="${redis.port}"/>  
 ></bean>
 > ```
+
+
+~={red}!!!=~ При инициализации контекста через XML ~={cyan}инъекция через поле НЕ РАБОТАЕТ=~:
+- пытаемся инжектить через property -> он ищет setter, если setter-a нет - кидает ошибку. ~={red}!!!=~
+
+#### Включение аннотаций в xml
+
+ Чтобы работали базовые аннотации Spring (~={purple}@PreDestroy=~, ~={purple}@PostConstruct=~ и ~={purple}@Resource=~ (не class-level, для этого есть context:component-scan)), добавляем в applicationContext.xml bean общего [[Про использование BeanPostProcessor - Spring|BeanPostProcessor]]:
+ ```xml
+    <bean class = "org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
+ ```
+
+Для ~={purple}@Autowired=~ существует свой AutowiredAnnotationBeanPostProcessor:
+ ```xml
+    <bean class = "org.springframework.context.annotation.AutowiredAnnotationBeanPostProcessor"/>
+ ```
+#### xml namespaces
+
+Т.к. вручную добавлять каждый обработчик анотаций заёбно - сделали namespaces, которые включают в себя несколько аннотаций:
+
+- `context:component-scan` - добавляет обработчики class-level аннотаций (~={purple}@Controller=~, ~={purple}@Component=~ и т.д.)
+	~={red}!!!=~ ~={yellow}При использовании `component-scan` все user-defined классы пакета, реализующие BeanPostProcessor, будут загружены автоматически.=~ ~={red}!!!=~ 
+
+- `context:annotation-config` - добавляет обработчики method-level аннотаций (~={purple}@PostConstruct=~, ~={purple}@PreDestroy=~, ~={purple}@Autowired=~ и т.д.)
 
 ---
 

@@ -8,7 +8,7 @@ Tags: [[Spring]]
 ---
 # Configuration via Java code
 
-Заменяет [[Application Context.xml file - Spring|ApplicationContext.xml]] при конфигурации.
+Заменяет [[ApplicationContext.xml file - Spring|ApplicationContext.xml]] при конфигурации.
 
 Т.е. нам не надо даже двух строчек писать в xml.
 

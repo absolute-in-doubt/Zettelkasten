@@ -37,7 +37,7 @@ public class MySpringMVCDispatcherServletInitializer extends AbstractAnnotationC
     @Override  
     public void onStartup(ServletContext aServletContext) throws ServletException {  
         super.onStartup(aServletContext);  
-  
+		  registerHiddenFieldFilter(aServletContext);
     }  
   
     private void registerHiddenFieldFilter(ServletContext aContext){  
@@ -46,6 +46,12 @@ public class MySpringMVCDispatcherServletInitializer extends AbstractAnnotationC
     }  
 }
 ```
+
+
+### В Spring Boot
+
+Этот класс инициализации DispatcherServlet не нужен, его автоматически сконфигурирует Spring Boot. А для добавления фильтров, их достаточно прописать в [[application.properties - Spring Boot#Добавление фильтра к Dispatcher servlet|application.properties]]
+
 
 ----
 #### [[Filter - Spring - Flashcards|Link to flashcards]]

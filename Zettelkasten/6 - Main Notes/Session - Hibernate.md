@@ -16,6 +16,24 @@ Tags: [[Hibernate & JPA]]
 
 В JPA - хранится в [[EntityManager - JPA|EntityManager]].
 
+~={orange}**В приоритете - использовать [[EntityManager - JPA|EntityManager]].**=~
+
+---
+## Когда использовать:
+
+- `Session` — это **нативный API Hibernate**, который предоставляет больше возможностей, чем JPA:
+    
+    - **ScrollableResults** для потоковой обработки больших выборок.
+        
+    - **StatelessSession** для batch‑операций без кэша первого уровня.
+        
+    - **Нативные SQL‑запросы** и специфичные для Hibernate функции.
+        
+    - Более тонкий контроль над flush/dirty checking.
+        
+- Эти возможности полезны, если вы упираетесь в ограничения JPA.
+
+
 ---
 ### Создание (получение) Session
 
@@ -37,12 +55,28 @@ session.close();//обязательно только при ручном упр
 ---
 ### Методы Session
 
-- save
+- `Serializable` ~={green}save(`Object objToBeSaved`)=~ - сразу возвращает id сохраняемого объекта
+
+- ~={green}persist(`Object objToBeSaved`)=~ - для получения первичного ключа придётся вызвать getId(), он получается ==lazily== 
+
+![[Pasted image 20251029132617.png]]
+
 - update
 - get
 - ...
 
 - `Query` ~={green}createQuery(`String HQLQuery`)=~ - создаёт TypedQuery
+
+
+
+---
+### Hibernate-native методы:
+
+~={orange}Hibernate 6.0 - Deprecated=~
+
+~={red}Hibernate 7.0 - вообще убрали
+
+Сейчас используются только методы, определённые в JPA.
 
 ----
 #### [[Session - Hibernate - Flashcards|Link to flashcards]]

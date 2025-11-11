@@ -29,6 +29,19 @@ psql -d <db_name> -U <user_name>
 ```
 
 
+---
+### Дамп БД
+
+```bash
+pg_dump -U <username> -d <dbname> -f <dumpfile.sql>
+# `-f <dumpfile.sql>` — путь к файлу, куда будет записан дамп.
+```
+
+### Восстановление из дампа
+
+```bash
+psql -U <username> -d <dbname> < <dumpfile.sql>
+```
 
 
 ----

@@ -53,6 +53,20 @@ Tags: [[Spring]]
 
 ![[Pasted image 20251018161137.png]]
 
+### Использование имя бина через .yaml:
+
+```java
+@Component
+public class ZooConfig {
+    @Value("${animal.service}")
+    private String animalServiceName;
+
+    public String getAnimalServiceName() {
+        return animalServiceName;
+    }
+}
+```
+
 ---
 ### @Value - внедрение констант
 

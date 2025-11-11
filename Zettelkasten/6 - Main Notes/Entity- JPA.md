@@ -67,7 +67,7 @@ class Paerson {
 class Paerson {
 	
 	@Id
-	@COlumn(name="id")
+	@Column(name="id")
 	private int id
 	
 	...
@@ -120,6 +120,24 @@ CREATE TABLE IF NOT EXISTS Person (
 - SEQUENCE + используем аннотацию @SequenceGenerator, где указываем нашу SEQUENCE из БД
 
 - UUID
+
+
+### Корректное отображение полей Date & Time в БД:
+
+Для различных типов данных, отображающих время использовалаь устаревшая аннотация ~={purple}@Temporal(`TemporalType tempType`)=~, где аргументами могут быть:
+- TemporalType.TIME
+- TemporalType.TIMESTAMP
+- TemporalType.DATE
+
+Пример использования (НА поле Entity класса):
+```java
+@Column(name = "empl_dob", nullable = false)  
+@Temporal(TemporalType.DATE)  
+private Date emplDob;
+```
+
+Сейчас необходимость в такой аннотации отпала, т.к. классы из `java.time` корректно автоматически преобраховываются в представление в БД.
+
 
 ----
 #### [[@Entity annotation - JPA - Flashcards|Link to flashcards]]

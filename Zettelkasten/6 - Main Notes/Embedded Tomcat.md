@@ -8,6 +8,14 @@ Tags: [[Tomcat]] [[Java+]]
 ---
 # Embedded Tomcat
 
+```xml
+<dependency>  
+  <groupId>org.apache.tomcat.embed</groupId>  
+  <artifactId>tomcat-embed-core</artifactId>  
+  <version>11.0.5</version>  
+</dependency>
+```
+
 #### Создание сервера:
 
 ```java
@@ -93,7 +101,7 @@ tomcat.start();
 tomcat.stop();
 
 tomcat.destroy();
-tomcat.getServer.await(); -> //заставляет текущий thread ждать, пока tomcat завершится
+tomcat.getServer().await(); -> //заставляет текущий thread ждать, пока tomcat завершится
 ```
 
 

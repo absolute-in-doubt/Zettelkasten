@@ -93,8 +93,25 @@ public String newPerson(@MethodAttribute("person") Person person){
 ```
 - Thymeleaf увидит, что перед входом в метод, он должен передать туда Person, но у него его нет -> создаст новый и передаст.
 
+----
+### Пример формы
 
+ ```html
+ <form th:method="POST" th:action="@{/people}" th:object="${person}">  
+    <label for="name">Name: </label>  
+    <input type="text" id="name" th:field="*{name}"/>  
+    <br/>    
+    <label for="age">Age</label>  
+    <input type="number" min="0" max="120" id="age" th:field="*{age}"/>  
+    <br/>    
+    <label for="email">Email</label>  
+    <input type="text" id="email" th:field="*{email}"/>  
+    <br/>    
+    <input type="submit" value="Create">  
+</form>
+ ```
 
+`th:field` - заполняет поле текущим значением поля из `th:object`. При отпарвке формы сохраняет значение из этого поля в поле `th:object`.
 
 ----
 #### [[HTML формы в Thymeleaf - Flashcards|Link to flashcards]]

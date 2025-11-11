@@ -1,9 +1,9 @@
 
 29-10-2025 07:55
 
-Status:
+Status: #baby
 
-Tags:
+Tags: [[Hibernate & JPA]]
 
 ---
 # @OneToMany & @ManyToOne - JPA
@@ -20,7 +20,7 @@ Tags:
 
 #### @ManyToOne
 
-В БД вместо этого поля будет лежать PRIMARY KEY этого объекта. 
+В БД вместо этого поля будет лежать PRIMARY KEY связанного объекта. 
 
 
 #### @JoinColumn(name="person_id", referencedColumnName="id")
@@ -39,7 +39,90 @@ Tags:
 
 
 ---
-### Example
+### Examples 
+
+##### ONE DIRECTIONAL ONE TO MANY
+
+
+`1st type` - об отношении знает только Parent (~={red}**он не владелец отношения**=~):
+```java
+import jakarta.persistence.*;
+import java.util.List;
+
+@Entity
+public class Department {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String name;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "department_id") // 👈 создаёт внешний ключ в Employee
+    private List<Employee> employees;
+
+    // Getters, setters, toString
+}
+```
+
+```java
+import jakarta.persistence.*;
+
+@Entity
+public class Employee {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String name;
+
+    // 👈 Нет ссылки на Department — односторонняя связь
+}
+```
+
+
+`2nd type` - об отношении знает только Child (он владеет отношением):
+```java
+import jakarta.persistence.*;
+import java.util.List;
+
+@Entity
+public class Department {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String name;
+	
+    // 👈 Нет ссылки на всех связанных Employee — односторонняя связь
+	
+    // Getters, setters, toString
+}
+```
+
+```java
+import jakarta.persistence.*;
+
+@Entity
+public class Employee {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String name;
+    
+    @ManyToOne
+    @JoinColumn(name = "department_id", referencedColumnName="id")  // есть ссылка на Department
+    private Department department;
+
+}
+```
+
+##### BIDIRECTIONAL ONE TO MANY
 
 ```java
 import jakarta.persistence.*;
@@ -75,16 +158,44 @@ public class Employee {
     private String name;
 	
     @ManyToOne
-    @JoinColumn(name = "department_id")
+    @JoinColumn(name = "department_id", referencedColumnName="id")
     private Department department;
 	
     // Getters, setters, toString
 }
 ```
 
+### Работа со связанными объектами
+
+
+
+> [!warning]
+> Если мы работаем с BIDIRECTIONAL ONE TO MANY:
+> 
+> При добавлении Child объекта в БД. 
+> ```java
+> session.getTransaction().begin();  
+ > 
+>Person person = (Person) session.createQuery("FROM Person WHERE name = 'Adam'").getResultList().get(0);  
+ > 
+>Item item = new Item("GBC badge");  
+>item.setPerson(person);  
+ > 
+>session.persist(item);  
+ > 
+>person.getItems();  //автоматически НЕ подтянет новодобавленный Item, т.к. это Person уже был запрошен и его кэш хранится в Context, List<Item> подтянется оттуда
+ > 
+>person.getItems().add(item); //надо вручную добавить, если хотим далее работать с этим списком. Если же не будем далее с ним работать -> можно не добавлять. На сохранение в БД это не влияет.  
+ > 
+>System.out.println(item.getId());
+> ```
+> 
+>~={red}**При BIDIRECTIONAL ONE TO MANY считается хорошей практикой всё же добавлять `person.getItems().add(item);` -> значение в таблице БД и в кэше Hibernate совпадают.**=~
+
+
 
 > [!note]
-> Вызывать геттер для получения объекта, связанного с merged objectt нужно только внутри транзакции. Т.к. только при вызове геттера выполняется запрос на получение связанных объектов. Т.е. они подтягиваются ==lazily==
+> Вызывать геттер для получения объекта, связанного с merged object нужно только внутри транзакции. Т.к. только при вызове геттера выполняется запрос на получение связанных объектов. Т.е. они подтягиваются ==lazily==
 > Код транзакции:
 > ```java
 > session.getTransaction().begin();  

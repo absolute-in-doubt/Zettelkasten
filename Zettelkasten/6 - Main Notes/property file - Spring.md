@@ -56,4 +56,4 @@ ApplicationContext.xml:
 ---
 ### References:
 
-- [[Application Context.xml file - Spring]]
+- [[ApplicationContext.xml file - Spring]]

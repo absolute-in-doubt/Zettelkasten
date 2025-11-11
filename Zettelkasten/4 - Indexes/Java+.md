@@ -30,6 +30,8 @@
 	- [[HttpRequest.Builder - Java]]
 	- [[HttpRequest.BodyPublisher - Java]]
 		- [[HttpRequest.BodyPublishers - Java]]
+	
+4. Отправка HTTP запросов в Spring - [[RestTemplate - Spring Web]]
 
 
 ### Jackson
@@ -38,6 +40,7 @@
 
 1. [[ObjectMapper - Jackson Databind]]
 2. [[Jackson Tree Model - Jackson Databind]]
+	-  [[JsonNode - Jackson Databind]]
 
 [[Jackson Annotations]]
 [[Class-level annotations - Jackson Annotations]]
@@ -64,6 +67,9 @@
 ### [[Jakarta.servlet]]
 
 
+### [[JAXB]]
+
+
 ### [[Tomcat]]
 
 
@@ -78,6 +84,11 @@
 
 ### [[Hibernate & JPA]]
 
+
+### [[Jakarta Validation]]
+
+
 Eclipse
 - [[Hotkeys - Eclipse]]
 
+### [[Testing]]

@@ -38,13 +38,20 @@
 ### Postgres specifics
 [[PostgreSQL specifics]]
 
+-  [[PostgreSQL - commands & notables]]
+
 1. [[Протокол коммуникации с БД (Under the hood) - Postgres]]
 2. [[Queries to system DBs - PostgreSQL]]
 3. [[PostgreSQL - String data types]]  - ТИПЫ ДАННЫХ
 4. [[PostgreSQL - Numeric data types]] 
 
 
+### Notables
+
+- [[Проблема N+1]]
+
 ---
 #### References:
 
 - [[Базы данных]]
+- [[Hibernate & JPA]]

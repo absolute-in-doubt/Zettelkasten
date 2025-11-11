@@ -10,6 +10,8 @@ Tags: [[Hibernate & JPA]]
 
 implements [[AutoClosable Interface - Java|AutoClosable]]
 
+~={red}**thread-unsafe**=~
+
 У JPA **нет своей реализации [[Session - Hibernate|Session]]** — JPA определяет только интерфейс `EntityManager`. Конкретная реализация поставляется провайдером (в твоём случае — Hibernate).
 
 **Объект `EntityManager` фактически ~={cyan}является [[Adapter (Wrapper) - pattern|адаптером]]=~ (обёрткой) над экземпляром `org.hibernate.Session`.**
@@ -22,6 +24,10 @@ implements [[AutoClosable Interface - Java|AutoClosable]]
 ### Создание (получение) EntityManager:
 
 ```java
+Configuration configuration = new Configuration().addAnnotatedClasses(Person.class, Item.class);
+
+EntityManagerFactory entityManagerFactory = configuration.buildSessionFactory();
+
 EntityManager entityManager = EntityManagerFactory.createEntityManager();
 ```
 
@@ -56,9 +62,29 @@ EntityManager entityManager = EntityManagerFactory.createEntityManager();
 
 
 
-- `T` ~={green}find(`Class<T> entityClass, Object primaryKey`)=~
+- `T` ~={green}find(`Class<T> entityClass, Object primaryKey`)=~ - **именно PRIMARY KEY,  - НЕ связанная сущность**:
+```java
+@Entity  
+@Table(name="Passport")  
+public class Passport implements Serializable {  
+    @Id  
+    @OneToOne    
+    @JoinColumn(name="person_id", referencedColumnName="id")  
+    private Person person;
+    
+    ...
+    
+}
 
--~={green} remove(`Object entity`)=~ - marking entity for removal
+//вызов find(..)
+
+Passport passport = entityManager,find(Passport.class, person.getId()); //передаём именно id как он в БД, а не связанную сущность
+```
+
+
+
+
+- ~={green} remove(`Object entity`)=~ - marking entity for removal
 
 - ~={green}detach(`Object entity`)=~ - удаляет объект из Contxt. ~={green}Unflushed changes will be lost.=~
 

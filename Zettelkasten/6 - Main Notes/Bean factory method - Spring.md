@@ -11,7 +11,7 @@ Tags: [[Spring]]
 
 
 
-## Указание фабричного метода в [[Application Context.xml file - Spring|ApplicationContext.xml]]
+## Указание фабричного метода в [[ApplicationContext.xml file - Spring|ApplicationContext.xml]]
 
 ```xml
 <bean id="classicalMusic" class="secret.boy.spring.demo.ClassicalMusic"   

@@ -32,6 +32,7 @@
 
 ### Collection implementations
 1. [[LinkedList implementation - Java Core]]
+2. [[HashMap implementation - Java Core]]
 
 
 ### Java Classes:
@@ -78,11 +79,17 @@
 8. [[Classpath - Java]]
 9. [[Сравнение в Java]]
 10. [[Method parameters & arguments - Java]]
+11. [[Модификатор метода final - Java]]
 
 
 
 ### Java Important Classes
 [[Java Important Classes|Link to the tag]]
+
+#### classes:
+
+1. [[Optional class - Java]]
+##### interfaces
 
 1. [[AutoClosable Interface - Java]]
 2. [[Comparable Interface - Java]]

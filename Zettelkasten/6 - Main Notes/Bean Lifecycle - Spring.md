@@ -10,11 +10,14 @@ Tags: [[Spring]]
 
 ![[Pasted image 20251009203409.png]]
 
+> [!warning] 
+> Если bean является singleton, то он создаётся изначально, как только поднимается контекст. А все прототайпы создаются в тот момент, когда они нужны.
+
 
 > [!note] 
 > Каждый Bean может иметь user-defined init-метод и destroy-метод
 
-## Указание методов в [[Application Context.xml file - Spring|ApplicationContext.xml]]
+## Указание методов в [[ApplicationContext.xml file - Spring|ApplicationContext.xml]]
 
 ```xml
 <bean id="musicBean" 

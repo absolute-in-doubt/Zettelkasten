@@ -13,7 +13,7 @@ Tags: [[Java+]] [[Jackson Annotations]]
 
 ### Нейминг
 
-~={green}@JsonRootName=~ - для определения имени корневого эдемента:
+~={green}@JsonRootName=~ - для определения имени корневого элемента:
 	
 ```java
 @JsonRootName("writer")

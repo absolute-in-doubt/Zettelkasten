@@ -1,5 +1,7 @@
 
-[[PostgreSQL - commands & notables]]
+Index: [[SQL]]
+
+- [[PostgreSQL - commands & notables]]
 
 1. [[Протокол коммуникации с БД (Under the hood) - Postgres]]
 2. [[Queries to system DBs - PostgreSQL]]

@@ -13,15 +13,15 @@ Tags: [[Spring]] [[Patterns]]
 ### Способы внедрения зависимостей
 
 - **через конструктор**
-	[[Application Context.xml file - Spring#Через конструктор|Внедрение через конструктор в ApplicationContext.xml]]
+	[[ApplicationContext.xml file - Spring#Через конструктор|Внедрение через конструктор в ApplicationContext.xml]]
 
 - **через setter**
-	[[Application Context.xml file - Spring#Через setter|Внедрение через setter в ApplicationContext.xml]]
+	[[ApplicationContext.xml file - Spring#Через setter|Внедрение через setter в ApplicationContext.xml]]
 
 
 ### Способы задания инъекций зависимостей
 
-- через XML ([[Application Context.xml file - Spring|ApplicationContext.xml]])
+- через XML ([[ApplicationContext.xml file - Spring|ApplicationContext.xml]])
 
 - Аннотации
 

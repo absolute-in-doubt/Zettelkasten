@@ -34,7 +34,7 @@ Tags: [[Spring]]
 
 
 > [!warning]
-> Spring вызывает destroy метод толькоу Singleton бинов
+> Spring вызывает destroy метод только у Singleton бинов
 
 ---
 

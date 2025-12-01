@@ -62,8 +62,6 @@
 - [[Взаимодействия с remote repo - Git]]
 - [[Conventional commits - Git]]
 
-[[SSH]]
-
 ### [[Jakarta.servlet]]
 
 
@@ -92,3 +90,17 @@ Eclipse
 - [[Hotkeys - Eclipse]]
 
 ### [[Testing]]
+
+
+### [[gRPC]]
+
+
+### [[SSH]]
+
+
+### [[Local network]] 
+- проброс портов, доступ к локально хостимым сайтам извне и т.д.
+
+#### Не знаю куда поместить:
+
+[[реализация ConnectionPool]]

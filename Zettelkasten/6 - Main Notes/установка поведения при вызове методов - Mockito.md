@@ -22,7 +22,7 @@ doNothing().when(repository).delete(employee);
 
 
 ---
-### Установка возвращаеемого значения
+### Установка возвращаемого значения
 ### `OngoingStubbing<T>` ~={green}Mockito.when(`T methodCall`)=~
 
 Возвращает объект, к которому нужно вызвать доп метод для установки возвращаемого значения.
@@ -45,7 +45,7 @@ System.out.println(mock.someMethod("foo"));
 
 ![[Pasted image 20251107145846.png]]
 
-
+~={orange}Именно `OngoingStubbing<T>`, НЕ Mockito=~
 
 ```java
 when(mock.someMethod()).thenReturn(10); 

@@ -24,7 +24,7 @@ Tags: [[Spring]]
 
 - Boot сканирует `META-INF/spring.factories` (в Spring Boot 2) или `META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports` (в Spring Boot 3) и автоматически подключает классы‑конфигурации.
    
-**Примеры: **
+**Примеры:**
 - если в classpath есть `spring-boot-starter-data-jpa`, то автоматически создаётся `EntityManagerFactory`, `DataSource`, `JpaTransactionManager` и т. д. 
 	`+` выполняется [[setup - Spring Data|@EnableJpaRepositories]]
 

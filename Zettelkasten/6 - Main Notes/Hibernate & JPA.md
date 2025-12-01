@@ -22,6 +22,8 @@ Index: [[Java+]]
 - [[EntityManager - JPA]]
 - [[Transaction - JPA]]
 - [[Entity- JPA]]
+	- [[Composite PRIMARY KEY - Hibernate]]
+	- [[FK как PRIMARY KEY (@MapsId) - Hibernate]]
 - [[HQL запросы - JPA]]
 
 [[Relationships общее - JPA]]
@@ -30,4 +32,12 @@ Index: [[Java+]]
 - [[@OneToOne - JPA]]
 - [[Каскадирование - JPA]]
 
+TL;DR: (по отношениям):
+	mappedBy - тот, на кого ссылаются
+	@JoinColumn - тот, кто владеет FK
+
+[[JPQL - JPA]]
+
+
 [[@Transient - JPA]]
+[[Mapping типов - JPA]] - Mapping

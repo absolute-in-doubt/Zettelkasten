@@ -76,6 +76,33 @@ class Paerson {
 ```
 
 ---
+## ~={cyan}@Enumerated=~
+
+Нужно для отображения полей типа Enum:
+
+```java
+@Entity
+public class User {
+
+    @Id
+    @GeneratedValue
+    private Long id;
+
+    @Enumerated(EnumType.STRING)
+    private Role role;
+}
+
+public enum Role {
+    ADMIN,
+    USER,
+    GUEST
+}
+```
+
+В БД будет храниться строка `"ADMIN"`, `"USER"`, `"GUEST"`.
+
+
+---
 ## @GeneratedValue annotation
 
 указывает, что значение генерируется на стороне БД

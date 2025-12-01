@@ -36,7 +36,7 @@
 
 
 ### Postgres specifics
-[[PostgreSQL specifics]]
+[[PostgreSQL DB]]
 
 -  [[PostgreSQL - commands & notables]]
 
@@ -44,6 +44,7 @@
 2. [[Queries to system DBs - PostgreSQL]]
 3. [[PostgreSQL - String data types]]  - ТИПЫ ДАННЫХ
 4. [[PostgreSQL - Numeric data types]] 
+5. [[PostgreSQL - other data types]]
 
 
 ### Notables

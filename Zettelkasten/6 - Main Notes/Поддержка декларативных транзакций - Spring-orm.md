@@ -8,6 +8,8 @@ Tags: [[Spring]]
 ---
 # Поддержка декларативных транзакций - Spring-orm
 
+### ~={orange}Обычно [[@Transactional на методах service - Spring|@Transactional указывается на методах service]] для эффективной работы с каскадированием=~
+
 Для поддержки декларативных транзакций необходимо над классом аннотированным как ~={purple}@Configuration=~ поставить аннотацию ~={purple}@EnableTransactionManagement=~:
 
 ```java
@@ -111,6 +113,8 @@ public void delete(int id){
     em.close();
 }
 ```
+
+~={pink}Как Spring понимает, что нужно создать  EntityManager? В Configuration классе мы никак не обозначили, что LocalContainerEntityManagerFactory - это именно FactryBean.=~
 
 После:
 ```java

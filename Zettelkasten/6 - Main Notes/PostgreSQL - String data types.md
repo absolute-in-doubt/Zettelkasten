@@ -3,7 +3,7 @@
 
 Status: #child
 
-Tags: [[SQL]] [[PostgreSQL specifics]]
+Tags: [[SQL]] [[PostgreSQL DB]]
 
 ---
 # PostgreSQL - String data types

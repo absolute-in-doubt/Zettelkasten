@@ -6,6 +6,9 @@
 3. [[AOP - Spring]]
 
 
+##### Configuration class summary
+- [[Configuration class summary- Spring]]
+
 #### Spring Core
 
 [[Инициализация контекста через XML - Spring]]
@@ -28,6 +31,7 @@ config:
 - [[spring-orm package]]
 	- [[Настройка Hibernate - spring-orm]]
 	- [[Поддержка декларативных транзакций - Spring-orm]]
+		- [[@Transactional на методах service - Spring]]
 
 #### Spring MVC
 
@@ -40,10 +44,11 @@ config:
 
 
 - [[DispatcherServlet - Spring MVC]]
-- [[Controller - Spring MVC]]
+- [[Controller - Spring MVC]] - @Controller
 	- [[Получение параметров запроса - Spring MVC]]
 - [[Model - Spring MVC]]
 - [[Filter - Spring]] - настройка DispatcherServletIntializer
+
 
 - [[JDBC Template - Spring]]
 
@@ -51,10 +56,26 @@ config:
 ### Spring Data JPA
 
 - [[setup - Spring Data]]
-- [[@Repository - Spring Data]]
-- [[Service - Spring Data]]
+- [[@Repository - Spring Data]] - @Repository
+	-  [[Custom repository methods - Spring Data ]]
+- [[Service - Spring Data]] - @Service
 
-- [[Custom repository methods - Spring Data ]]
+
+
+> [!warning]
+> (Controller, Service, Repository) - по сути, семантические аннотации для лучшей читаемости и разделения слоёв.
+> 
+> Такие аннотации называются стериотипными. И хранятся в `org.springframework.stereotype`
+
+
+### Spring Web
+
+- [[RestTemplate - Spring Web]]
+
+- [[@ResponseBody - Spring Web]]
+- [[@RestController - Spring Web]]
+- [[@ExceptionHandler - Spring Web]]
+- [[@RequestBody - Spring Web]]
 
 
 ### [[Spring Boot]]
@@ -64,5 +85,18 @@ config:
 - [[application.properties - Spring Boot]]
 
 
+### Spring Security
+
+- [[Авторизация vs Аутентификация]]
+
 ### [[Thymeleaf - шаблонизатор]]
 
+
+### Многопоточность в Spring:
+
+- [[ThreadPoolTaskExecutor - Spring]]
+
+
+### Notes
+
+- [[Classpath - Spring]]

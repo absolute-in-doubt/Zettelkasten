@@ -3,7 +3,7 @@
 
 Status: #adult 
 
-Tags: [[PostgreSQL specifics]] [[SQL]]
+Tags: [[PostgreSQL DB]] [[SQL]]
 
 ---
 # PostgreSQL - commands & notables

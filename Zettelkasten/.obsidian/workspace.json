@@ -8,36 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "17f16480894f2334",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "6 - Main Notes/Ковариация.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Ковариация"
-            }
-          },
-          {
             "id": "22add7fffd2edb8b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6 - Main Notes/Configuration via Java code - Spring.md",
+                "file": "6 - Main Notes/client - gRPC.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,16 +28,16 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Configuration via Java code - Spring"
+              "title": "client - gRPC"
             }
           },
           {
-            "id": "d0cf503e0ff7aa50",
+            "id": "f53f29d9c3e25da5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6 - Main Notes/Оценка качества точечной оценки параметра СВ.md",
+                "file": "6 - Main Notes/@Valid, @Validated - валидация через аннотацию.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -76,16 +52,16 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Оценка качества точечной оценки параметра СВ"
+              "title": "@Valid, @Validated - валидация через аннотацию"
             }
           },
           {
-            "id": "cc2377effb780772",
+            "id": "b83c424c8487b31e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6 - Main Notes/REST standard.md",
+                "file": "6 - Main Notes/Сравнительные критерии спецификации модели.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -100,40 +76,16 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "REST standard"
+              "title": "Сравнительные критерии спецификации модели"
             }
           },
           {
-            "id": "e5477ef9a6267676",
+            "id": "d8ee1d2a94c5e4f7",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6 - Main Notes/startup - Mockito.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": true,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "startup - Mockito"
-            }
-          },
-          {
-            "id": "c45fb9289d44358f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "6 - Main Notes/Отношение Risk & Reward - FRM - Flashcards.md",
+                "file": "6 - Main Notes/F-статистика.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -148,16 +100,16 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Отношение Risk & Reward - FRM - Flashcards"
+              "title": "F-статистика"
             }
           },
           {
-            "id": "9ca3b878937a41d7",
+            "id": "901ef0baf6fe3b16",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "4 - Indexes/ТВиМС.md",
+                "file": "6 - Main Notes/Распределение Фишера.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -172,16 +124,16 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "ТВиМС"
+              "title": "Распределение Фишера"
             }
           },
           {
-            "id": "65fae1419fdbff46",
+            "id": "e2b65cb227edec01",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6 - Main Notes/Парная корреляция (Коэффициент Пирсона).md",
+                "file": "3 - Tags/Testing.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -196,203 +148,10 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Парная корреляция (Коэффициент Пирсона)"
-            }
-          },
-          {
-            "id": "6b68048a08e165ba",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "6 - Main Notes/Оценка качества точечной оценки параметра СВ.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Оценка качества точечной оценки параметра СВ"
-            }
-          },
-          {
-            "id": "21688107beb864b3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "6 - Main Notes/EntityManager - JPA.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "EntityManager - JPA"
-            }
-          },
-          {
-            "id": "776c11d9e2001457",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "6 - Main Notes/Conventional commits - Git.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Conventional commits - Git"
-            }
-          },
-          {
-            "id": "31207856304fb17d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "6 - Main Notes/REST standard.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "REST standard"
-            }
-          },
-          {
-            "id": "2d70f52ee5c244d4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "6 - Main Notes/Параметры GET запроса - Spring MVC.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Параметры GET запроса - Spring MVC"
-            }
-          },
-          {
-            "id": "b9f37ad6d62385b9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "4 - Indexes/Obsidian Features.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Obsidian Features"
-            }
-          },
-          {
-            "id": "187b66f9f3dff5fe",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "4 - Indexes/Java+.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Java+"
-            }
-          },
-          {
-            "id": "7ce3a31888d5f222",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "6 - Main Notes/Expected & Unexpected loss.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Expected & Unexpected loss"
+              "title": "Testing"
             }
           }
-        ],
-        "currentTab": 15
+        ]
       }
     ],
     "direction": "vertical"
@@ -411,7 +170,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "docker",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -466,7 +225,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "6 - Main Notes/Access Modifiers.md",
+                "file": "6 - Main Notes/Classpath - Spring.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -476,7 +235,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Access Modifiers"
+              "title": "Backlinks for Classpath - Spring"
             }
           },
           {
@@ -485,12 +244,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "6 - Main Notes/Access Modifiers.md",
+                "file": "6 - Main Notes/Classpath - Spring.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Access Modifiers"
+              "title": "Outgoing links from Classpath - Spring"
             }
           },
           {
@@ -514,15 +273,17 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "6 - Main Notes/Classpath - Spring.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of Classpath - Spring"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -541,44 +302,46 @@
       "obsidian-to-anki-plugin:Obsidian_to_Anki - Scan Vault": false
     }
   },
-  "active": "7ce3a31888d5f222",
+  "active": "22add7fffd2edb8b",
   "lastOpenFiles": [
-    "desktop.ini",
-    "4 - Indexes/FRM.md",
-    "6 - Main Notes/Численные меры риска - FRM.md",
-    "6 - Main Notes/Качественные методы анализа риска - FRM.md",
-    "6 - Main Notes/Expected & Unexpected loss.md",
-    "6 - Main Notes/Custom repository methods - Spring Data.md",
-    "6 - Main Notes/Ковариация.md",
-    "4 - Indexes/ТВиМС.md",
-    "6 - Main Notes/Дисперсия выборки, среднее квадратичное отклонение.md",
-    "6 - Main Notes/Классические предпосылки МНК.md",
-    "6 - Main Notes/Configuration via Java code - Spring.md",
+    "6 - Main Notes/gRPC.md",
     "4 - Indexes/Java+.md",
-    "6 - Main Notes/Deserialization Annotations - Jackson Annotations.md",
-    "6 - Main Notes/Порядок сериализации - Jackson Annotations.md",
-    "6 - Main Notes/Jackson Tree Model - Jackson Databind.md",
-    "6 - Main Notes/JsonNode - Jackson Databind.md",
-    "6 - Main Notes/RestTemplate - Spring Web.md",
-    "6 - Main Notes/Работа с HTTP в Java - java.net.http.md",
-    "6 - Main Notes/Class-level annotations - Jackson Annotations.md",
-    "6 - Main Notes/Jackson Databind.md",
-    "6 - Main Notes/ObjectMapper - Jackson Databind.md",
+    "6 - Main Notes/@RequestBody - Spring Web.md",
     "4 - Indexes/Spring.md",
-    "6 - Main Notes/application.properties - Spring Boot.md",
-    "6 - Main Notes/Filter - Spring.md",
-    "6 - Main Notes/Configurating Spring MVC via Java code.md",
-    "6 - Main Notes/Конфигурация web.xml с помощью Java класса + Spring.md",
-    "Pasted image 20251109093940.png",
-    "Pasted image 20251108155551.png",
-    "Pasted image 20251108155516.png",
-    "Pasted image 20251108154607.png",
-    "Pasted image 20251107183634.png",
-    "Pasted image 20251107174452.png",
-    "Pasted image 20251107150755.png",
-    "2 - Source Materials/Pasted image 20251107145846.png",
-    "Pasted image 20251107145817.png",
-    "Pasted image 20251107083953.png",
+    "6 - Main Notes/@ResponseBody - Spring Web.md",
+    "6 - Main Notes/SSH.md",
+    "6 - Main Notes/Проброс портов WSL.md",
+    "6 - Main Notes/Local network.md",
+    "6 - Main Notes/LocalTunnel.md",
+    "6 - Main Notes/Запуск Redis docker container.md",
+    "6 - Main Notes/@ExceptionHandler - Spring Web.md",
+    "6 - Main Notes/@Valid, @Validated - валидация через аннотацию.md",
+    "6 - Main Notes/Jakarta Validation.md",
+    "6 - Main Notes/FOREIGN KEY - SQL.md",
+    "6 - Main Notes/@RestController - Spring Web.md",
+    "6 - Main Notes/Controller - Spring MVC.md",
+    "6 - Main Notes/Hibernate set up.md",
+    "6 - Main Notes/Hibernate & JPA.md",
+    "6 - Main Notes/setup - Spring Data.md",
+    "4 - Indexes/SQL.md",
+    "6 - Main Notes/Creating and deleting tables - SQL.md",
+    "6 - Main Notes/@OneToMany & @ManyToOne - JPA.md",
+    "6 - Main Notes/@Transactional на методах service - Spring.md",
+    "6 - Main Notes/Поддержка декларативных транзакций - Spring-orm.md",
+    "6 - Main Notes/PRIMARY KEY - SQL.md",
+    "6 - Main Notes/PostgreSQL - other data types.md",
+    "Pasted image 20251122100321.png",
+    "Pasted image 20251122095605.png",
+    "desktop.ini",
+    "2 - Source Materials/Pasted image 20251115095525.png",
+    "2 - Source Materials/Pasted image 20251115095427.png",
+    "2 - Source Materials/Pasted image 20251115095158.png",
+    "2 - Source Materials/Pasted image 20251115100335.png",
+    "2 - Source Materials/Pasted image 20251115100237.png",
+    "2 - Source Materials/Pasted image 20251115095937.png",
+    "2 - Source Materials/Pasted image 20251115095858.png",
+    "2 - Source Materials/Pasted image 20251108155516.png",
+    "2 - Source Materials/03_ОБА_ЛР2_Моделирование_бизнес_процессов_Нотация_BPMN (1).pdf",
     "2 - Source Materials/Formal_strategic_planning.pdf",
     "6 - Main Notes/Untitled 3.base",
     "6 - Main Notes/Untitled 2.base",
@@ -586,7 +349,6 @@
     "6 - Main Notes/Untitled.base",
     "Redis",
     "Бородич_Эконометрика.pdf",
-    "2 - Source Materials/О мед освидетельствовании 30.06.2022.pdf",
-    "2 - Source Materials/Unconfirmed 145553.crdownload"
+    "2 - Source Materials/О мед освидетельствовании 30.06.2022.pdf"
   ]
 }

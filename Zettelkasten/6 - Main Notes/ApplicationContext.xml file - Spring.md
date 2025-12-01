@@ -72,7 +72,7 @@ Tags: [[Spring]]
 ~={red}!!!=~ При инициализации контекста через XML ~={cyan}инъекция через поле НЕ РАБОТАЕТ=~:
 - пытаемся инжектить через property -> он ищет setter, если setter-a нет - кидает ошибку. ~={red}!!!=~
 
-#### Включение аннотаций в xml
+#### Включение class-level аннотаций в xml
 
  Чтобы работали базовые аннотации Spring (~={purple}@PreDestroy=~, ~={purple}@PostConstruct=~ и ~={purple}@Resource=~ (не class-level, для этого есть context:component-scan)), добавляем в applicationContext.xml bean общего [[Про использование BeanPostProcessor - Spring|BeanPostProcessor]]:
  ```xml

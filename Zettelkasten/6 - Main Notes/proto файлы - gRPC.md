@@ -1,0 +1,137 @@
+
+18-11-2025 07:41
+
+Status: #adult
+
+Tags: [[gRPC]] [[Java+]]
+
+---
+# proto файлы - gRPC
+
+
+```java
+syntax = "proto3"; //версия proto файла  
+package org.bsuir.received_data_directory; //куда сохранится полученный файл  
+  
+message HelloRequest { //запрос, получаемый сервером  
+  
+  string name = 1; //name и 1 - это ключ. Передаётся фактически 1, но при получении 1 заменяется на name в конечном файле  
+  
+  repeated string hobbies = 2; //список строк  
+  
+}  
+  
+message HelloResponse {  
+  string greeting = 1;  
+}  
+  
+service GreetingService { //Сервис, ответственный за обработку этого gRPC запроса  
+  rpc greeting(HelloRequest) returns (HelloResponse); //сигнатура метода, ответственного за обработку запроса  
+}
+```
+
+
+
+### Maven plugin для генерации Java классов из .proto-файла:
+
+```xml
+<build>  
+	<extensions>    
+		<extension>      
+			<groupId>kr.motd.maven</groupId>  
+			<artifactId>os-maven-plugin</artifactId>  
+			<version>1.7.1</version>  
+		</extension>
+	</extensions>  
+	<plugins>    
+		<plugin>      
+	        <groupId>org.xolstice.maven.plugins</groupId>  
+	        <artifactId>protobuf-maven-plugin</artifactId>  
+		    <version>0.6.1</version>  
+	        <configuration>      
+<protocArtifact>com.google.protobuf:protoc:3.25.8:exe:${os.detected.classifier}</protocArtifact>        
+	        <pluginId>grpc-java</pluginId>  
+	        <pluginArtifact>io.grpc:protoc-gen-grpc-java:1.76.0:exe:${os.detected.classifier}</pluginArtifact>  
+	        </configuration>      
+		    <executions>        
+			    <execution>          
+				    <goals>            
+				        <goal>compile</goal>  
+				        <goal>compile-custom</goal>  
+			        </goals>
+                  
+	            </execution>      
+            </executions>    
+		</plugin>  
+	</plugins>
+</build>
+```
+
+Генерирует файлы при компиляции (`mvn compile`)
+
+Требует зваисимости тоже версии `1.76.0`:
+
+Вот полный pom.xml:
+
+(редачить впадлу, просто копировать)
+```xml
+<?xml version="1.0" encoding="UTF-8"?>  
+  
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">  
+  <modelVersion>4.0.0</modelVersion>  
+  
+  <groupId>org.example</groupId>  
+  <artifactId>grpc-hello-server</artifactId>  
+  <version>1.0-SNAPSHOT</version>  
+  
+  <name>GRPC</name>  
+  
+  
+  <properties>    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>  
+    <maven.compiler.source>23</maven.compiler.source>  
+    <maven.compiler.target>23</maven.compiler.target>  
+  </properties>  
+  <dependencies>    <dependency>      <groupId>junit</groupId>  
+      <artifactId>junit</artifactId>  
+      <version>4.11</version>  
+      <scope>test</scope>  
+    </dependency>    <dependency>      <groupId>io.grpc</groupId>  
+      <artifactId>grpc-netty-shaded</artifactId>  
+      <version>1.76.0</version>  
+      <scope>runtime</scope>  
+    </dependency>    <dependency>      <groupId>io.grpc</groupId>  
+      <artifactId>grpc-protobuf</artifactId>  
+      <version>1.76.0</version>  
+    </dependency>    <dependency>      <groupId>io.grpc</groupId>  
+      <artifactId>grpc-stub</artifactId>  
+      <version>1.76.0</version>  
+    </dependency>    <dependency>      <groupId>javax.annotation</groupId>  
+      <artifactId>javax.annotation-api</artifactId>  
+      <version>1.3.1</version>  
+    </dependency>  </dependencies>  
+  <build>    <extensions>      <extension>        <groupId>kr.motd.maven</groupId>  
+        <artifactId>os-maven-plugin</artifactId>  
+        <version>1.7.1</version>  
+      </extension>    </extensions>    <plugins>      <plugin>        <groupId>org.xolstice.maven.plugins</groupId>  
+        <artifactId>protobuf-maven-plugin</artifactId>  
+        <version>0.6.1</version>  
+        <configuration>          <protocArtifact>com.google.protobuf:protoc:3.25.8:exe:${os.detected.classifier}</protocArtifact>  
+          <pluginId>grpc-java</pluginId>  
+          <pluginArtifact>io.grpc:protoc-gen-grpc-java:1.76.0:exe:${os.detected.classifier}</pluginArtifact>  
+        </configuration>        <executions>          <execution>            <goals>              <goal>compile</goal>  
+              <goal>compile-custom</goal>  
+            </goals>          </execution>        </executions>      </plugin>    </plugins>  </build></project>
+```
+
+> [!warinng]
+> Плагин не работает, если в пути есть кириллица
+
+----
+#### [[proto файлы - gRPC - Flashcards|Link to flashcards]]
+
+
+
+---
+### References:
+

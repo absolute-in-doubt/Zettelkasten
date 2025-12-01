@@ -64,7 +64,7 @@ public class AppConfig {
 ```
 
 
-> [!note] **В любом из этих способов необходимо создавать**`PropertySourcesPlaceholderConfigurer`:
+> [!note] **Для работы `@Value` необходимо создавать**`PropertySourcesPlaceholderConfigurer`:
 > ```java
 > @Configuration  
 @ComponentScan("secret.boy.crud.app")  

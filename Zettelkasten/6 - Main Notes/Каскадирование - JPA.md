@@ -84,6 +84,14 @@ session.getTransaction().commit();
 ```
 
 
+> [!warning]
+> Чтобы связь создалась необходимо, чтобы владелец отношения (тот, кто хранит FK) получил ссылку на Parent объект. 
+> 
+> В данном случае отношение создаётся на этом этапе:
+> ```java
+> testCascadingItem.setPerson(person);  
+> ```
+
 ----
 #### [[Каскадирование - JPA - Flashcards|Link to flashcards]]
 

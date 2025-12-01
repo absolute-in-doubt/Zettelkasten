@@ -3,7 +3,7 @@
 
 Status: #baby
 
-Tags: [[SQL]] [[PostgreSQL specifics]]
+Tags: [[SQL]] [[PostgreSQL DB]]
 
 ---
 # viewing DBs - PostgreSQL

@@ -3,7 +3,7 @@
 
 Status:
 
-Tags:
+Tags: [[Testing]] [[Java+]] 
 
 ---
 # test methods - JUnit

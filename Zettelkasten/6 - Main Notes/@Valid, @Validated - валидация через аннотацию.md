@@ -27,7 +27,7 @@ private List<@Valid Employee> employees;
     @Service
     @Validated // важно!
     public class EmployeeService {
-        public void save(@Valid Employee employee) { ... }
+        public void save(@Valid Employee employee, BindingResult bindingResult) { ... }
     }
 ```
 

@@ -10,8 +10,33 @@ Tags: [[Hibernate & JPA]]
 
 Обычно настраивается на Parent сущности. Но можно и на обоих.
 
+Нальзя, чтобы поле связанного объекта (FK) одновременно являся PK:
 
+```java
+@Entity  
+@Table(name="session")  
+public class Session {  
+    //@Id  - неправильно, т.к. он уже FK
+    @ManyToOne    
+    @JoinColumn(name="user_id", referencedColumnName = "user_id") 
+    private User user;  
+    @Id // - правильно
+    @Column(name="refresh_token_hash")  
+    private String refreshTokenHash;  
+ ...   
+}    
+    
+@Entity  
+@Table(name="\"user\"")  
+public class User {   
+...
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)  
+    private List<Session> sessions;
+...
+}
+```
 
+~={pink}Hibernate просто тупит. Ну, точнее, причины я не знаю.=~
 
 
 

@@ -9,6 +9,16 @@ Tags: [[Java+]]
 # Git
 
 
+### ~={orange}Переход на предыдущий коммит без удаления текущего=~:
+
+```bash
+git checkout <commit_hash>
+
+git checkout HEAD~1
+```
+
+~={orange}!!!=~ ~={yellow}Создаёт _detached HEAD state_=~
+
 
 #### Прсмотр истории коммитов:
 

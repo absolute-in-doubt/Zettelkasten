@@ -35,6 +35,9 @@ config:
 
 #### Spring MVC
 
+[[ViewResolver- Spring MVC]]
+[[Request Handling Workflow - Spring MVC]]
+
 config:
 - [[web.xml для Spring MVC]]
 	- [[Конфигурация web.xml с помощью Java класса + Spring]] - настройка DispatcherServletIntializer
@@ -55,6 +58,9 @@ config:
 
 ### Spring Data JPA
 
+~={pink}@CrudRepository - ????=~
+	 @JpaRepository - расширяет @CrudRepository 
+	
 - [[setup - Spring Data]]
 - [[@Repository - Spring Data]] - @Repository
 	-  [[Custom repository methods - Spring Data ]]

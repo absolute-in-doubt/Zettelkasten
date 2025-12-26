@@ -31,6 +31,8 @@ public String helloPage(HttpServletRequest request){
 
 ### 2. @RequestParam
 
+Универсален. Может извлечь параметр запроса как из параметров URl, так и из тела формы/multipart.
+
 Если нужно только параметры запроса.
 
 ```java

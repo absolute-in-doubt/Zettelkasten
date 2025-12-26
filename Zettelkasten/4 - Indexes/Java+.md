@@ -1,5 +1,6 @@
 
 
+
 ### Protocols:
 
 - [[HTTP]]
@@ -32,7 +33,8 @@
 		- [[HttpRequest.BodyPublishers - Java]]
 	
 4. Отправка HTTP запросов в Spring - [[RestTemplate - Spring Web]]
-
+	
+5. [[HttpSession vs Cookie - Java servlet API]]
 
 ### Jackson
 

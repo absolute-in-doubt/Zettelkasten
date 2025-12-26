@@ -157,6 +157,7 @@ $\equiv$ - эквивалентно, тождественно равно
 
 $\tilde{\beta}_1 = \frac{\mathrm{Cov}(X, Y)}{\mathrm{Var}(X)}$
 
+### $\vec{A}$
 
 ### Перенос:
 ### $$\begin{aligned}(Y - XB)^T \cdot & (Y - XB) = Y^TY -B^TX^TY - Y^TXB + B^TX^TXB = \\ & = Y^TY - 2B^TX^TY + B^TX^TXB\end{aligned}$$
@@ -165,3 +166,7 @@ $\tilde{\beta}_1 = \frac{\mathrm{Cov}(X, Y)}{\mathrm{Var}(X)}$
 
 
 ### $\frac{\partial y}{\partial x}$
+
+$\forall x \in \mathbb{R}$ - для всех x в R
+
+$\gamma$

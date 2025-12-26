@@ -12,7 +12,7 @@ Tags: [[Spring]]
 
 Работает только в Spring контексте, т.к. в нём существуют BeanPostProcessors, которые и внедряют логику транзакций в методы. О том как они работают [[Про использование BeanPostProcessor - Spring|тут]].
 
-Для корректной работы в Spring-контексте также нужно настроить JpaTransctionManager. Подробнее про настройку [[Поддержка декларативных транзакций - Spring-orm#Настройка менеджера транзакций Hibernate (JPA)|тут]].
+Для корректной работы в Spring-контексте также нужно настроить JpaTransactionManager. Подробнее про настройку [[Поддержка декларативных транзакций - Spring-orm#Настройка менеджера транзакций Hibernate (JPA)|тут]].
 
 ---
 ### Поля аннотации
@@ -38,6 +38,41 @@ public class PeopleService {
 	    peopleRepo.update(person, int id);  
     }  
   
+}
+```
+
+
+И ещё пример:
+
+```java
+@Service  
+@Transactional  
+public class FilingServiceImpl implements FilingService {  
+  
+    private final FilingRepository repository;  
+  
+    @Autowired  
+    public FilingServiceImpl(FilingRepository repository) {  
+        this.repository = repository;  
+    }  
+  
+    @Override  
+    public void createFiling(UUID recordId, Date filingFiscalYear, Date filingEndDate, Filing.FilingType filingType) {  
+        Filing filing = new Filing(recordId, filingFiscalYear, filingType);  
+  
+        repository.save(filing);  
+    }  
+  
+    @Override  
+    public void deleteFiling(UUID recordId) {  
+        repository.deleteById(recordId);  
+    }  
+  
+    @Override  
+    @Transactional(readOnly = true)    //тут аннотация метода, она имеет приоритет над аннотацией класса -> выполнится транзакция readOnly
+    public Filing getTheMostRecentFiling(UUID recordId) {  
+        return repository.findTheMostRecentFilingByRecordId(recordId);  
+    }  
 }
 ```
 

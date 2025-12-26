@@ -30,8 +30,10 @@ config:
 
 - [[spring-orm package]]
 	- [[Настройка Hibernate - spring-orm]]
-	- [[Поддержка декларативных транзакций - Spring-orm]]
-		- [[@Transactional на методах service - Spring]]
+	- @Transactional:
+	- [[Поддержка декларативных транзакций - Spring-orm]] 
+		- [[@Transactional - Jakarta & Spring ORM]]
+		- [[@Transactional на методах service - Spring]] 
 
 #### Spring MVC
 
@@ -74,7 +76,9 @@ config:
 > Такие аннотации называются стериотипными. И хранятся в `org.springframework.stereotype`
 
 
-### Spring Web
+### Spring Web MVC
+
+В **Spring Web** нет `DispatcherServlet` и аннотаций контроллеров.
 
 - [[RestTemplate - Spring Web]]
 
@@ -83,6 +87,9 @@ config:
 - [[@ExceptionHandler - Spring Web]]
 - [[@RequestBody - Spring Web]]
 
+- [[Редирект - Spring Web MVC]]
+- [[Заголовки - Spring Web MVC]]
+- [[Cookie - Spring Web MVC]]
 
 ### [[Spring Boot]]
 
@@ -94,6 +101,21 @@ config:
 ### Spring Security
 
 - [[Авторизация vs Аутентификация]]
+- [[Spring Security Filters]]
+- [[AuthenticationProvider - Spring Security]]
+
+HttpSession vs Cookie [[HttpSession vs Cookie - Java servlet API]]
+
+- [[config - Spring Security]]
+
+- [[Filter - Spring]]
+- DelegatingFilterProxy
+- 
+- [[Security Filter Chain - Spring Security]]
+- [[Custom Security Filter - Spring Security]]
+	- [[Adding Custom Security FIlter - Spring Security]]
+
+- [[Работа с JWT - Spring Security]]
 
 ### [[Thymeleaf - шаблонизатор]]
 

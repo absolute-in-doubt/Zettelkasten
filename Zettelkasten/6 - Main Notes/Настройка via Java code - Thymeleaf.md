@@ -15,7 +15,8 @@ Tags: [[Spring]]
 @EnableWebMvc  
 public class SpringConfig implements WebMvcConfigurer {  
     //реализуем WevMvcConfigurer если нам нужно по своему сконфигурировать Spring MVC app  
-    // в данном случае - мы задаём свой шаблонизатор Thymeleaf вместо стандартного    private final ApplicationContext applicationContext;  
+    // в данном случае - мы задаём свой шаблонизатор Thymeleaf вместо стандартного    
+    private final ApplicationContext applicationContext;  
     
     //получаем ApplicationContext как bean
     @Autowired  

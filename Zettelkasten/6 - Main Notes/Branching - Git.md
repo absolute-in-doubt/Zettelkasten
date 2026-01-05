@@ -53,8 +53,8 @@ Git does this:
 Result:
 
 ```mathematica
-A---B---C-------M  (main)
-         \     /           
+A---B---C-----------M  (main)
+         \         /           
           D---E---F  (feature)
 ```
 
@@ -65,6 +65,8 @@ Git just joins the two histories together with the merge commit `M`.
 ---
 
 `git rebase <branch_to_be_rebased>` - слияние веток, все коммиты ветки `<branch_to_be_rebased>` присоединяются в начало текущей ветки, при возникновении merge конфликтов - они решаются вручную. 
+
+~={red}_«Не rebase’ить ветки, которые уже разделяются с другими людьми»_=~
 
 (Все конфликты решаются как [[Merge Conflicts - Git|merge conflicts]])
 

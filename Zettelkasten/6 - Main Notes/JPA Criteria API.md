@@ -21,6 +21,9 @@ cq.select(root).where(cb.gt(root.get("age"), 18));
 List<User> results = em.createQuery(cq).getResultList();
 ```
 
+#### [[Методы задания условий для JPA Criteria API запросов]]
+
+
 > [!note] 
 > Hibernate поддерживает реализацию JPA Criteria API (т.к. это часть JPA)
 

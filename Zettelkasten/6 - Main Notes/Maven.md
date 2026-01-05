@@ -7,4 +7,5 @@ Index: [[Java+]]
 4. [[Принудительная подгрузка зависимостей - Maven]]
 
 5. [[maven wrapper - Maven]]
-6. 
+
+6. [[Плагины и lifecycle Maven]]

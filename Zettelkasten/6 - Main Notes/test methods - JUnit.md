@@ -8,7 +8,7 @@ Tags: [[Testing]] [[Java+]]
 ---
 # test methods - JUnit
 
-Каждый Test-иетод аннотируется @Test или @ParametrizedTest.
+Каждый Test-метод аннотируется @Test или @ParametrizedTest.
 
 ~={purple}@ParametrizedTest=~ - позволяет проводить один и тот же тест несколько раз с разными параметрами. Параметры могут поставляться различными аннотациями извне: ~={purple}@FieldSource=~, ~={purple}@ValueSource=~ и т.д. Подробнее [[Параметризованные тесты - JUnit|тут]]
 

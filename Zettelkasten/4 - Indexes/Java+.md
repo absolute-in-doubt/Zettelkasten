@@ -1,7 +1,11 @@
 
+### Principles:
 
+- [[SOLID]]
 
 ### Protocols:
+
+- [[OSI модель]]
 
 - [[HTTP]]
 	- [[Виды HTTP запросов]]
@@ -51,6 +55,8 @@
 - [[Deserialization Annotations - Jackson Annotations]]
 
 
+### [[Gson]]
+
 ### [[Базы данных]]
 
  
@@ -59,6 +65,7 @@
 
 ### [[Git]]
 - [[Настройка Git credentials]]
+- [[Git stash]]
 - [[Branching - Git]]
 - [[Merge Conflicts - Git]]
 - [[Взаимодействия с remote repo - Git]]
@@ -98,6 +105,9 @@ Eclipse
 
 
 ### [[SSH]]
+
+
+### [[Документирование]]
 
 
 ### [[Local network]] 

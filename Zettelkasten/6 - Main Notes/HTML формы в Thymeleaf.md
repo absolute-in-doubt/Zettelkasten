@@ -29,7 +29,7 @@ Tags: [[Thymeleaf - шаблонизатор]] [[Spring]]
 
 - `th:action` - url по которому будет сделан запрос при отправке формы
 
-> [!note] **В представлении Thymeleaf - МОЖНО использовать `th:aaction="PATCH"`**
+> [!note] **В представлении Thymeleaf - МОЖНО использовать `th:action="PATCH"`**
 > (Любые можно, типо не только POST и GET)
 > 
 > Thymeleaf автоматически преобразует такую запись в форму со скрытым полем. [[формы - HTML#Атрибуты тега `<form>`|Подробнее тут.]]
@@ -46,7 +46,7 @@ public String populateHeaderMessage() {
 	return "Welcome to our website!";
 }
 
-//в кадлой моделли этого контроллера будет храниться пара:
+//в каждой модели этого контроллера будет храниться пара:
 "headerMessage": "Welcome to our website!"
 ```
 

@@ -99,8 +99,9 @@ Tags: [[Spring]]
 #### Через конструктор
 
 ```java
-public MusicPlayer(Music music) {
+public MusicPlayer(Music music, String name) {
 	this.music = music;
+	this.name = name;
 }
 ```
 	
@@ -108,12 +109,12 @@ public MusicPlayer(Music music) {
 <bean id="musicBean" class="secret.boy.spring.demo.ClassicalMusic"/>
 <bean id="MusicPlayer" class="secret.boy.spring.demo.MusicPlayer">
 	<constructor-arg ref="musicBean"/>
-	<constructor-arg value="some value"/>
+	<constructor-arg value="some name"/>
 </bean>
 ```
 
 > [!note] 
-> Spring XML как раз позволяет явно указать, **какому параметру конструктора** соответствует каждое значение.
+> Spring XML позволяет явно указать, **какому параметру конструктора** соответствует каждое значение.
 >1. указывать аргументы по порядку (как записаны параметры в конструкторе)
 >2.  указывать аргументы с индексом
 >3.  указывать имя праметра:

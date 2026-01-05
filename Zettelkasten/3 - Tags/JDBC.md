@@ -4,6 +4,7 @@ Index: [[Java+]]
 [[JDBC setup]]
 [[JDBC Driver]]
 [[Запросы к БД - JDBC]]
+[[Транзакции в JDBC]]
 [[ResultSet - JDBC]]
 
 [[JDBC Template - Spring]]

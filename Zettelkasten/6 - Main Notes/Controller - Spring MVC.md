@@ -66,7 +66,7 @@ public class HelloController {
 >    public String sayHello(){  
 >        return "hello/world"; //thymeleaf будет искать представление world.html в папке hello в корневой папке представлений (обычно - "views")
 >    }  
->    @GetMapping("/hello-bitch)
+>    @GetMapping("/hello-bitch")
 >    public String sayHelloBitch(){
 >    return "hello/bitch"; //thymeleaf будет искать представление bitch.html в папке hello в корневой папке представлений (обычно - "views")
 >    }
@@ -82,7 +82,7 @@ public class HelloController {
 
 #### Маппинг на уровне контроллера (@RequestMapping)
 
-Для маппинга вего контроллера - используем только @RequestMapping
+Для маппинга всего контроллера - используем только @RequestMapping
 	И для маппинга на уровне контроллера это релевантный метод
 	
 
@@ -105,13 +105,13 @@ public String newPerson(Model model){ ... }
 
 > @RequestMapping на методе - хуйня, устарело
 > 
-> @RequestMappong на контроллере - норм тема
+> @RequestMapping на контроллере - норм тема
 >
 
 
 
 > [!note]
-> Если в @GetMapping ничего не укащыывать - то новый пть не добавится, доступ к методу будет по существующему parent пути:
+> Если в @GetMapping ничего не указывать - то новый путь не добавится, доступ к методу будет по существующему parent пути:
 > ```java
 >@Controller
 >@RequestMapping("/people")

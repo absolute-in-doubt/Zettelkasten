@@ -39,14 +39,38 @@ while(rs.next()){
 }
 ```
 
-### Настройка ResultSet
+### Типы прокрутки (scroll)
 
-ResultSet можно настроить:
-- чтобы он обновлялся
-- чтобы через изменения в нём можно было менять данные в БД
+Есть три основных типа:
+
+- `TYPE_FORWARD_ONLY` — ~={orange}(по-умолчанию)=~ можно только идти вперёд, `next()`; это самый лёгкий и быстрый вариант.​
+    
+- `TYPE_SCROLL_INSENSITIVE` — можно двигаться вперёд/назад (`next`, `previous`, `absolute`, `relative`), но изменения в БД после выборки не видны.​
+    
+- `TYPE_SCROLL_SENSITIVE` — тоже произвольная навигация, но изменения в БД могут становиться видимыми (в зависимости от драйвера и БД).
 
 
-Всё это чекай в [документации]()
+
+### ResultSetConcurrency
+
+- CONCUR_UPDATABLE – позволяет вносить изменения в данные;
+    
+- CONCUR_READ_ONLY – параметр ~={orange}по умолчанию=~, стандартный ResultSet.
+
+
+```java
+Statement st = conn.createStatement(
+                ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+        ResultSet uprs = st.executeQuery(
+            "SELECT * FROM " + dbName + ".COFFEES");
+
+        while (uprs.next()) {
+            float f = uprs.getFloat("PRICE");
+            uprs.updateFloat( "PRICE", f * percentage);
+            uprs.updateRow();
+        }
+```
+
 
 ----
 #### [[ResultSet - JDBC - Flashcards|Link to flashcards]]

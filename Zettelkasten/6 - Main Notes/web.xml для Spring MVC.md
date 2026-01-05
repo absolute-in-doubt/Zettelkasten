@@ -23,7 +23,8 @@ Tags: [[Spring]] [[Tomcat]]
 			<!-- Указываем путь к xml конфигурации  applicationContextMVC.xml -->  
 		    <param-name>contextConfigLocation</param-name>  
 		    <param-value>/WEB-INF/applicationContextMVC.xml</param-value>  
-		</init-param>    <load-on-startup>1</load-on-startup>  
+		</init-param>    
+		<load-on-startup>1</load-on-startup>  
 	</servlet>  
 	<servlet-mapping>
 		<servlet-name>dispatcher</servlet-name>  
@@ -43,3 +44,4 @@ Tags: [[Spring]] [[Tomcat]]
 ### References:
 
 - [[web.xml file - Tomcat]]
+

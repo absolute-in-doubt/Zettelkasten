@@ -60,8 +60,8 @@ config:
 
 ### Spring Data JPA
 
-~={pink}@CrudRepository - ????=~
-	 @JpaRepository - расширяет @CrudRepository 
+~={pink}CrudRepository - ????=~
+	 JpaRepository - расширяет CrudRepository 
 	
 - [[setup - Spring Data]]
 - [[@Repository - Spring Data]] - @Repository

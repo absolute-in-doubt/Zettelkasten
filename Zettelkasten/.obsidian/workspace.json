@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6 - Main Notes/Streaming - gRPC.md",
+                "file": "4 - Indexes/Spring.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Streaming - gRPC"
+              "title": "Spring"
             }
           },
           {
@@ -61,30 +61,6 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6 - Main Notes/Парная корреляция (Коэффициент Пирсона).md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Парная корреляция (Коэффициент Пирсона)"
-            }
-          },
-          {
-            "id": "2b6f7a344022d8e7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
                 "file": "4 - Indexes/ТВиМС.md",
                 "mode": "source",
                 "source": false,
@@ -101,6 +77,54 @@
               },
               "icon": "lucide-file",
               "title": "ТВиМС"
+            }
+          },
+          {
+            "id": "2b6f7a344022d8e7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "4 - Indexes/Java+.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Java+"
+            }
+          },
+          {
+            "id": "f1d5ae1de6c530a9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "6 - Main Notes/t-распределение (Распределение Стьюдента).md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "t-распределение (Распределение Стьюдента)"
             }
           },
           {
@@ -151,8 +175,7 @@
               "title": "Property, plant and equipment  - Основные фонды  - МСФО"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -210,7 +233,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "0b6f3d0fd53cfb18",
@@ -303,35 +327,38 @@
       "obsidian-to-anki-plugin:Obsidian_to_Anki - Scan Vault": false
     }
   },
-  "active": "2b6f7a344022d8e7",
+  "active": "22add7fffd2edb8b",
   "lastOpenFiles": [
+    "6 - Main Notes/Model - Spring MVC.md",
+    "6 - Main Notes/Получение данных из Model - Thymeleaf.md",
+    "4 - Indexes/Spring.md",
+    "6 - Main Notes/Получение параметров запроса - Spring MVC.md",
+    "6 - Main Notes/Controller - Spring MVC.md",
+    "6 - Main Notes/DispatcherServlet - Spring MVC.md",
+    "6 - Main Notes/Request Handling Workflow - Spring MVC.md",
+    "6 - Main Notes/spring-orm package.md",
+    "6 - Main Notes/Поддержка декларативных транзакций - Spring-orm.md",
+    "6 - Main Notes/Bean Lifecycle - Spring.md",
+    "6 - Main Notes/Configuration via Java code - Spring.md",
+    "6 - Main Notes/Configuration via Annotations - Spring.md",
+    "6 - Main Notes/ApplicationContext.xml file - Spring.md",
+    "6 - Main Notes/Application Context - Spring.md",
+    "6 - Main Notes/Инициализация контекста через XML - Spring.md",
+    "6 - Main Notes/web.xml для Spring MVC.md",
+    "4 - Indexes/Java+.md",
+    "6 - Main Notes/SOLID.md",
+    "3 - Tags/Jakarta.servlet.md",
+    "3 - Tags/Thymeleaf - шаблонизатор.md",
+    "6 - Main Notes/HTML формы в Thymeleaf.md",
+    "6 - Main Notes/Динамическое отображение HTML элементов - Thymeleaf.md",
+    "6 - Main Notes/Циклы - Thymeleaf.md",
+    "6 - Main Notes/Переход по страницам (возвращ. значение методов Controller) - Thymeleaf.md",
+    "6 - Main Notes/Настройка via Java code - Thymeleaf.md",
+    "6 - Main Notes/Настройка в applicationContextMVC.xml file - Thymeleaf.md",
+    "Pasted image 20260104182057.png",
+    "Pasted image 20260104181730.png",
     "desktop.ini",
-    "6 - Main Notes/Степени свободы в выборке.md",
-    "4 - Indexes/ТВиМС.md",
-    "6 - Main Notes/Дисперсия выборки, среднее квадратичное отклонение.md",
-    "6 - Main Notes/Совместные Эконометрические Уравнения - СЭУ.md",
-    "6 - Main Notes/Obsidian Markdown example.md",
-    "6 - Main Notes/Парная корреляция (Коэффициент Пирсона).md",
-    "6 - Main Notes/Property, plant and equipment  - Основные фонды  - МСФО.md",
-    "4 - Indexes/Бух Учёт.md",
-    "4 - Indexes/Финансовый анализ.md",
-    "6 - Main Notes/Примеры применения.md",
-    "6 - Main Notes/Стационарный ВР.md",
     "Pasted image 20251224171110.png",
-    "6 - Main Notes/Ковариация.md",
-    "6 - Main Notes/критерий DW.md",
-    "6 - Main Notes/Методы диагностики мультиколлинеарности.md",
-    "6 - Main Notes/Мультиколлинеарность.md",
-    "6 - Main Notes/Автокорреляция.md",
-    "6 - Main Notes/Когда использовать ВР.md",
-    "6 - Main Notes/Probability (p-value).md",
-    "6 - Main Notes/F-статистика.md",
-    "6 - Main Notes/Проверка гипотез о зависимости СВ при помощи t-статистики.md",
-    "6 - Main Notes/Гипотезы корреляции.md",
-    "6 - Main Notes/Проверка гипотез. Критерий Пирсона.md",
-    "6 - Main Notes/Проверка гипотез о нормальном распределении с помощью стаистики JB.md",
-    "6 - Main Notes/Статистика Жарка–Бера (Jarque–Bera Test).md",
-    "6 - Main Notes/Статистика Хи квадрат.md",
     "Pasted image 20251203123600.png",
     "Pasted image 20251203123526.png",
     "Pasted image 20251203123419.png",
@@ -339,8 +366,6 @@
     "Pasted image 20251122100321.png",
     "Pasted image 20251202201518.png",
     "Pasted image 20251203122018.png",
-    "Pasted image 20251203122050.png",
-    "Pasted image 20251202202257.png",
     "2 - Source Materials/03_ОБА_ЛР2_Моделирование_бизнес_процессов_Нотация_BPMN (1).pdf",
     "2 - Source Materials/Formal_strategic_planning.pdf",
     "6 - Main Notes/Untitled 3.base",

@@ -45,7 +45,7 @@ class Vehicle {
 }
 ```
 
-In detail: [What is the "owning side" in an ORM mapping?](https://stackoverflow.com/questions/2749689/what-is-the-owning-side-in-an-orm-mapping/21068644#21068644)
+
 
 **A onedirectional association via a foreign key**
 

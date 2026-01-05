@@ -1,6 +1,7 @@
 
 Index: [[Java+]]
 
+- [[Про gRPC]]
 - [[proto файлы - gRPC]]
 	- [[proto files data structures - gRPC]]
 

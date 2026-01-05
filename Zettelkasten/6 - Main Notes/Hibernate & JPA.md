@@ -19,6 +19,9 @@ Index: [[Java+]]
 - [[Состояния сущностей в JPA]]
 - [[Проблема N+1]]
 
+- [[JPA Criteria API]]
+- [[Методы задания условий для JPA Criteria API запросов]]
+
 - [[EntityManager - JPA]]
 - [[Transaction - JPA]]
 - [[Entity- JPA]]
@@ -30,6 +33,7 @@ Index: [[Java+]]
  [[Examples on relationships - JPA]]
 - [[@OneToMany & @ManyToOne - JPA]]
 - [[@OneToOne - JPA]]
+- [[@ManyToMany - JPA]]
 - [[Каскадирование - JPA]]
 
 TL;DR: (по отношениям):

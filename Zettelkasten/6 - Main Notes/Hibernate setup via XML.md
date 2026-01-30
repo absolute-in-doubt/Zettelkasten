@@ -3,7 +3,7 @@
 
 Status:
 
-Tags:
+Tags: [[Hibernate & JPA]] [[Java+]]
 
 ---
 # Hibernate setup via XML
@@ -16,14 +16,14 @@ Tags:
 
 ---
 
-|Характеристика|**hibernate.cfg.xml**|**persistence.xml**|
-|---|---|---|
-|**Стандарт**|Проприетарный для Hibernate|Стандарт JPA (javax.persistence)|
-|**Когда используется**|Если вы работаете напрямую с `SessionFactory`, `Configuration`, `Session`|Если вы используете JPA (`EntityManager`, `EntityManagerFactory`)|
-|**Расположение**|Обычно в `src/main/resources` или в корне classpath|Обязательно в `META-INF/persistence.xml`|
-|**Содержимое**|JDBC‑параметры (URL, логин, пароль), диалект, маппинги (`<mapping resource="..."/>`)|Определение persistence‑unit, список классов‑сущностей, JPA‑свойства (Hibernate‑специфичные можно добавлять через `<properties>`)|
-|**Пример API**|`java Configuration cfg = new Configuration().configure(); SessionFactory sf = cfg.buildSessionFactory();`|`java EntityManagerFactory emf = Persistence.createEntityManagerFactory("myUnit"); EntityManager em = emf.createEntityManager();`|
-|**Гибкость**|Глубокий доступ к специфике Hibernate|Унифицированный подход, переносимость между провайдерами (EclipseLink, OpenJPA и др.)|
+| Характеристика         | **hibernate.cfg.xml**                                                                                      | **persistence.xml**                                                                                                               |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| **Стандарт**           | Проприетарный для Hibernate                                                                                | Стандарт JPA (javax.persistence)                                                                                                  |
+| **Когда используется** | Если вы работаете напрямую с `SessionFactory`, `Configuration`, `Session`                                  | Если вы используете JPA (`EntityManager`, `EntityManagerFactory`)                                                                 |
+| **Расположение**       | Обычно в `src/main/resources` или в корне classpath                                                        | Обязательно в `META-INF/persistence.xml`                                                                                          |
+| **Содержимое**         | JDBC‑параметры (URL, логин, пароль), диалект, маппинги (`<mapping resource="..."/>`)                       | Определение persistence‑unit, список классов‑сущностей, JPA‑свойства (Hibernate‑специфичные можно добавлять через `<properties>`) |
+| **Пример API**         | `java Configuration cfg = new Configuration().configure(); SessionFactory sf = cfg.buildSessionFactory();` | `java EntityManagerFactory emf = Persistence.createEntityManagerFactory("myUnit"); EntityManager em = emf.createEntityManager();` |
+| **Гибкость**           | Глубокий доступ к специфике Hibernate                                                                      | Унифицированный подход, переносимость между провайдерами (EclipseLink, OpenJPA и др.)                                             |
 
 
 ### Пример Hibernate-native конфигурации с XML:
@@ -35,7 +35,8 @@ hibernate.cfg.xml:
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">  
   
 <hibernate-configuration>  
-    <session-factory>        <property name="hibernate.dialect">  
+    <session-factory>        
+	    <property name="hibernate.dialect">  
             org.hibernate.dialect.MySQLDialect  
         </property>  
         <property name="hibernate.connection.driver_class">  
@@ -71,10 +72,12 @@ Developer.hbm.xml:
     <class name="ctp.web.hibernatexml.model.Developer" table="developers">  
         <id name="id" type="int" column="ID">  
             <generator class="native"/>  
-        </id>        <property name="name" column="name" type="string"/>  
+        </id>        
+        <property name="name" column="name" type="string"/>  
         <property name="specialty" column="specialty" type="string"/>  
         <property name="experience" column="experience" type="int"/>  
-    </class></hibernate-mapping>
+    </class>
+</hibernate-mapping>
 ```
 
 

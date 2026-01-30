@@ -70,7 +70,8 @@ no changes added to commit (use "git add" and/or "git commit -a")
 - добавляем в индекс:
  ```bash
  PS C:\Users\нео\IdeaProjects\JDBC sample> git add .
-  ```
+ ```
+ 
   - коммитим:
   ```java
   PS C:\Users\нео\IdeaProjects\JDBC sample> git commit -m "finalizing the merge"
@@ -80,7 +81,6 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ### Отмена слияния
 
 - `git merge --abort`
-
 
 ----
 #### [[Merge Conflicts - Git - Flashcards|Link to flashcards]]

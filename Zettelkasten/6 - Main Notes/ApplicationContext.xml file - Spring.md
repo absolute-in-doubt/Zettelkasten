@@ -253,8 +253,23 @@ public void setServers(List<String> servers) {
 - **props**
 
 
+
+> [!warning] ~={red}**Biggest Ever Warning**=~
+> Если при инициализации указать параметр `lazy-init= "true"`, то экземпляр бина не будет создан сразу же при инициализации контекста.
+>
+>```xml
+><bean id = "goodVillain" class = "film.Villain" lazy-init= "true">          
+>	<property name = "name" value = "Good Vasily"/>        
+></bean>
+>```
+>P.S. имеет смысл только для singleton бинов.
+
+
+
+
+
 ----
-#### [[Application Context.xml file - Spring - Flashcards|Link to flashcards]]
+#### [[ApplicationContext.xml file - Spring - Flashcards|Link to flashcards]]
 
 
 

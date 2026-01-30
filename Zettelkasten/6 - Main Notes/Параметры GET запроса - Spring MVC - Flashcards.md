@@ -1,5 +1,5 @@
 
-Theory for the cards: [[Получение параметров запроса - Spring MVC]]
+Theory for the cards: [[Получение параметров запроса - Spring Web MVC]]
 
 FILE TAGS: spring spring_mvc
 
@@ -59,3 +59,60 @@ public class PeopleController {
 A:  @PathVariable - извлекает параметр из url. Здесь будет такой url: `.../people/67`, где 67 - предаваемый параметр (id)
 <!--ID: 1760937373808-->
 
+Q: Какие есть способы передачи параметров в Http запросе и какие есть способы их извлечения в Spring Web MVC?
+A:   
+1. В теле запроса
+	
+```java
+@ResponseBody
+@GetMapping("/sayHello")
+public String sayHello() {
+	return "Hello, world!";
+}
+```
+	
+> [!note]
+> Если в методе контроллера, аннотированном `@ResponseBody` возвращать объект, то он будетавтоматически конвертирован в json с помощью Jackson:
+> ```java
+> @ResponseBody
+>@GetMapping("/sayHello")
+>public String sayHello() {
+>	return Map.of("code", "200", "errorMessage", "");
+>}
+> ```
+	
+2. В пути
+	
+```java
+@GetMapping("/{id}")  
+public String show(@PathVariable("id")double id, Model model){  
+	...
+	return null;  
+}  
+```
+	
+3. В заголовках
+	
+```java
+@GetMapping("/users") 
+public String getUsers( 
+	@RequestHeader("Authorization") String authToken, // Обязательный 
+	@RequestHeader(value = "User-Agent", required = false) String userAgent, // Необязательный 
+	@RequestHeader(value = "X-API-Version", defaultValue = "1.0") String apiVersion
+	) { 
+	...
+ }
+```
+	
+4. В параметрах запроса: `some/path?key1=val1&key2=val2`
+	
+```java
+@PostMapping("/hello")
+public String helloPage(@RequestParam("name") String name){
+	...
+	return "first/hello";
+}
+```
+	
+Также извлекать все типы параметров можно через `HttpServletRequest`.
+<!--ID: 1769524942013-->

@@ -1,5 +1,5 @@
 
-Theory for the cards: [[Инициализация контекста через XML - Spring]]
+Theory for the cards: [[ClasspathXmlApplicationContext - Spring]]
 
 FILE TAGS: spring
 

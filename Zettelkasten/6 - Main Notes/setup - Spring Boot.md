@@ -34,16 +34,18 @@ Tags: [[Spring]]
 ----
 ## `@SpringBootApplication`
 
+![[Pasted image 20260110174320.png]]
+
 Содержит в себе:
 - ~={purple}@SpringBootConfiguration=~  
 - ~={purple}@EnableAutoConfiguration=~
-
 - ~={purple}@ComponentScan=~ - настроен так, что рекурсивно  сканирует классы в текущей папке и подпапках:
 ![[Pasted image 20251109093940.png]]
 Отсканирует папку `org.bsuir.spring.boot.app` (Где находдится только сам Application) + подпапки (controller, service (и его подпапки))
 
 > [!warning] 
-> Класс с аннотацией ~={purple}@SpringBootApplication=~ должен неаходиться в корне проекта
+> Класс с аннотацией ~={purple}@SpringBootApplication=~ должен неаходиться в корне проекта.
+> Или придётся вручную настраивать сканирование пакетов.
 
 ----
 #### [[setup - Spring Boot - Flashcards|Link to flashcards]]

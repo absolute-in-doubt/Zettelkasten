@@ -30,11 +30,11 @@ Tags: [[Java Core]] [[Java Collections]]
 
 Deque помимо методов из Collection предлагает по два метода на операции вставки, чтения и удаления: один выкидывает исключение, а другой - нет.
 
-| Type of operation             | Throws exception                          | Returns special value                      | value |
-| ----------------------------- | ----------------------------------------- | ------------------------------------------ | ----- |
-| вставка                       | addFirst(e)                   addLast(e)  | offerFirst(e)                 offerLast(e) | false |
-| удаление и получение значения | removeFirst(e)          removeLast(e)     | pollFirst()                  pollLast()    | null  |
-| только просмотр элемента      | getFirst()                      getLast() | peekFirst()           peekLast()           | null  |
+| Type of operation             | Throws exception                          | Returns special value                  | value |
+| ----------------------------- | ----------------------------------------- | -------------------------------------- | ----- |
+| вставка                       | addFirst(e)                   addLast(e)  | offerFirst(e)             offerLast(e) | false |
+| удаление и получение значения | removeFirst(e)          removeLast(e)     | pollFirst()                 pollLast() | null  |
+| только просмотр элемента      | getFirst()                      getLast() | peekFirst()           peekLast()       | null  |
 
 - *boolean*  removeFirstOccurance(`Object o`)
 - *boolean*  removeLastOccurance(`Object o`)

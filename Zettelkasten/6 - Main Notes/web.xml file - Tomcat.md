@@ -68,8 +68,9 @@ http://localhost:8080/identity/user/login
 	    </init-param>
 	    <load-on-startup>1</load-on-startup>  
 	</servlet>  
-	<servlet-mapping>    <servlet-name>dispatcher</servlet-name>  
-    <url-pattern>/</url-pattern>  
+	<servlet-mapping>    
+		<servlet-name>dispatcher</servlet-name>  
+	    <url-pattern>/</url-pattern>  
 	</servlet-mapping>  
 	
 </web-app>
@@ -83,3 +84,4 @@ http://localhost:8080/identity/user/login
 ---
 ### References:
 
+- [[web.xml для Spring MVC]]

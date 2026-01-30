@@ -102,6 +102,39 @@ public class PersonDao {
 
 ```
 
+
+> [!warning]
+> `PropertyPlaceholderConfigurer` нужно самому добавлять в контекст:
+> ([[Процесс инициализации ApplicationContext - Spring#3. **prepareBeanFactory(beanFactory)**|Как и когда он регистрируется?]])
+>
+> В XML:
+> ```xml
+> <!-- Обязательно! --> <context:property-placeholder location="classpath:app.properties"/>
+> ```
+>
+> В Java-config:
+> ```java
+@Configuration
+public class AppConfig {
+>    
+>    @Bean
+>    public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
+>        PropertySourcesPlaceholderConfigurer configurer = new PropertySourcesPlaceholderConfigurer();
+>        configurer.setLocation(new ClassPathResource("app.properties"));
+>        configurer.setIgnoreUnresolvablePlaceholders(true);
+>        return configurer;
+>    }
+>    
+>    @Bean
+>    @Value("${db.url}")
+>    public DataSource dataSource() {
+>        // ${db.url} работает!
+>    }
+>}
+> ```
+
+
+
 ### @Scope
 
 ![[Pasted image 20251018170053.png]]

@@ -33,6 +33,12 @@ public void serverSideStreamingGetListStockQuotes(Stock request, StreamObserver<
 ~={orange}Просто используем `.onNext(...)` столько раз, сколько надо для отправки информации (=~не один раз~={orange}), после чего вызываем `.onCompleted()`.=~
 
 
+```java
+    service MyService {
+      rpc serverSideStreamingGetListStockQuotes(Stock) returns (stream /* !! здесь Stream !! */Response); 
+    }
+```
+
 ### Client side:
 
 Вызов rpc метода на клиенте через [[client - gRPC|Stub]]
@@ -54,19 +60,19 @@ public void serverSideStreamingGetListStockQuotes(Stock request, StreamObserver<
 >class GreeterGrpc{
 >	class GreeterGrpcBaseImpl { /*класс, чей функционал мы расширяем*/}
 >
->	// методы создания stub-ов, которые фактически имитирую GreeterGrpcBaseImpl
+>	// методы создания stub-ов, которые фактически имитируют GreeterGrpcBaseImpl
 >}
 >```
 
 ---
-## Client-side streaming:
+## Bidirectional streaming:
 
 ### Client Side:
 
 ```java
     // Client-side for a client streaming example
     MyServiceStub asyncStub = MyServiceGrpc.newStub(channel);
-    StreamObserver<MyRequest> requestObserver = asyncStub.clientStream(new StreamObserver<MyResponse>() {
+    StreamObserver<MyRequest> requestObserver = asyncStub.bidirectStream(new StreamObserver<MyResponse>() {
         @Override
         public void onNext(MyResponse response) {
             System.out.println("Server response: " + response.getMessage());
@@ -87,21 +93,24 @@ public void serverSideStreamingGetListStockQuotes(Stock request, StreamObserver<
     requestObserver.onCompleted(); // Signal end of client stream
 ```
 
-Создаём анонимный `StreamObserver`, в котором переопределяем методы:
-- `onNext(...)` - вызовется при зеркальном вызове `onNext(...)` на сервере и получит отправленные данные.
 
+Когда мы отправляем данные в поток с клиента (с помощью `requestObserver.onNext(MyRequest.newBuilder().setData("data1").build());`),
+они обрабатываются `StreamObserver<MyRequest>` на сервере, у которого вызывается метод `onNext(theMessageWe'veJustSent)`. 
+
+Сервер же в ответ вызывает (когда ему надо - не обязательно в обработчике `onNext()`, но обязательно в одном из обработчиков класса `StreamObserver<MyRequest>`) метод `responseObserver.onNext(MyResponse.newBuilder().setData("Received " + request.getData()).build());` для отправки сообщения обратно на client, где вызывается `onNext()` обработчик локальной реализации `StreamObserver<MyResponse>`
 
 ### Server-side
 
 ```java
     // Server-side for a client streaming example
     @Override
-    public StreamObserver<MyRequest> clientStream(StreamObserver<MyResponse> responseObserver) {
+    public StreamObserver<MyRequest> bidirectStream(StreamObserver<MyResponse> responseObserver) {
         return new StreamObserver<MyRequest>() {
             List<MyRequest> receivedRequests = new ArrayList<>();
             @Override
             public void onNext(MyRequest request) {
                 receivedRequests.add(request);
+                responseObserver.onNext(MyResponse.newBuilder().setData("Received " + request.getData()).build());
             }
             @Override
             public void onError(Throwable t) {
@@ -110,8 +119,7 @@ public void serverSideStreamingGetListStockQuotes(Stock request, StreamObserver<
             @Override
             public void onCompleted() {
                 // Process receivedRequests and send a single response
-                MyResponse response = MyResponse.newBuilder().setMessage("Processed " + receivedRequests.size() + " requests").build();
-                responseObserver.onNext(response);
+		                responseObserver.onNext(MyResponse.newBuilder().setMessage("Processed " + receivedRequests.size() + " requests").build());
                 responseObserver.onCompleted();
             }
         };
@@ -120,15 +128,14 @@ public void serverSideStreamingGetListStockQuotes(Stock request, StreamObserver<
 ```
 
 
-ПРи этом proto выглядит так:
+При этом proto выглядит так:
 
 ```java
     service MyService {
       rpc ServerStream(Request) returns (stream /* !! здесь Stream !! */Response); 
       rpc ClientStream(stream Request) returns (Response);
-      rpc BidiStream(stream Request) returns (stream /*! здесь Stream!*/ Response);
+      rpc bidirectStream(stream Request) returns (stream /*! здесь Stream!*/ Response);
     }
-
 ```
 
 

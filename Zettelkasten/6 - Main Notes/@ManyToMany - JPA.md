@@ -3,7 +3,7 @@
 
 Status:
 
-Tags:
+Tags: [[Hibernate & JPA]] [[Java+]]
 
 ---
 # @ManyToMany - JPA

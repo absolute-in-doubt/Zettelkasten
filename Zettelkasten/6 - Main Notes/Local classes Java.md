@@ -10,17 +10,28 @@ Tags: [[Java Core]] [[Java Classes]]
 
 Local class - класс, определенный в блоке (метод, конструктор,if-else, for, while,...) внешнего класса.
 
->[!warning]
->- Имеет доступ к полям внешнего класса. 
->
->- Имеет доступ только к [[Effectively final - Java|effectively final]] переменным из scope определния (блока кода, где Local класс определен)
+
+- Имеет доступ к полям внешнего класса. 
+  (_~={red}если объявлен не в статическом контексте=~_)
+
+- Имеет доступ только к [[Effectively final - Java|effectively final]] переменным из scope определния (блока кода, где Local класс определен)
+
+- ~={green}Могут иметь конструктор и intializer blocks=~
+
+-  **~={red}могут иметьть=~** static поля, методы, static initializer block (короче static members) - ~={red}**начиная с версии Java 16 SE**=~
+
+
+- Сами не могут быть static
+
+- Не могут иметь acess modifier
+
+- Могут наследовать
 
 
 
-> [!note]
-> 1. Не могут быть static
-> 2. Не могут иметь acess modifier
+Local class или local interface - не является частью пакета, Enclosing класса или интерфейса.
 
+Local class имеет [[Fully qualified vs Simple name - Java|simple name]]
 
 
 
@@ -28,10 +39,6 @@ Local class - класс, определенный в блоке (метод, к
 >Локальными могут быть и ~={green}Enum=~ классы и ~={green}record=~ классы и ~={green}Интерфейсы=~: они неявно ~={orange}static=~ -> не имеют доступа к полям Enclosing класса.
 >
 >Но ~={green}обычные local классы=~ - ~={orange}НЕ static=~ -> поэтому имеют доступ к полям Enclosing класса
-
-Local class или local interface - не является частью пакета, Enclosing класса или интерфейса.
-
-Local class имеет [[Fully qualified vs Simple name - Java|simple name]]
 
 
 ### Scope of Local class:
@@ -66,10 +73,6 @@ class Global {
 ```
 
 
-## Ещё моменты:
-
->[!note] **static members**
-> В локальных классах **~={red}могут быть=~** static поля, методы, static initializer block (короче static members) - ~={red}**начиная с версии Java 16 SE**=~
 
 ----
 #### [[Local classes Java - Flashcards|Link to flashcards]]

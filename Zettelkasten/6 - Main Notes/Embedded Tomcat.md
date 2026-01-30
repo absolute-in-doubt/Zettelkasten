@@ -11,8 +11,15 @@ Tags: [[Tomcat]] [[Java+]]
 ```xml
 <dependency>  
   <groupId>org.apache.tomcat.embed</groupId>  
-  <artifactId>tomcat-embed-core</artifactId>  
-  <version>11.0.5</version>  
+  <artifactId>tomcat-embed-jasper</artifactId>  
+  <version>11.0.15</version>  
+  <scope>compile</scope>
+</dependency>
+<dependency>
+    <groupId>org.apache.tomcat.embed</groupId>
+    <artifactId>tomcat-embed-core</artifactId>
+    <version>11.0.15</version>
+    <scope>compile</scope>
 </dependency>
 ```
 
@@ -47,6 +54,8 @@ tomcat.getConnector();
 > И в него можно добавлять информацию:
 > - константы
 > - классы
+> - фильтры
+> - маппинги (routings)
 > - прочую хуйню
 > 
 
@@ -75,12 +84,15 @@ File classesDir = new File("target/classes");
 WebResourceRoot resources = new StandardRoot(context);  
 resources.addPreResources(new DirResourceSet(  
         resources,  
-        "/WEB-INF/classes",  
-        classesDir.getAbsolutePath(),  
-        "/"  
+        "/WEB-INF/classes",            // путь в веб‑приложении
+        classesDir.getAbsolutePath(),  // реальная папка на диске
+        "/"                            // внутренний корень
 ));  
 context.setResources(resources);
 ```
+
+> [!note] **Добавление классов в context**
+> Тут мы настраиваем, чтобы Tomcat в runtime брал классы из `target` и ложил в `/WEB-INF/classes`.
 
 Установка маппинга via Java code:
 
@@ -90,7 +102,7 @@ tomcat.addServletMappingDecoded(String urlPattern, String servletName);
 ```
 
 > [!note] 
-> При работе со Spring MVC добавлять DispatcherServlet вручную - НЕ НАДО. Он его сам найдёт.
+> При работе со Spring MVC добавлять DispatcherServlet вручную - можно. Но обычно это делается через `MVCDispatcherServletInitializer` class ([[Конфигурация web.xml с помощью Java класса - Spring|подробнее тут]])
 
 
 ### start/stop/destroy

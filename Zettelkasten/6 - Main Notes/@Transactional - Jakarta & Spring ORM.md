@@ -76,6 +76,19 @@ public class FilingServiceImpl implements FilingService {
 }
 ```
 
+
+### Установка уровня изоляции транзакций 
+
+**Через аннотацию ~={purple}@Transactional=~** - локально
+```java
+@Transactional(isolation = Isolation.REPEATABLE_READ)
+```
+Spring автоматически применит настройку к Connection через JpaTransactionManager. 
+
+
+**Глобально:** 
+в `persistence.xml` или `application.properties` через `spring.jpa.properties.hibernate.connection.isolation=4`.
+
 ----
 #### [[@Transactional - Jakarta & Spring - Flashcards|Link to flashcards]]
 
@@ -85,3 +98,4 @@ public class FilingServiceImpl implements FilingService {
 ### References:
 
 - [[Поддержка декларативных транзакций - Spring-orm]]
+- [[ACID principles - БД]]

@@ -3,7 +3,7 @@
 
 Status:
 
-Tags:
+Tags: [[Tomcat]] [[Java+]]
 
 ---
 # Embedded Tomact Classloader issue
@@ -37,3 +37,4 @@ context.setLoader(webappLoader);
 ---
 ### References:
 
+- [[ClassLoader - JMM]]

@@ -1,88 +1,67 @@
 
-05-01-2026 10:08
+20-10-2025 21:34
 
-Status:
+Status: #baby 
 
-Tags: [[Jakarta.servlet]] [[Java+]]
+Tags: [[Spring]]
 
 ---
-# Filter - jakarta.servlet
+# Filter - Spring
 
-- Servlet‑фильтр — это компонент, который перехватывает запросы и/или ответы на пути между клиентом и сервлетом: можно выполнять аутентификацию, логирование, сжатие, добавление заголовков и т.д.​
-    
-- Основной метод интерфейса `jakarta.servlet.Filter` — `doFilter(ServletRequest req, ServletResponse res, FilterChain chain)`, внутри которого выполняется пред‑обработка, затем вызывается `chain.doFilter(...)` для передачи управления дальше и, при необходимости, пост‑обработка после возврата.
+Фильтр - объект, который перехватывает все входящие запросы.
 
+~={orange}`Filter` can be used to:=~
 
-### Пример фильтра
+- Prevent downstream (следующие по [[Security Filter Chain - Spring Security#Порядок применения Security Filters|порядку в Filter Chain]]) `Filter` instances or the `Servlet` from being invoked. In this case, the `Filter` typically writes the `HttpServletResponse`.
 
+-  Modify the `HttpServletRequest` or `HttpServletResponse` used by the downstream `Filter` instances and the `Servlet`.
+
+---
+## Use cases:
+
+Перенаправление запросов на методы с HTTP методами PATCH, PUT, DELETE, т.к. [[формы - HTML#Атрибуты тега `<form>`|из HTML формы мы не можем отправить, что-то кроме POST или GET]]
+
+класс замены web.xml с конфигурацией фильтра для поиска имени метода в спрятанном поле:
 ```java
-package com.example.filter;
-
-import jakarta.servlet.Filter;
-import jakarta.servlet.FilterChain;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.ServletRequest;
-import jakarta.servlet.ServletResponse;
-import jakarta.servlet.annotation.WebFilter;
-import jakarta.servlet.annotation.WebInitParam;
-import java.io.IOException;
-
-@WebFilter(
-    filterName = "LoggingFilter",
-    urlPatterns = "/*",
-    initParams = {
-        @WebInitParam(name = "enabled", value = "true")
-    }
-)
-public class LoggingFilter implements Filter {
-
-    private boolean enabled;
-
-    @Override
-    public void init(jakarta.servlet.FilterConfig filterConfig) {
-        String param = filterConfig.getInitParameter("enabled");
-        enabled = param == null || Boolean.parseBoolean(param);
-    }
-
-    @Override
-    public void doFilter(
-            ServletRequest request,
-            ServletResponse response,
-            FilterChain chain
-    ) throws IOException, ServletException {
-
-        if (!enabled) {
-            // Просто передаём дальше без логирования
-            chain.doFilter(request, response);
-            return;
-        }
-
-        long start = System.currentTimeMillis();
-
-        // Предобработка (до сервлета)
-        System.out.println("Incoming request from IP: " + request.getRemoteAddr());
-
-        // Передаём запрос следующему фильтру или целевому сервлету
-        chain.doFilter(request, response);
-
-        // Постобработка (после сервлета)
-        long duration = System.currentTimeMillis() - start;
-        System.out.println("Request processed in " + duration + " ms");
-    }
-
-    @Override
-    public void destroy() {
-        // Освобождение ресурсов при остановке приложения (если нужно)
-    }
+public class MySpringMVCDispatcherServletInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {  
+    @Override  
+    protected Class<?>[] getRootConfigClasses() {  
+        return null;  
+    }  
+  
+    @Override  
+    protected Class<?>[] getServletConfigClasses() {  
+        return new Class[] {SpringConfig.class};  
+    }  
+  
+    @Override  
+    protected String[] getServletMappings() {  
+        return new String[] {"/"};  
+    }  
+  
+    @Override  
+    public void onStartup(ServletContext aServletContext) throws ServletException {  
+        super.onStartup(aServletContext);  
+		  registerHiddenFieldFilter(aServletContext);
+    }  
+  
+    private void registerHiddenFieldFilter(ServletContext aContext){  
+        aContext.addFilter("hiddenHttpMethodFIlter", new HiddenHttpMethodFilter())  
+                .addMappingForUrlPatterns(null, true, "/*");  
+    }  
 }
-
 ```
 
+
+### В Spring Boot
+
+Этот класс инициализации DispatcherServlet не нужен, его автоматически сконфигурирует Spring Boot. А для добавления фильтров, их достаточно прописать в [[application.properties - Spring Boot#Добавление фильтра к Dispatcher servlet|application.properties]]
+
+
 ----
-#### [[Filter - jakarta.servlet - Flashcards|Link to flashcards]]
+#### [[Filter - Spring - Flashcards|Link to flashcards]]
 
 
 
 ---
 ### References:
-

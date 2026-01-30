@@ -19,6 +19,8 @@ Tags: [[Java Core]]
 - int ~={green}Arrrays.binarysearch(`byte[] a , byte key`)=~ - работает для массивов всех типов, возвращает индекс элемента `key` в массиве. ~={red}Если элемент не найден returns int < 0 || int > array.length=~ - в документации никакой конкретики.
 - `T[]` ~={green}Arrays.copyOf(`T[] source`)=~ - создаёт копию массива
 
+- `boolean` ~={green}Arrays.compare(`T[] arr1, T[] arr2`)=~ - returns 0 if arrays are equal
+
 
 
 ----

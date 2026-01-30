@@ -14,7 +14,6 @@ Tags: [[Java Core]] [[Interfaces Java]]
 > - всегда *неявно* static
 > - могут иметь любые acess modifiers 
 
-
 ### Методы
 
 - `abstract`~={orange} (по умолчанию, неявно `public abstract`)=~ — сигнатура без реализации.
@@ -43,6 +42,21 @@ Tags: [[Java Core]] [[Interfaces Java]]
 - Поля всегда `public static final`.
 
 
+
+### Default interface methods
+
+```java
+public interface SomeInterface {  
+    default void doSmth(){  
+        System.out.println(this);  
+    }  
+}
+```
+
+> [!tip] **Использование `this` в default методах интерфейса**
+> В default-методе интерфейса `this` вполне можно использовать, и он указывает на **конкретный** экземпляр класса, который реализует интерфейс, а не на интерфейс как таковой.
+
+
 ## Инициализация интерфейса
 
 >[!question] **Когда инициализируется интерфейс?**
@@ -50,6 +64,8 @@ Tags: [[Java Core]] [[Interfaces Java]]
 
 
 > [!note] **Константы инициализируются первыми**
+> Константы - (simple static initializers)
+>
 > Константы инициализируются перед простыми static final полями интерфейса.
 > ([[Initializer; constants & just static finals - Java|Разница между static final и константами]])
 

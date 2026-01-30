@@ -1,5 +1,5 @@
 
-Theory for the cards: [[Data Types]] 
+Theory for the cards: [[Primitive Data Types]] 
 
 FILE TAGS: java_core
 

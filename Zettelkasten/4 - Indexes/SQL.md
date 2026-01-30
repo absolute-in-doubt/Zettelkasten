@@ -17,6 +17,12 @@
 9. [[Views - SQL]]
 
 
+10. [[Рекурсивные запросы - SQL]]
+
+[[Транзакции - PostgreSQL]]
+1. [[Pessimistic blocking - SQL]]
+2. [[Optimistic blocking - SQL]]
+
 #### Databases and tables
 
 1. [[Creating and deleting databases - SQL]]

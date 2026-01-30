@@ -12,7 +12,7 @@ Tags: [[SQL]] [[PostgreSQL DB]]
 В Postgres помимо пользовательских БД есть "встроенные": 
 postgres, template0, template1
 
-ЧТобы просмотреть список всех пользовательских БД в Postgres можно сделать запрос:
+Чтобы просмотреть список всех пользовательских БД в Postgres можно сделать запрос:
 ```sql
 SELECT datname 
 FROM pg_database 

@@ -1,4 +1,6 @@
 
+- [[Giant flashcards on all topics]]
+
 ### Principles:
 
 - [[SOLID]]
@@ -40,27 +42,27 @@
 	
 5. [[HttpSession vs Cookie - Java servlet API]]
 
-### Jackson
-
-[[Jackson Databind]]
-
-1. [[ObjectMapper - Jackson Databind]]
-2. [[Jackson Tree Model - Jackson Databind]]
-	-  [[JsonNode - Jackson Databind]]
-
-[[Jackson Annotations]]
-[[Class-level annotations - Jackson Annotations]]
-[[Порядок сериализации - Jackson Annotations]]
-- [[Serialization Annotations - Jackson Annotations]]
-- [[Deserialization Annotations - Jackson Annotations]]
 
 
-### [[Gson]]
 
 ### [[Базы данных]]
 
- 
-### [[JDBC]]
+
+### ConnectionPool
+- [[реализация ConnectionPool]]
+
+### [[DataSource]]
+
+
+### [[Docker]]
+
+
+### [[Документирование]]
+
+
+
+Eclipse
+- [[Hotkeys - Eclipse]]
 
 
 ### [[Git]]
@@ -71,22 +73,11 @@
 - [[Взаимодействия с remote repo - Git]]
 - [[Conventional commits - Git]]
 
-### [[Jakarta.servlet]]
+
+### [[Gson]]
 
 
-### [[JAXB]]
-
-
-### [[Tomcat]]
-
-
-### [[Maven]]
-
-
-### [[Tablesaw]]
-
-
-### [[Redis + Jedis]]
+### [[gRPC]]
 
 
 ### [[Hibernate & JPA]]
@@ -95,24 +86,43 @@
 ### [[Jakarta Validation]]
 
 
-Eclipse
-- [[Hotkeys - Eclipse]]
-
-### [[Testing]]
+### [[Jackson]]
 
 
-### [[gRPC]]
+### [[Jakarta.servlet]]
 
 
-### [[SSH]]
+### [[JAXB]]
 
 
-### [[Документирование]]
+### [[JDBC]]
+
+
+### [[Logging]]
 
 
 ### [[Local network]] 
 - проброс портов, доступ к локально хостимым сайтам извне и т.д.
 
-#### Не знаю куда поместить:
 
-[[реализация ConnectionPool]]
+### [[Maven]]
+
+
+### [[Multithreading]]
+
+
+### [[Redis + Jedis]]
+
+
+### [[SSH]]
+
+
+### [[Tomcat]]
+
+
+
+### [[Tablesaw]]
+
+
+### [[Testing]]
+

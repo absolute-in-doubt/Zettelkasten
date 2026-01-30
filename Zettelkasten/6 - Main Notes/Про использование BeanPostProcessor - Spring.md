@@ -8,6 +8,12 @@ Tags: [[Spring]]
 ---
 # Про использование BeanPostProcessor - Spring
 
+
+**~={cyan}User-defined BeanPostProcessors должны быть отмечены with=~ ~={purple}@BeanPostProcessor=~**
+
+---
+
+
 ![[Pasted image 20251101094858.png]]
 
 (afterPropertiesSet - устаревший метод из Spring 2, то же самое, что и init-method и @PostConstruct)
@@ -61,7 +67,7 @@ public @interface InjectRandomInt {
 
 По умолчанию там стоит ~={purple}CLASS=~. Всего есть три варианта:
 
-- ~={purple}**SOURCE**=~ говорит о том, что эта аннотация видна исключительно в исходниках, а когда вы компилируете, в байткоде уже ничего не будет. Например, overwrite — это аннотация такого плана. Она нужна только в процессе разработки кода.
+- ~={purple}**SOURCE**=~ говорит о том, что эта аннотация видна исключительно в исходниках, а когда вы компилируете, в байткоде уже ничего не будет. Например, **~={purple}@Override=~** — это аннотация такого плана. Она нужна только в процессе разработки кода.
     
 - ~={purple}**CLASS**=~ говорит, что аннотация в байткод попасть должна, но при этом все равно через reflection в рантайме вы ее считать не сможете, ее там не будет. Это нужно для вещей вроде AST-трансформаций и инструментирования байткода.
     
@@ -82,7 +88,7 @@ public @interface InjectRandomInt {
 
 ### Создаём реализацию BeanPostProcessor для обработки нашей user-defined аннотации
 
-Теперь мы будем обучать. Мы сейчас создадим класс, который имплементирует интерфейс, который будет отвечать за обработку всех бинов, классы которых имеют эту аннотацию хотя бы в каком-то поле. Называться он будет «InjectRandomIntAnnotationBeanPostProcessor». Ну, вы в курсе, что при придумывании внутренних компонентов Spring класс с названием меньше 20 букв — это просто несерьезно! Я даже не шучу, для обработки ~={purple}@Autowired=~ в Spring вполне есть AutowiredAnnotationBeanPostProcessor, так что я тут просто соблюдаю конвенцию.
+Теперь создадим класс, который имплементирует интерфейс, который будет отвечать за обработку всех бинов, классы которых имеют эту аннотацию хотя бы в каком-то поле. Называться он будет «InjectRandomIntAnnotationBeanPostProcessor».
 
 Этот наш класс имплементирует интерфейс BeanPostProcessor. У этого интерфейса нужно имплементировать два метода:
 
@@ -109,7 +115,11 @@ public class InjectRandomIntAnnotationBeanPostProcessor implements BeanPostProce
 				 int min = annotation.min();                
 				 int max = annotation.max();                
 				 Random random = new Random();                
-				 int i = min + random.nextInt(max - min);                
+				 int i = min + random.nextInt(max - min);
+				 field.setAccessible(true);
+				 //field.set(i);  - потребует обработки exceptions
+				 ReflectionUtils.setField(field, bean, i); // - инструмент работы с рефлексией от Spring
+				 //делает примерно то же самое, но внутри оборачивает ошибки в RuntimeExceptions 
 			}            
 		}        
 		 return bean;    
@@ -185,7 +195,7 @@ ID я ему давать не буду: это инфраструктурный
 > Удобнее всего добавлять обработчики аннотаций через [[ApplicationContext.xml file - Spring#xml namespaces|xml namespaces]].
 
 
-## [[Изменение поведения бина в BeanPostProcessor - Spring|Изменение поведения бина в BeanPostProcessor]]
+## [[Проксирование бина в BeanPostProcessor - Spring|Изменение поведения бина в BeanPostProcessor]]
 
 
 ----

@@ -29,15 +29,15 @@ StringPool - пример паттерна [[Flyweight - pattern|Flyweight]]
 >
 >The risk of interning _Strings_ in the _PermGen_ (instead of the _Heap_) is that **we can get an _OutOfMemory_ error** from the JVM if we intern too many _Strings_.
 >
->From Java 7 onwards, the Java String Pool is **stored in the** [**_Heap_ space**](https://muratakkan.medium.com/java-memory-management-101-heap-memory-ca4060b10685)**, which is garbage collected** by the JVM_._ The advantage of this approach is the **reduced risk of _OutOfMemory_ error** because unreferenced _Strings_ will be removed from the pool, thereby releasing memory.
+>From Java 7 onwards, the Java String Pool is **stored in the** [[Heap - JMM|Heap space]], which is garbage collected** by the JVM. The advantage of this approach is the **reduced risk of _OutOfMemory_ error** because unreferenced _Strings_ will be removed from the pool, thereby releasing memory.
 >
 
 ---
 ### Метод new String("...").intern()
 
-Заставляет искать строку сначалао в StringPool, и только если нет - создавать новую.
+Заставляет искать строку сначала в StringPool, и только если нет - создавать новую.
 
-Делает создание строки конструкторомв эквивалентным обычной инициализации литералом.
+Делает создание строки конструктором эквивалентным обычной инициализации литералом.
 
 
 

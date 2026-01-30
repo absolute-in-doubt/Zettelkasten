@@ -86,7 +86,7 @@ Passport passport = entityManager,find(Passport.class, person.getId()); //пер
 
 - ~={green} remove(`Object entity`)=~ - marking entity for removal
 
-- ~={green}detach(`Object entity`)=~ - удаляет объект из Contxt. ~={green}Unflushed changes will be lost.=~
+- ~={green}detach(`Object entity`)=~ - удаляет объект из Context. ~={green}Unflushed changes will be lost.=~
 
 > [!note] 
 > Объект `obj1` НЕ БУДЕТ УДАЛЁН, т.к. мы его пометили для удаления, но после этого отключили помеченный объект от контекста:

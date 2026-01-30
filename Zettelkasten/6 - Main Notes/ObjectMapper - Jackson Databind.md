@@ -3,7 +3,7 @@
 
 Status: #baby
 
-Tags: [[Java+]] [[Jackson Databind]]
+Tags: [[Java+]] [[Jackson]]
 
 ---
 # ObjectMapper - Jackson Databind

@@ -10,8 +10,12 @@
 5. [[Перенаправление запросов между сервлетами]]
 6. ServletContext - jakarta.servlet
 	- ServletContextListener - jakarta.servlet
-7. [[Filter - jakarta.servlet]]
-8. Cookies class - jakarta.servlet
-9. Session class - jakarta.servlet
-10. [[JSP & JSTL]]
-11. 
+
+7. Cookies class - jakarta.servlet
+8. Session class - jakarta.servlet
+9. [[JSP & JSTL]]
+
+10. [[Filter - jakarta.servlet]]
+11. [[FilterChain - jakarta.servlet]] 
+	- [[Регистрация фильтров в FilterChain - jakarta.servlet]]
+	- [[Регистрация фильтров в FilterChain - Spring]]

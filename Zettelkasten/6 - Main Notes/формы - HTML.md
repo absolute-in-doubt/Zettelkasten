@@ -3,7 +3,7 @@
 
 Status: #baby 
 
-Tags: [[HTML]]
+Tags: [[Frontend]]
 
 ---
 # формы - HTML
@@ -32,7 +32,7 @@ Tags: [[HTML]]
 > 
 > Решение: передаём нужный тип запроса в скрытом поле:
 > ![[Pasted image 20251020193902.png]]
-> Spring resolves special field `"_method"` -> [[Filter - Spring|filter]] directs request to a handler with the specified method 
+> Spring resolves special field `"_method"` -> [[Filter - jakarta.servlet|filter]] directs request to a handler with the specified method 
 
 
 
@@ -45,6 +45,10 @@ Tags: [[HTML]]
 - number
 - date
 - ~={green}submit=~ - для отправки формы
+- hidden:
+```html
+<input type="hidden" name="userId" value="123">
+```
 - ...
 
 #### атрибуты:
@@ -54,7 +58,10 @@ Tags: [[HTML]]
 
 - **autocomplete** = "on/off" - запоминание в автоподстановку
 
-- **disabled** - установить одноразовые взиамодействие - нельзя отменить ввод
+- **disabled** -  полностью исключает поле из отправки формы, то есть значение на сервер не уйдёт.
+```html
+<input id="promo" name="promo" type="text" disabled>
+```
 
 - **max/min** - диапазон ввода
 

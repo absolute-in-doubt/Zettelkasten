@@ -71,7 +71,7 @@ class DBConnection {
 > 
 > Нам нужно лочить его только для первого вызова - во время создания объекта
 
-### Double locking
+### Double checked locking
 
 ~={green}industry standard=~
 

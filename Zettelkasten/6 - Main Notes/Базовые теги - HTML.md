@@ -3,7 +3,7 @@
 
 Status: #baby 
 
-Tags: [[HTML]]
+Tags: [[Frontend]]
 
 ---
 # Базовые теги - HTML

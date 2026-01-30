@@ -12,6 +12,28 @@ Tags: [[Java Core]] [[Java Classes]]
 
 Частный случай локального класса.
 
+
+- Имеет доступ к полям внешнего класса. 
+  (_~={red}если объявлен не в статическом контексте=~_)
+
+- Имеет доступ только к [[Effectively final - Java|effectively final]] переменным из scope определния (блока кода, где Local класс определен)
+
+- ~={red}**НЕ**=~ ~={green}могут иметь конструктор=~ 
+
+- ~={green}Могут иметь=~ intializer blocks
+
+-  **~={red}могут иметь=~** static поля, методы, static initializer block (короче static members) - ~={red}**начиная с версии Java 16 SE**=~
+
+
+- Сами не могут быть static
+
+- Не могут иметь acess modifier
+
+
+- [[Anonymous classes Java#Ещё моменты|Может наследовать]] (но только один класс/интерфейс)
+
+
+---
 ## Конструкторы
 
 >[!warning] **Конструкторы объявлять нельзя.**  
@@ -47,18 +69,6 @@ public class LocalClassCheck {
 }
 ```
 
-## Доступ к Enclosing class members + переменным scope
-
-1. Если Anonymous class объявлен НЕ в static контексте (он считается inner- классом):
-   - может обращаться к переменным Enclosing класса
-
-
-2. Если объявлен в статическом контексте -> не имеет указателя на Enclosing класс
-
-#### Доступ к переменным из scope
-
-Имеет доступ только к [[Effectively final - Java|effectively final]] (и final) переменным.
-
 
 ## this
 
@@ -69,15 +79,6 @@ public class LocalClassCheck {
 >```java
 >Outer.this.someMethod();
 >```
-
-
-## Acess modifiers и scope
-
-~={orange}Не имеет модификаторов доступа.=~
-
-Область видимости - блок, где Anonymous класс определён (метод, конструктор,if-else, for, while,...) 
-
-
 
 
 ## Ещё моменты:
@@ -100,9 +101,6 @@ public class LocalClassCheck {
 >
 >~={green}Имя анонимного класса=~ - генерируется компилятором типа `Outer$1`, `Outer$2` и т.д.
 
-
-> [!note] **static members**
-> В анонимных классах **~={red}могут быть=~** static поля, методы, static initializer block (короче static members) - ~={red}**начиная с версии Java 16 SE**=~
 
 ----
 #### [[Anonymous classes Java Flashcards|Link to flashcards]]

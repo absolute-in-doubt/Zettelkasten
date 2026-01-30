@@ -57,7 +57,7 @@ CREATE TABLE Users (
 	Проверяет условие при вставке записи в таблицу.
 
 	Пример:
-	```sql
+```sql
 	CREATE TABLE Employees (
 	    employee_id INT PRIMARY KEY,
 	    first_name VARCHAR(50) NOT NULL,

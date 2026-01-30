@@ -41,7 +41,7 @@ CREATE TABLE Activities (
 CREATE TABLE Student_Activities (
     student_id INT REFERENCES Students(student_id),
     course_id INT REFERENCES Activities(id), 
-    PRIMARY KEY (student_id, id)
+    PRIMARY KEY (student_id, course_id)
 );
 ```
 🔑 Таблица `StudentActivities` — это «связка», которая реализует отношение многие-ко-многим.

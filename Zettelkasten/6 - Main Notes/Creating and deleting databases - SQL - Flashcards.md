@@ -24,6 +24,8 @@ A:
 ```sql
 DROP DATABASE IF EXISTS database_name;
 ```
+	
+> [!note] Такой синтаксис не работает в Postgres. Там нельзя при создании БД указывать `IF NOT EXISTS`.
 <!--ID: 1757954053432-->
 
 

@@ -36,3 +36,4 @@ Tags:
 ---
 ### References:
 
+- [[OSI модель]]

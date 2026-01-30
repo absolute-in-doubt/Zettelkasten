@@ -1,5 +1,5 @@
 
-Theory for the cards: [[Heap & Stack - JMM]]
+Theory for the cards: [[Heap - JMM]]
 
 FILE TAGS: jmm
 

@@ -7,7 +7,7 @@ Q:  Как в  regex обозначается "Любая цифра буква"
 A:  `[0-9]`
 <!--ID: 1757928813922-->
 
-Q: Как с помощью сравнения regex в sql запросе получить все строки таблицы, где поле phone_number начинается с `"+7"`  ?
+Q: Как **с помощью сравнения regex** в sql запросе получить все строки таблицы, где поле phone_number начинается с `"+7"`  ?
 A:    
 ```sql
 SELECT name, phone_number FROM Users WHERE phone_number ~ '^\+7'
@@ -16,7 +16,7 @@ SELECT name, phone_number FROM Users WHERE phone_number ~ '^\+7'
 
 
 
-Q:  Как с помощью сравнения regex  в sql запросе получить все строки таблицы, где поле address содержит подстроку `'Avenue'` ?
+Q:  Как **с помощью сравнения regex**  в sql запросе получить все строки таблицы, где поле address содержит подстроку `'Avenue'` ?
 A:   
 ```sql
 SELECT id, address WHERE address ~* 'Avenue';

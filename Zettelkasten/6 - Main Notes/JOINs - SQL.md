@@ -18,7 +18,7 @@ SELECT * FROM Person [INNER] JOIN Order ON Person.user_id = Order.user_id;
 
 ![[Pasted image 20251026214643.png]]
 
-Т.к запись {4, Nick, 30} - не связана ни скакой запись в Order -> она не отображается в результатах JOIN:
+Т.к запись {4, Nick, 30} - не связана ни с какой записью в Order -> она не отображается в результатах JOIN:
 
 ![[Pasted image 20251026215254.png]]
 
@@ -37,7 +37,7 @@ SELECT * FROM Person LEFT [OUTER] JOIN Order ON Person.user_id = Order.user_id;
 
 ![[Pasted image 20251026215657.png]]
 
-ОТображает пересечение таблиц и все значения из ЛЕВОЙ таблицы, даже если они не связаны со значениями правой таблицы.
+Отображает пересечение таблиц и все значения из ЛЕВОЙ таблицы, даже если они не связаны со значениями правой таблицы.
 
 #### RIGHT (OUTER) JOIN 
 
@@ -54,7 +54,7 @@ SELECT * FROM Person LEFT [OUTER] JOIN Order ON Person.user_id = Order.user_id;
 
 Малополезная хуйня.
 
-Фактически делает полность денормализованную таблицу.
+Фактически делает полностью денормализованную таблицу.
 
 ----
 #### [[JOINs - SQL - Flashcards|Link to flashcards]]

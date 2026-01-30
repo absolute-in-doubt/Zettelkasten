@@ -13,6 +13,30 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "6 - Main Notes/ReadWriteLock - Multithreading Java.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "ReadWriteLock - Multithreading Java"
+            }
+          },
+          {
+            "id": "d8ee1d2a94c5e4f7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "4 - Indexes/Spring.md",
                 "mode": "source",
                 "source": false,
@@ -32,12 +56,12 @@
             }
           },
           {
-            "id": "d8ee1d2a94c5e4f7",
+            "id": "2582ca047f2fbd2f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6 - Main Notes/Streaming - gRPC.md",
+                "file": "6 - Main Notes/ApplicationListener - Spring.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,7 +76,31 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Streaming - gRPC"
+              "title": "ApplicationListener - Spring"
+            }
+          },
+          {
+            "id": "ec9bc8c7b5025252",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "6 - Main Notes/Процесс инициализации ApplicationContext - Spring.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Процесс инициализации ApplicationContext - Spring"
             }
           },
           {
@@ -61,7 +109,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "4 - Indexes/ТВиМС.md",
+                "file": "6 - Main Notes/@ManyToMany - JPA - Flashcards.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -76,16 +124,16 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "ТВиМС"
+              "title": "@ManyToMany - JPA - Flashcards"
             }
           },
           {
-            "id": "2b6f7a344022d8e7",
+            "id": "a8fa0f612a13dd5e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "4 - Indexes/Java+.md",
+                "file": "3 - Tags/Hibernate & JPA.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -100,16 +148,16 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Java+"
+              "title": "Hibernate & JPA"
             }
           },
           {
-            "id": "f1d5ae1de6c530a9",
+            "id": "30a5de7605506dcb",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6 - Main Notes/t-распределение (Распределение Стьюдента).md",
+                "file": "6 - Main Notes/Процесс инициализации ApplicationContext - Spring.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -124,7 +172,55 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "t-распределение (Распределение Стьюдента)"
+              "title": "Процесс инициализации ApplicationContext - Spring"
+            }
+          },
+          {
+            "id": "dc9283c73c9fcd5d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "6 - Main Notes/Проксирование бина в BeanPostProcessor - Spring.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Проксирование бина в BeanPostProcessor - Spring"
+            }
+          },
+          {
+            "id": "1fdbf9085cbaa370",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "6 - Main Notes/Object class - Java Core - Flashcards.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Object class - Java Core - Flashcards"
             }
           },
           {
@@ -133,7 +229,31 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6 - Main Notes/Obsidian Markdown example.md",
+                "file": "6 - Main Notes/@Lock - optimistic & pessimistic Spring-orm.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": true,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "@Lock - optimistic & pessimistic Spring-orm"
+            }
+          },
+          {
+            "id": "0866c4091c9e6fe9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "6 - Main Notes/SpringContext helpful debugging methods - Spring.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -148,7 +268,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Obsidian Markdown example"
+              "title": "SpringContext helpful debugging methods - Spring"
             }
           },
           {
@@ -157,7 +277,31 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6 - Main Notes/Property, plant and equipment  - Основные фонды  - МСФО.md",
+                "file": "6 - Main Notes/Конфигурация WebApplicationContext - Spring MVC.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": true,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Конфигурация WebApplicationContext - Spring MVC"
+            }
+          },
+          {
+            "id": "c58a09b2dedaf29b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "6 - Main Notes/web.xml file - Tomcat.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -172,10 +316,107 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Property, plant and equipment  - Основные фонды  - МСФО"
+              "title": "web.xml file - Tomcat"
+            }
+          },
+          {
+            "id": "082ba1ddfba4094b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "6 - Main Notes/web.xml file - Tomcat.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "web.xml file - Tomcat"
+            }
+          },
+          {
+            "id": "769b6ab2903ca6a0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "3 - Tags/Hibernate & JPA.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Hibernate & JPA"
+            }
+          },
+          {
+            "id": "16c8122149a84c05",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "6 - Main Notes/Giant flashcards on all topics.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Giant flashcards on all topics"
+            }
+          },
+          {
+            "id": "acde1229c3e8e7f4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "3 - Tags/Jakarta.servlet.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Jakarta.servlet"
             }
           }
-        ]
+        ],
+        "currentTab": 15
       }
     ],
     "direction": "vertical"
@@ -194,7 +435,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "Transactional",
+                "query": "Giant",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -233,8 +474,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "0b6f3d0fd53cfb18",
@@ -327,45 +567,46 @@
       "obsidian-to-anki-plugin:Obsidian_to_Anki - Scan Vault": false
     }
   },
-  "active": "22add7fffd2edb8b",
+  "active": "16c8122149a84c05",
   "lastOpenFiles": [
-    "6 - Main Notes/Model - Spring MVC.md",
-    "6 - Main Notes/Получение данных из Model - Thymeleaf.md",
-    "4 - Indexes/Spring.md",
-    "6 - Main Notes/Получение параметров запроса - Spring MVC.md",
-    "6 - Main Notes/Controller - Spring MVC.md",
-    "6 - Main Notes/DispatcherServlet - Spring MVC.md",
-    "6 - Main Notes/Request Handling Workflow - Spring MVC.md",
-    "6 - Main Notes/spring-orm package.md",
-    "6 - Main Notes/Поддержка декларативных транзакций - Spring-orm.md",
-    "6 - Main Notes/Bean Lifecycle - Spring.md",
-    "6 - Main Notes/Configuration via Java code - Spring.md",
-    "6 - Main Notes/Configuration via Annotations - Spring.md",
-    "6 - Main Notes/ApplicationContext.xml file - Spring.md",
-    "6 - Main Notes/Application Context - Spring.md",
-    "6 - Main Notes/Инициализация контекста через XML - Spring.md",
-    "6 - Main Notes/web.xml для Spring MVC.md",
     "4 - Indexes/Java+.md",
-    "6 - Main Notes/SOLID.md",
+    "6 - Main Notes/Рекурсивные запросы - SQL.md",
     "3 - Tags/Jakarta.servlet.md",
-    "3 - Tags/Thymeleaf - шаблонизатор.md",
-    "6 - Main Notes/HTML формы в Thymeleaf.md",
-    "6 - Main Notes/Динамическое отображение HTML элементов - Thymeleaf.md",
-    "6 - Main Notes/Циклы - Thymeleaf.md",
-    "6 - Main Notes/Переход по страницам (возвращ. значение методов Controller) - Thymeleaf.md",
-    "6 - Main Notes/Настройка via Java code - Thymeleaf.md",
-    "6 - Main Notes/Настройка в applicationContextMVC.xml file - Thymeleaf.md",
-    "Pasted image 20260104182057.png",
-    "Pasted image 20260104181730.png",
+    "6 - Main Notes/Hibernate & JPA - Flashcards.md",
+    "3 - Tags/Hibernate & JPA.md",
+    "6 - Main Notes/Giant flashcards on all topics.md",
+    "4 - Indexes/Java Core.md",
+    "4 - Indexes/SQL.md",
+    "6 - Main Notes/Path class - Java Core.md",
+    "6 - Main Notes/File class - Java Core.md",
+    "6 - Main Notes/File class - Java Core - Flashcards.md",
+    "6 - Main Notes/IO - Java Core.md",
+    "6 - Main Notes/IO - Java Core - Flashcards.md",
+    "6 - Main Notes/Конфигурация WebApplicationContext - Spring MVC.md",
+    "6 - Main Notes/ConcurrentHashMap - Java Core.md",
+    "6 - Main Notes/ConcurrentHashMap - Java Core - Flashcards.md",
+    "6 - Main Notes/HashMap implementation - Java Core.md",
+    "6 - Main Notes/HashMap implementation - Java Core - Flashcards.md",
+    "6 - Main Notes/UML диаграмма классов.md",
+    "4 - Indexes/Системный анализ.md",
+    "6 - Main Notes/Процесс инициализации ApplicationContext - Spring.md",
+    "Pasted image 20260129101210.png",
+    "4 - Indexes/Spring.md",
+    "6 - Main Notes/Bean Lifecycle - Spring.md",
+    "Pasted image 20260129101148.png",
+    "6 - Main Notes/@EnableWebMvc - Spring MVC.md",
+    "6 - Main Notes/Базы данных.md",
+    "6 - Main Notes/ReadWriteLock - Multithreading Java.md",
+    "Pasted image 20260129085052.png",
     "desktop.ini",
-    "Pasted image 20251224171110.png",
-    "Pasted image 20251203123600.png",
-    "Pasted image 20251203123526.png",
-    "Pasted image 20251203123419.png",
-    "Pasted image 20251203123249.png",
-    "Pasted image 20251122100321.png",
-    "Pasted image 20251202201518.png",
-    "Pasted image 20251203122018.png",
+    "Pasted image 20260127155511.png",
+    "@Lock - optimistic",
+    "Pasted image 20260124092326.png",
+    "Pasted image 20260122094137.png",
+    "IMG_20260121_183641.jpg",
+    "Pasted image 20260121163136.png",
+    "Pasted image 20260121162643.png",
+    "Pasted image 20260118142252.png",
     "2 - Source Materials/03_ОБА_ЛР2_Моделирование_бизнес_процессов_Нотация_BPMN (1).pdf",
     "2 - Source Materials/Formal_strategic_planning.pdf",
     "6 - Main Notes/Untitled 3.base",
@@ -373,7 +614,6 @@
     "6 - Main Notes/Untitled 1.base",
     "6 - Main Notes/Untitled.base",
     "Redis",
-    "Бородич_Эконометрика.pdf",
-    "2 - Source Materials/О мед освидетельствовании 30.06.2022.pdf"
+    "Бородич_Эконометрика.pdf"
   ]
 }

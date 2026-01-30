@@ -25,7 +25,7 @@ CREATE TABLE Users (
     CONSTRAINT pk_users PRIMARY KEY (id)
 );
 
--- ещеё способ
+-- ещё способ
 CREATE TABLE Users (
     id INTEGER,
     name VARCHAR(255) NOT NULL,

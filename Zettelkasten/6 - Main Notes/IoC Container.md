@@ -41,4 +41,5 @@ Tags: [[Patterns]]
 ---
 ### References:
 
+- [[Inversion of control]]
 - [[Application Context - Spring]]

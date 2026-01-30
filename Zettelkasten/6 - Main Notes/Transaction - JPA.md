@@ -8,7 +8,7 @@ Tags: [[Hibernate & JPA]]
 ---
 # Transaction - JPA
 
-Инициируется обхектом связи с БД, т.е. или [[Session - Hibernate|Session]] или [[EntityManager - JPA|EntityManager]].
+Инициируется объектом связи с БД, т.е. или [[Session - Hibernate|Session]] или [[EntityManager - JPA|EntityManager]].
 
 
 ### ЖЦ транзакции

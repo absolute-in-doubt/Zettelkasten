@@ -114,7 +114,7 @@ public void delete(int id){
 }
 ```
 
-~={pink}Как Spring понимает, что нужно создать  EntityManager? В Configuration классе мы никак не обозначили, что LocalContainerEntityManagerFactory - это именно FactryBean.=~
+~={pink}Как Spring понимает, что нужно создать  EntityManager? В Configuration классе мы никак не обозначили, что LocalContainerEntityManagerFactory - это именно FactoryBean.=~
 
 После:
 ```java

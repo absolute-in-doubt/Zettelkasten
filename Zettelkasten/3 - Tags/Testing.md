@@ -3,6 +3,8 @@ Index: [[Java+]]
 
 ### JUnit
 
+- [[JUnit with Spring]]
+
 - [[test methods - JUnit]]
 	- [[Helpful annotations - JUnit]]
 	- [[Параметризованные тесты - JUnit]]

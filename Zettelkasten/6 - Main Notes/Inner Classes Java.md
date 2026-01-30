@@ -84,8 +84,12 @@ public class Enclosing {
 
 
 
-4. Может ~={cyan}реализовывать=~ ~={green}интерфейсы=~, расширять~={green} top-level =~и ~={green}member classes=~, расширять ~={green}abstract classes=~ 
+5. Может ~={cyan}реализовывать=~ ~={green}интерфейсы=~, расширять~={green} top-level =~и ~={green}member classes=~, расширять ~={green}abstract classes=~ 
 
+
+6. ~={red}НЕ может иметь вложенных классов=~
+
+7. Может содержать static поля и методы
 
 ### Наследование Inner классов
 

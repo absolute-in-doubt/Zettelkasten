@@ -3,7 +3,7 @@
 
 Status: currently updated
 
-Tags:
+Tags: [[Spring]]
 
 ---
 # Configuration class summary- Spring
@@ -22,6 +22,11 @@ Tags:
 ~={purple}@EntityScan(`path to entities`)=~ - нужно только, если главный класс - не в корне проекта
 
 
+
+
+## Notes on configuration with Spring Boot
+
+- В ~={purple}@SpringBootApplication=~ уже _встроена_ ~={purple}@ComponentScan=~, которая по умолчанию сканирует пакет, где лежит главный класс приложения, и все его подпакеты.
 
 
 

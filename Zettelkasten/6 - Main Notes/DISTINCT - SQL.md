@@ -3,7 +3,7 @@
 
 Status:
 
-Tags:
+Tags: [[SQL]]
 
 ---
 # DISTINCT - SQL

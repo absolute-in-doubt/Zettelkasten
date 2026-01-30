@@ -1,5 +1,5 @@
 
-Theory for the cards: [[Controller - Spring MVC]]
+Theory for the cards: [[Controller - Spring Web MVC]]
 
 FILE TAGS: spring spring_mvc
 

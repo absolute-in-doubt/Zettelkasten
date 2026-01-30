@@ -70,13 +70,12 @@ A: Сначала представление будет отсортирован
 	
 | town_from | town_to     |
 | --------- | ----------- |
-| London    | Paris       |
 | London    | Singapore   |
+| London    | Paris       |
 | Moscow    | Rostov      |
 | Paris     | Rostov      |
-| Rostov    | Paris       |
 | Rostov    | Vladivostok |
+| Rostov    | Paris       |
 <!--ID: 1757873925114-->
-
 <!--ID: 1757873883590-->
 

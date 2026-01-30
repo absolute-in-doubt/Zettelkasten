@@ -12,6 +12,10 @@ Tags: [[Spring]]
 
 ~={purple}@Repository=~ - обозначает, что это JpaRepository
 
+> [!tip] Note
+> **~={purple}@Repository=~** отличается от **~={purple}@Component=~** тем, что помиом регистрации в контексте, оборачивает выкидываемые `SQLException` в unchecked `DataAccessException`.
+
+
 ```java
 @Repository
 public interface PeopleJpaRepository extends JpaRepository<Person, Integer> {  

@@ -3,16 +3,39 @@
 
 1. [[Dependency Injection]]
 2. [[Inversion of control]]
-3. [[AOP - Spring]]
+
 
 
 ##### Configuration class summary
 - [[Configuration class summary- Spring]]
 
+
+### Spring Context
+
+##### Многопоточность в Spring:
+- [[ThreadPoolTaskExecutor - Spring]]
+
+
 #### Spring Core
 
-[[Инициализация контекста через XML - Spring]]
+[[ЖЦ контекста - Spring]]
+
+[[Процесс инициализации ApplicationContext - Spring]]
+	- [[Подробнее про BeanDefinitionReaders - Spring]]
+[[ClasspathXmlApplicationContext - Spring]]   - initing context with XML
+[[AnnotationConfigApplicationContext - Spring]] - with annotations
 	- [[Про использование BeanPostProcessor - Spring]]
+		- [[Проксирование бина в BeanPostProcessor - Spring]]
+	- [[Спринговские BeanPostProcessors - Spring]]
+Spring Events:
+[[ApplicationListener - Spring]]
+
+Context debugging methods:
+[[SpringContext helpful debugging methods - Spring]]
+
+
+[[Пакеты Spring Core]]
+[[Профили - Spring]]
 
 config:
 - [[Application Context - Spring]]
@@ -27,6 +50,9 @@ config:
 	- [[Bean Lifecycle - Spring]]
 	- [[Bean factory method - Spring]]
 
+[[@ComponentScan - Spring]]
+
+### Spring ORM
 
 - [[spring-orm package]]
 	- [[Настройка Hibernate - spring-orm]]
@@ -34,26 +60,52 @@ config:
 	- [[Поддержка декларативных транзакций - Spring-orm]] 
 		- [[@Transactional - Jakarta & Spring ORM]]
 		- [[@Transactional на методах service - Spring]] 
+		- [[@Lock - optimistic & pessimistic Spring-orm]]
 
-#### Spring MVC
+#### Spring Web MVC
 
-[[ViewResolver- Spring MVC]]
-[[Request Handling Workflow - Spring MVC]]
+[[WebApplicationContext - Spring MVC]]
+	- [[Конфигурация WebApplicationContext - Spring MVC]]
+	- [[@EnableWebMvc - Spring MVC]]
+
+Инфраструктура Spring MVC
+- [[DispatcherServlet - Spring Web MVC]]
+
+[[ViewResolver- Spring Web MVC]]
+[[Request Handling Workflow - Spring Web MVC]]
 
 config:
 - [[web.xml для Spring MVC]]
-	- [[Конфигурация web.xml с помощью Java класса + Spring]] - настройка DispatcherServletIntializer
+	- [[Конфигурация web.xml с помощью Java класса - Spring]] - настройка DispatcherServletIntializer
+	- [[Добавление статических ресурсов в WebApplicationContext - Spring]]
 	
-- [[ApplicationContextMVC.xml file - Spring]]
+- [[ApplicationContextMVC.xml file - Spring Web MVC]]
 	- [[Configurating Spring MVC via Java code]]
 
 
-- [[DispatcherServlet - Spring MVC]]
-- [[Controller - Spring MVC]] - @Controller
-	- [[Получение параметров запроса - Spring MVC]]
+- [[DispatcherServlet - Spring Web MVC]]
+- [[Controller - Spring Web MVC]] - @Controller
+	- [[Получение параметров запроса - Spring Web MVC]]
+	- [[Редирект - Spring MVC]]
 - [[Model - Spring MVC]]
-- [[Filter - Spring]] - настройка DispatcherServletIntializer
 
+- [[@ResponseBody - Spring Web MVC]]
+- [[@RestController - Spring Web MVC]]
+- [[@ExceptionHandler - Spring Web MVC]]
+- [[@ResponseStatus - Spring Web MVC]]
+
+
+- [[Редирект - Spring Web MVC]]
+- [[Заголовки - Spring Web MVC]]
+- [[Cookie - Spring Web MVC]]
+
+- [[Filter - jakarta.servlet]] - настройка DispatcherServletIntializer
+- [[FilterChain - jakarta.servlet]] 
+	- [[Регистрация фильтров в FilterChain - jakarta.servlet]]
+	- [[Регистрация фильтров в FilterChain - Spring]]
+
+
+### Spring JDBC
 
 - [[JDBC Template - Spring]]
 
@@ -76,26 +128,26 @@ config:
 > Такие аннотации называются стериотипными. И хранятся в `org.springframework.stereotype`
 
 
-### Spring Web MVC
+### Spring Web
 
-В **Spring Web** нет `DispatcherServlet` и аннотаций контроллеров.
+`spring-web` — более базовый модуль для работы с вебом, **без** MVC‑части.
+
+[[Возможности Spring Web]]
 
 - [[RestTemplate - Spring Web]]
 
-- [[@ResponseBody - Spring Web]]
-- [[@RestController - Spring Web]]
-- [[@ExceptionHandler - Spring Web]]
 - [[@RequestBody - Spring Web]]
 
-- [[Редирект - Spring Web MVC]]
-- [[Заголовки - Spring Web MVC]]
-- [[Cookie - Spring Web MVC]]
+
+
 
 ### [[Spring Boot]]
 
 - [[setup - Spring Boot]]
 - [[Spring Boot starters]]
 - [[application.properties - Spring Boot]]
+
+- [[CommandLineRunner и ApplicationRunner- Spring Boot]]
 
 
 ### Spring Security
@@ -108,7 +160,10 @@ HttpSession vs Cookie [[HttpSession vs Cookie - Java servlet API]]
 
 - [[config - Spring Security]]
 
-- [[Filter - Spring]]
+- [[Filter - jakarta.servlet]]
+- [[FilterChain - jakarta.servlet]] 
+	- [[Регистрация фильтров в FilterChain - jakarta.servlet]]
+	- [[Регистрация фильтров в FilterChain - Spring]]
 - DelegatingFilterProxy
 - 
 - [[Security Filter Chain - Spring Security]]
@@ -117,12 +172,27 @@ HttpSession vs Cookie [[HttpSession vs Cookie - Java servlet API]]
 
 - [[Работа с JWT - Spring Security]]
 
+
+
+### Spring Test
+
+- [[Возможности Spring Test]]
+- [[JUnit with Spring]]
+
+
+### Spring AOP
+
+- [[Возможности Spring AOP]]
+
+
+
+### [[Logging in Spring + Spring Boot]]
+
+
 ### [[Thymeleaf - шаблонизатор]]
 
 
-### Многопоточность в Spring:
 
-- [[ThreadPoolTaskExecutor - Spring]]
 
 
 ### Notes

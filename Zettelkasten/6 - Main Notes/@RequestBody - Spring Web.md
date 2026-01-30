@@ -39,7 +39,7 @@ private ResponseEntity<PersonErrorResponse> handleException(PersonNotCreatedExce
 
 `BindingResult` - такой же как и при [[@Valid, @Validated - валидация через аннотацию|проверке значений с помощью Hibernate Validator]], заполняемых в HTML форме.
 
-Если при валидации что-то невалидное -> кидаем ошибку и отлавливаем её в [[@ExceptionHandler - Spring Web|@ExceptionHandler]]
+Если при валидации что-то невалидное -> кидаем ошибку и отлавливаем её в [[@ExceptionHandler - Spring Web MVC|@ExceptionHandler]]
 
 
 ----
@@ -50,4 +50,4 @@ private ResponseEntity<PersonErrorResponse> handleException(PersonNotCreatedExce
 ---
 ### References:
 
-- [[@ExceptionHandler - Spring Web]]
+- [[@ExceptionHandler - Spring Web MVC]]

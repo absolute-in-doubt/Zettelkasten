@@ -32,7 +32,10 @@ Tags: [[SQL]]
 
 Используется `IS NULL` и `IS NOT NULL`:
 
-`SELECT * FROM people WHERE age IS NULL;     -- работает SELECT * FROM people WHERE age IS NOT NULL; -- работает`
+```sql
+SELECT * FROM people WHERE age IS NULL;     -- работает 
+SELECT * FROM people WHERE age IS NOT NULL; -- работает
+```
 
 
 ----

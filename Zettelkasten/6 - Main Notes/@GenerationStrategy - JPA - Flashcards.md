@@ -92,3 +92,36 @@ A:
 | `SEQUENCE` | БД-sequence (nextval перед INSERT)                      | Oracle, PostgreSQL, H2, DB2   | `@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")` с `@SequenceGenerator` |
 | `TABLE`    | Отдельная таблица с счётчиками (SELECT FOR UPDATE)      | Все                           | `@GeneratedValue(strategy = GenerationType.TABLE)`                                              |
 <!--ID: 1769502015349-->
+
+Q: Как правильно создать таблицу с генерацией id через SEQUENCE и связать с ней Entity (Hibernate)?
+A:  Создание таблицы:
+```sql
+CREATE SEQUENCE user_sequence START 1 INCREMENT 20;  
+	
+CREATE TABLE "users" (  
+    id BIGINTEGER PRIMARY KEY,  
+    first_name VARCHAR(25),  
+    last_name VARCHAR(25),  
+    username VARCHAR(35),  
+    password VARCHAR(35),  
+    role VARCHAR(10)  
+)
+```
+В самой таблице не указываем стратегию генерации. Этим занимается наше приложение:
+	
+```java
+@Entity
+public class User {
+    @Id
+    @SequenceGenerator(
+        name = "user_seq", 
+        sequenceName = "user_sequence", 
+        allocationSize = 50
+    )
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_seq")
+    private Long id;
+    
+    // поля...
+}
+```
+<!--ID: 1770984391066-->

@@ -3,7 +3,7 @@
 
 Status: #baby
 
-Tags: [[Java+]]
+Tags: [[Git]] [[Java+]]
 
 ---
 # Merge Conflicts - Git
@@ -90,5 +90,5 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ---
 ### References:
 
-- [[Git]]
+- [[Изменение, удаление коммитов & откат изменений - Git]]
 - [[Branching - Git]]

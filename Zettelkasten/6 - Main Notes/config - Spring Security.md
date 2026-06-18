@@ -22,7 +22,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 }
 ```
 
-
+**~={purple}@EnableWebSecurity=~**  - нужна только с чистым Spring. 
 
 
 #### AuthProvider:

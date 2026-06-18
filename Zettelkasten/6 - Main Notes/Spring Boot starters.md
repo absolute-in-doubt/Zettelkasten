@@ -3,7 +3,7 @@
 
 Status:
 
-Tags: [[Spring]]
+Tags: [[Spring Boot]] [[Spring]]
 
 ---
 # Spring Boot starters
@@ -14,6 +14,9 @@ Tags: [[Spring]]
 ### Spring-boot-parent-starter
 
 Проект, созданный через Spring Initializr будет также иметь spring-boot-parent-starter:
+
+![[Pasted image 20260513173141.png]]
+
 
 `spring-boot-starter-parent` — это **базовый каркас для Maven-проекта на Spring Boot**, который:
 

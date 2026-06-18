@@ -10,7 +10,7 @@ Tags: [[Jakarta.servlet]] [[Java+]]
 
 Создаётся Servlet-контейнером и передаётся в методы [[HttpServlet - jakarta.servlet|HttpServlet]].
 
-#### Получение параметров запроса (GET):
+#### Получение параметров запроса:
 ```java
 String param = request.getParameter("myParam");
 ```
@@ -24,7 +24,7 @@ String contentType = request.getHeader("Content-Type");
 ```
 
 
-#### Получение тела запроса (POST):
+#### Получение тела запроса:
 ```java
 String specificParam = request.getParameter("specificParameter");
 ```

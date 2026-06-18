@@ -16,11 +16,11 @@ Tags: [[Spring]]
 
 - Логирование
 
-- Транзакции (**~={purple}@Transactional=~**)
+- Транзакции (**[[@Transactional - Jakarta & Spring ORM|@Transactional]]**)
    
-- Безопасность (**~={purple}@Secured=~**)
+- Безопасность (**[[@PreAuthorize vs @Secured vs @RolesAllowed - Spring Security|@Secured]]**)
    
-- Кэширование (**~={purple}@Cacheable=~**)
+- Кэширование (**[[@Cacheable - Spring Data|@Cacheable]]**)
    
 - Метрики, аудит, трассировка
    

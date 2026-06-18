@@ -12,7 +12,7 @@ Tags: [[Hibernate & JPA]] [[Java+]]
 
  ```java
  @Id  
-@OneToOne
+@ManyToOne
 @JoinColumn(name = "calculation_id", referencedColumnName = "calculation_id")  
 private CalculationValue calculationValue;
  ```
@@ -32,7 +32,7 @@ private CalculationValue calculationValue;
 @Column(name="calculation_id")  
 private UUID calculationId;  
   
-@OneToOne  
+@ManyToOne(fetch = FetchType.LAZY) //чтобы не тягать лишний раз, если нужен только id  
 @MapsId  
 @JoinColumn(name = "calculation_id", referencedColumnName = "calculation_id")  
 private CalculationValue calculationValue;

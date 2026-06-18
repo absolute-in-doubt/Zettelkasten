@@ -95,6 +95,41 @@ class DBConnection {
 ```
 
 
+---
+### Пример singleton
+
+Spring singleton beans. Могут быть lazy (если поставить @Lazy) и eager (by default). Синхронизация выполняется средствами Spring а не самого бина:
+
+#### Как это работает в Spring
+
+1. **При @Lazy**: Spring создает прокси-объект вместо реального бина. Прокси содержит `volatile` ссылку на target-бин (недоинициализированную).
+   
+2. **При первом обращении** (через прокси):
+   
+```java
+// Внутренне в DefaultSingletonBeanRegistry
+private final Map<String, Object> singletonObjects = new ConcurrentHashMap<>(256);
+private final Map<String, Object> singletonFactories = new HashMap<>(16);
+	
+public Object getSingleton(String beanName) {
+    Object singletonObject = this.singletonObjects.get(beanName);
+    if (singletonObject == null) {
+        synchronized (this.singletonObjects) {  // Глобальная блокировка
+            // Double-check
+            singletonObject = this.singletonObjects.get(beanName);
+            if (singletonObject == null) {
+                // Создание через ObjectFactory (lazy init)
+                singletonObject = singletonFactory.getObject();
+                addSingleton(beanName, singletonObject);
+            }
+        }
+    }
+    return singletonObject;
+}
+```
+    
+3. **Volatile + happens-before**: Гарантирует, что все потоки видят полностью инициализированный бин после создания. Последующие запросы получают готовый объект из `singletonObjects` без блокировок.
+
 
 ----
 #### [[SIngleton - pattern - Flashcards|Link to flashcards]]

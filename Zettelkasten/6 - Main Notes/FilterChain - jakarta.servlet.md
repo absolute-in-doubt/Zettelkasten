@@ -3,7 +3,7 @@
 
 Status:
 
-Tags: [[Jakarta.servlet]] [[Java+]]
+Tags: [[Jakarta.servlet]] [[Spring Web MVC]] [[Java+]]
 
 ---
 # FilterChain - jakarta.servlet

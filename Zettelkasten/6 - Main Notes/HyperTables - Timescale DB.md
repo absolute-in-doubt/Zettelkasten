@@ -30,7 +30,7 @@ HyperTable - абстрактная таблица, состоящая из ме
 - **Efficient data management with [automated partitioning by time](https://docs.tigerdata.com/use-timescale/latest/hypertables/improve-query-performance/#optimize-hypertable-chunk-intervals/)** - разделяет данные на chunks (по значениям даты в определённом диапазоне)
 
 
-- **Better performance with [strategic indexing](https://docs.tigerdata.com/use-timescale/latest/hypertables/hypertables-and-unique-indexes/)** - [[Indexes - SQL|индекс]] по времени в порядке убывания ~={cyan}создаётся автоматически=~ при создании HyperTable. Также создаются вспомогательные индексы на уровне chunk-ов.
+- **Better performance with [strategic indexing](https://docs.tigerdata.com/use-timescale/latest/hypertables/hypertables-and-unique-indexes/)** - [[INDEXes - SQL|индекс]] по времени в порядке убывания ~={cyan}создаётся автоматически=~ при создании HyperTable. Также создаются вспомогательные индексы на уровне chunk-ов.
 
 
 - **Faster queries with [chunk skipping](https://docs.tigerdata.com/use-timescale/latest/hypertables/improve-query-performance/)** - Timescale пропускает chunks, которые не подходят по времени (или другому  используемомому dimension) ->  ~={red}!!!!=~ Не проходит по всей HyperTable ~={red}!!!!=~

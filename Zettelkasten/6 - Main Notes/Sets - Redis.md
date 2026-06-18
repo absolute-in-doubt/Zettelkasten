@@ -3,7 +3,7 @@
 
 Status: #child -- no flashcards needed
 
-Tags: [[Redis + Jedis]] [[Java+]]
+Tags: [[Jedis]] [[Java+]]
 
 ---
 # Sets - Redis
@@ -11,8 +11,9 @@ Tags: [[Redis + Jedis]] [[Java+]]
 
 Неупорядоченная коллекция уникальных строк ([[Strings - Redis|Strings]])
 
+![[Pasted image 20260507191328.png]]
 
-
+---
 ## Операции
 
 - `SADD <set_name> <value> [<value>]` - вставляет значение в Set, возвращает количество вставленных:

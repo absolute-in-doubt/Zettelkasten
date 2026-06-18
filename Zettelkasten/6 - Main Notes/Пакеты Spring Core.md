@@ -3,7 +3,7 @@
 
 Status:
 
-Tags:
+Tags: [[Spring Core]] [[Spring]]
 
 ---
 # Пакеты Spring Core

@@ -79,4 +79,27 @@ GROUP BY home_type
 <!--ID: 1757943644339-->
 
 
+Q: Print the IDs of all flights and the number of passengers on each flight. If there are no passengers on a flight, print the number "0" for that flight.
+![[Pasted image 20260325170034.png|467]]
+A:    
+```sql
+SELECT tr.id, COUNT(pit.passenger) AS count
+FROM Trip tr  
+LEFT JOIN Pass_in_trip pit ON pit.trip = tr.id
+GROUP BY tr.id;
+```
+	
+> Используем `COUNT()` по NULLABLE полю. -> если в ответе поле будет NULL - он его посчитает как 0. 
+<!--ID: 1774447359171-->
 
+
+Q: Вывести список имён сотрудников, получающих большую заработную плату, чем у непосредственного руководителя.
+![[Pasted image 20260325174332.png]]
+A:  
+```sql
+SELECT e.name 
+FROM Employee e
+JOIN Employee ch ON e.chief_id = ch.id
+WHERE e.salary > ch.salary;
+```
+<!--ID: 1774449844011-->

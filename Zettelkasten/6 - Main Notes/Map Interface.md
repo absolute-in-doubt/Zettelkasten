@@ -15,7 +15,7 @@ Tags: [[Java Core]] [[Java Collections]]
 ##### HashMap
 ##### TreeMap
 - хранит все в отсортированном виде (строки - по алфавиту)
-##### LinkeHashMap
+##### LinkedHashMap
 - хранит в порядке входа (вставки)
 
 
@@ -74,7 +74,7 @@ Tags: [[Java Core]] [[Java Collections]]
 ### Приколы
 
 >[!note]
->Map может содержать себя как ключ и как значение. Однако выполнение оперций .equals() и hashCode(), если Map содержит себя как VALUE, может привести к неопределенному поведению.
+>Map может содержать себя как ключ и как значение. Однако выполнение операций .equals() и hashCode(), если Map содержит себя как KEY, может привести к неопределенному поведению.
 
 
 
@@ -92,8 +92,8 @@ Tags: [[Java Core]] [[Java Collections]]
 >В Java нет MultiMaps => используем Map<..., List<...>>
 
 
-
-
+~={pink}Если при создании TreeMap передать ей компаратор, то она все равно будет требовать от вставляемых элементов реализации Comparable?=~
+	***Нет, TreeMap с переданным компаратором не требует от ключей реализации Comparable.***
 
 
 ----
@@ -105,3 +105,4 @@ Tags: [[Java Core]] [[Java Collections]]
 ### References:
 
 - [[SortedMap Interface]]
+- [[HashMap implementation - Java Core]]

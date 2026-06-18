@@ -52,14 +52,6 @@ SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
 Добавляем после AnonymousAuthenticationFilter, т.к. наш фильтр авторизирут юзера как постояльца (tenant).
 
-> [!warning]
-> Если аннотировать наш custom filter как `@Component` - он будет вызван дважды:
-> 
->  - при загрузке в контекст
->  
->  - при загрузке в FilterChain
->  
->~={red}**Поэтому Filter обычно НЕ региструруют как бины**=~
 
 ---
 ### Проверка подключённых фильтров

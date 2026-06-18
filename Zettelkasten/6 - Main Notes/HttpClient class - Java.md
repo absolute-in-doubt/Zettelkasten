@@ -10,7 +10,7 @@ Tags: [[Java+]]  [[Http - Java]]
 
 ==thread safe==
 
-Используетс ядля отправки Http запросов и получения ответов.
+Используется для отправки Http запросов и получения ответов.
 
 
 > [!note] **HttpClient is immutable**
@@ -58,8 +58,12 @@ HttpClient client = HttpClient.newBuilder()
 2. После завершения работы особождаем ресурсы методом `close()`
 ```java
 try{
+	...
+} catch(Exception e) {
+	log.warn("Exception: {}", e.getMessage());
+} finally {
 	client.close();
-} catch()
+}
 ```
 
 

@@ -65,12 +65,14 @@ A:
 
 Q: Чем отличается JRE, JVM и JDK?
 A:   
-- JVM - интерпретатор Java кода
+- **JVM** (Java Virtual Machine) содержит:
+	- **Интерпретатор** — выполняет байт-код построчно.
+	- **Class Loader** — загружает классы (Bootstrap, Extension, Application loaders).
+	- **JIT-компилятор**, сборщик мусора, верификатор байт-кода.
 - JRE = JVM + стандартный набор библиотек
 - JDK:
 	- JRE 
 	-  `javac` компилятор  
-	- **`java` (Interpreter/Loader):** Executes the compiled bytecode.
 	- **`jar` (Archiver):** Packages multiple files into a single JAR archive.
 	- **`jdb` (Debugger):** Used for finding and fixing errors in code.
 	- **`javadoc` (Documentation Generator):** Generates documentation from source code comments.
@@ -252,7 +254,7 @@ A: Кооперативная многозадачность - модель мн
 - сложность реализации
 	
 Преимущества:
-- зависшие потоки не стопят прилложение
+- зависшие потоки не стопят приложение
 <!--ID: 1769238604918-->
 
 
@@ -328,7 +330,8 @@ A: **Есть тело у:**
 **Нет тела у:**
 	- GET
 	- 
-<!--ID: 1769763230352-->
+<!--ID: 1773502706288-->
+
 
 
 
@@ -541,7 +544,7 @@ public String method(@RequestParam(value="name") String[] names){
 <!--ID: 1769763230409-->
 
 Q: Что делает аннотация @RequestBody в методе контроллера?
-A; `@RequestBody` **триггерит десериализацию** тела HTTP-запроса в Java-объект с помощью **HttpMessageConverter** (по умолчанию **Jackson** для JSON). Spring читает `Content-Type` запроса и автоматически парсит тело.
+A: `@RequestBody` **триггерит десериализацию** тела HTTP-запроса в Java-объект с помощью **HttpMessageConverter** (по умолчанию **Jackson** для JSON). Spring читает `Content-Type` запроса и автоматически парсит тело.
 	
 ```java
 @PostMapping("/users")
@@ -555,9 +558,371 @@ public User create(@RequestBody User user) {  // JSON → User объект
 - `application/xml` → **Jaxb2**
     
 - `application/x-www-form-urlencoded` → **FormHttpMessageConverter**
+<!--ID: 1769777240371-->
+
+
+Q: Из какого пакета в Java классы импортируются без явного указания import?
+A: из `java.lang`.
+<!--ID: 1769949815953-->
+
+
+Q: Что тут не так?
+```java
+List<String> original = new ArrayList<>();
+original.add("Hello");
+original.add("world");
+	
+List<String> copy = List.copyOf(original);
+copy.add("!");
+copy.forEach(s -> System.out.println(s));
+```
+A: `List.copyOf(...)` - создаёт НЕИЗМЕНЯЕМУЮ копию list.
+<!--ID: 1769949822652-->
+
+Q: Что делает аннотация `@Primary`?
+A: Это аннотация для определения приоритетно используемого бина. Ставится на методе создания бина (annotated with @Bean) или классе (аннотированном @Component или наследником её).
+	
+Пример:
+	
+- Spring Kafka автоматически создаёт бин `KafkaTransactionManager`, если мы хотим его переопределить - создаём свой бин (например `ChainedKafkaTransactionManager`) и, чтобы туда, где нужен `KafkaTransactionManager` инжектился наш бин - аннотируем наш бин аннотацией `@Primary`.
+	
+- У нас два одинаковых бина, один хотим инжектить всегда, кроме редких определённых случаев. -> ставим над бином по умолчанию аннотацию `@Primary`, а в случаях, когда нужен другой бин, в месте инъекции ставим `@Qualifier`.
+<!--ID: 1770121160394-->
+
+
+Q: Расскажи про Comparator и контракт `compare(o1, o2)`. В каком случае что возвращает этот метод и как на основании возвращаемого значения выполняется сортировка?
+A:    
+```
+Сравниваем: o1 vs o2
+├── o1.compareTo(o2) < 0 (o1 < o2)  → [o1, o2]  (o1 раньше)
+├── o1.compareTo(o2) > 0 (o1 > o2)  → [o2, o1]  (o2 раньше!) 
+└── o1.compareTo(o2) == 0 (o1 = o2) → [o1, o2]  (так и оставляем)
+```
+<!--ID: 1770815901938-->
+
+
+Q: Расскажи, что ты знаешь про Integer pool.
+A: **Integer pool** (cache) — пул предсозданных объектов Integer от -128 до 127 (по умолчанию, настраивается через `java.lang.Integer.IntegerCache.high`).
+	
+**Как работает:**
+	
+```java
+Integer a = 100;  // из пула
+Integer b = 100;  // тот же объект: a == b → true
+	
+Integer c = 200;  // новый объект
+Integer d = 200;  // другой: c == d → false
+```
+	
+**Особенности:**
+	
+- Только для **автоупаковки** (`Integer i = 100`), не для `new Integer(100)`.
+    
+- Long/Short/Byte — свои пулы (-128..127).
+    
+- Влияет на == vs equals, память, производительность (мало объектов — экономия).
+    
+**Проблемы:** Неожиданные == (bug-prone), избегать == для wrapper'ов — всегда equals/hashCode.
+	
+---
+у `Integer` нет метода `intern()` как у `String`.
+<!--ID: 1770815901945-->
+
+
+Q: Где хранятся пулы (Integer pool, String pool)? Как в них происходит очистка мусора?
+A:  
+**String Pool:**
+	
+- До Java 7: в **Metaspace** (PermGen).
+    
+- С Java 7+: в **Main Heap** (куча), управляется GC.​
+    
+---
+**Integer Pool:**
+	
+- **Статический кэш** в классе `Integer.IntegerCache` (Metaspace).
+    
+- Фиксированные 256 объектов (-128..127), создаются при загрузке класса.
+    
+---
+**GC очистка:**
+	
+- **String Pool**: собирается **Full GC**, строки удаляются если нет ссылок. G1/JDK9+ дедупликация (String Deduplication).
+    
+- **Integer Pool**: **НЕ собирается** — immortal/static объекты, живут весь lifetime JVM.
+    
+---
+**Память:** String pool может расти (OOM), Integer pool — фиксированный (~2KB).
+<!--ID: 1770815901951-->
+
+
+Q: Чем плоха такая реализация Factory? Как её можно исправить?
+	
+```java
+public class NotificationFactory{
+	public static Notification getNotification(NotificationType notificationType){
+		return switch (notificationType) {
+			case EmailNotification -> new EmailNotification();
+			case SmsNotification -> new SmsNotification();
+			case PushNotification -> new PushNotification();
+		}
+	}
+}
+```
+A: Такая реализация нарушает Open-Closeed principle: клсаа закрыт для расширения, но если у нас появится новый тип для уведомления, нам придётся его расширить.
+	
+Решается созданием общего интерфейса фабрики, который расширяем при необходимости добавить возможность создания нового объекта.
+```java
+public interface NotificationFactory {
+	public Notification getNotification();
+}
+	
+public class SmsNotificationFactory implements NotificationFactory {
+	public Notification getNotification(){
+		return new SmsNotification();
+	}
+}
+	
+public class EmailNotificationFactory implements NotificationFactory {
+	public Notification getNotification(){
+		return new EmailNotification();
+	}
+}
+```
+<!--ID: 1771750111701-->
+
+Q: Что такое _autoboxing («автоупаковка»)_ в Java и каковы правила упаковки примитивных типов в классы-обертк
+A: **Автоупаковка** - это механизм неявной инициализации объектов классов-оберток (`Byte`, `Short`, `Integer`, `Long`, `Float`, `Double`, `Character`, `Boolean`) значениями соответствующих им исходных примитивных типов (`byte`, `short`, `int`...), без явного использования конструктора класса.
+	
+- Автоупаковка происходит при прямом присваивании примитива классу-обертке (с помощью оператора `=`), либо при передаче примитива в параметры метода (типа класса-обертки).
+    
+- Автоупаковке в классы-обертки могут быть подвергнуты как переменные примитивных типов, так и константы времени компиляции (литералы и `final`-примитивы). При этом литералы должны быть синтаксически корректными для инициализации переменной исходного примитивного типа.
+    
+- Автоупаковка переменных примитивных типов требует точного соответствия типа исходного примитива типу класса-обертки. Например, попытка упаковать переменную типа `byte` в `Short`, без предварительного явного приведения `byte` в `short` вызовет ошибку компиляции.
+    
+- Автоупаковка констант примитивных типов допускает более широкие границы соответствия. В этом случае компилятор способен предварительно осуществлять неявное расширение/сужение типа примитивов:
+    
+    1. неявное расширение/сужение исходного типа примитива до типа примитива, соответствующего классу-обертке (для преобразования `int` в `Byte`, сначала компилятор самостоятельно неявно сужает `int` к `byte`)
+    2. автоупаковку примитива в соответствующий класс-обертку. Однако, в этом случае существуют два дополнительных ограничения: a) присвоение примитива обертке может производится только оператором `=` (нельзя передать такой примитив в параметры метода без явного приведения типов) b) тип левого операнда не должен быть старше чем `Character`, тип правого не должен старше, чем `int`: допустимо расширение/сужение `byte` в/из `short`, `byte` в/из `char`, `short` в/из `char` и только сужение `byte` из `int`, `short` из `int`, `char` из `int`. Все остальные варианты требуют явного приведения типов).
+	
+Дополнительной особенностью целочисленных классов-оберток, созданных автоупаковкой констант в диапазоне `-128 ... +127` является то, что они кэшируются JVM. Поэтому такие обертки с одинаковыми значениями будут являться ссылками на один объект.
+<!--ID: 1772007994355-->
+
+
+Q: Что такое автораспаковка типов в Java? Приведи примеры случаев, когда она выполняется.
+A: Автораспаковка (unboxing) в Java — это автоматическое преобразование объекта-обёртки примитивного типа (например, Integer в int) в соответствующий примитивный тип, происходящее без явного вызова методов вроде `intValue()`. Это фича с Java 5 упрощает код с generics и коллекциями.
+	
+---
+**Случаи автораспаковки**
+	
+- Присвоение объекта переменной примитива: Integer преобразуется в int.​
+    
+- Арифметические операции: Integer добавляется к int — объект распаковывается.
+    
+- Передача объекта в метод, ожидающий примитив: `List<Integer>` элемент распаковывается для параметра int.​
+    
+- Возврат значения из метода: метод возвращает Integer, присваивается int — автоматическая распаковка.​
+    
+- Условные выражения: Boolean в if проверяется как boolean.​
+    
+- Сравнения: Integer сравнивается с int в > или == — распаковка для вычисления.]
+    
+**Важно**: Автораспаковка работает только для точных пар (Integer ↔ int, Double ↔ double), и может вызвать NullPointerException при null-объектах.​
+<!--ID: 1772007994367-->
 
 
 
-//Q: Чем отличается процесс от потока?
-//A: 
 
+Q: Чем отличается процесс от потока?
+A: Поток и процесс — это базовые единицы выполнения в операционных системах, но процесс является более тяжеловесным и изолированным, а поток — легковесным компонентом внутри процесса.
+	
+---
+**Адресное пространство**
+	
+Процесс имеет собственное изолированное адресное пространство памяти, ресурсы (файлы, дескрипторы) и не может напрямую обращаться к данным другого процесса.
+Потоки внутри одного процесса делят общее адресное пространство, кучу и ресурсы, но имеют отдельные стеки и регистры.
+	
+---
+**Ресурсы и создание**
+	
+Процесс требует больше памяти и времени на создание/завершение, так как выделяет полную среду выполнения.
+Поток создается быстрее и потребляет меньше ресурсов, поскольку использует уже выделенные процессом структуры.
+	
+---
+**Коммуникация**
+	
+Между процессами нужна межпроцессная связь (IPC: pipes, shared memory), что дорого.
+Потоки общаются напрямую через общую память без дополнительных механизмов.
+	
+---
+**Применение**
+	
+Процессы подходят для изоляции (браузерные вкладки, сервисы); потоки — для параллелизма внутри приложения (UI + вычисления).
+	
+---
+> JVM-приложение — это один процесс ОС с изолированной памятью; потоки Java (Thread) внутри него делят heap (кучу), классы и ресурсы, но имеют отдельные stack и регистры.
+<!--ID: 1773240029078-->
+
+
+Q: Какие знаете способы отправки HTTP сообщений?
+A:     
+- **HttpClient** (встроенный в JDK 11+): Современный, асинхронный API с методами `newBuilder().GET()/POST()`. Идеален для новых проектов.
+    
+- **RestTemplate** - Spring Web 
+    
+- **OkHttp** (Square): Легкий, с поддержкой HTTP/2, retry и interceptors; популярен в Android и микросервисах.
+    
+- **Apache HttpClient**: Мощный для сложных сценариев (пулы соединений, multipart), но тяжелее
+<!--ID: 1774424468762-->
+
+Q: Почему в Generic в Java обязательно должны быть ссылочные типы?
+Почему нельзя сделать так: `List<long>`?
+A:   **Стирание типов (type erasure)**  
+В рантайме Generics не существуют: `List<String>` и `List<Integer>` компилятор сводит к одному сырым типам `List`, храня внутри объекты типа `Object`.  
+Примитивы не являются подтипами `Object`, поэтому их нельзя «подставить» на место `T` в общем случае, когда `T` сводится к `Object`‑ссылке.
+<!--ID: 1776182047442-->
+
+Q: Как создать собственный spring boot starter? Что для этого надо?
+A: **Создать Spring Boot Starter — упаковать автоконфигурацию в `spring-boot-starter-*` артефакт с `META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports`.**
+	
+**Шаги создания:**
+	
+1. **Структура проекта**
+	
+```
+my-custom-starter/
+├── pom.xml
+├── src/main/java/
+│   └── com/example/autoconfigure/
+│       └── MyAutoConfiguration.java
+└── src/main/resources/
+    └── META-INF/spring/
+        └── org.springframework.boot.autoconfigure.AutoConfiguration.imports
+```
+	
+2. **`pom.xml`**
+	
+```xml
+<parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.2.0</version>
+</parent>
+<artifactId>my-custom-starter</artifactId>
+<packaging>jar</packaging>
+	
+<dependencies>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-configuration-processor</artifactId>
+        <optional>true</optional>
+    </dependency>
+    <!-- Ваши зависимости -->
+</dependencies>
+```
+	
+3. **Автоконфигурация**
+	
+```java
+@Configuration
+@ConditionalOnClass(SomeClass.class)
+@ConditionalOnProperty(prefix = "myapp", name = "enabled", havingValue = "true", matchIfMissing = true)
+public class MyAutoConfiguration {
+    @Bean
+    @ConditionalOnMissingBean
+    public MyService myService() {
+        return new MyService();
+    }
+}
+```
+	
+ 4. **`META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports`**
+	
+В файле AutoConfiguration.imports прописываем:
+```imports
+com.example.autoconfigure.MyAutoConfiguration
+```
+	
+5. **Опционально: `@ConfigurationProperties`**
+	
+```java
+@ConfigurationProperties(prefix = "myapp")
+@Data
+public class MyProperties {
+    private boolean enabled = true;
+    private String url;
+}
+```
+	
+ 6. **Тестовый проект**
+	
+```xml
+<dependency>
+    <groupId>com.example</groupId>
+    <artifactId>my-custom-starter</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+	
+`application.yml`:
+	
+```yml
+myapp:
+  enabled: true
+  url: https://example.com
+```
+	
+**Starter готов**: `mvn install` → подключается автоматически.
+<!--ID: 1776877125909-->
+
+Q: Расскажи про логику увеличения и уменьшения ArrayList.
+A:  **Логика увеличения**
+	
+- При `add()` проверяется `elementData.length == size`. Если да:
+	
+- Вычисляется `newCapacity = oldCapacity + (oldCapacity >> 1)` (увеличение на ~50%, т.е. ×1.5).
+    
+- Создается новый массив большего размера (`Arrays.copyOf(elementData, newCapacity + 1)`).
+    
+- Элементы копируются (`System.arraycopy`), старый массив становится GC.
+    
+- Пример: 10 → 16 → 25 → 38 → 57... (не ×2, а ×1.5 для амортизированной O(1))
+	
+---
+**Логика уменьшения**
+	
+- **Автоматически**: не происходит. Массив остается перераспределенным даже после `remove()`.
+    
+- **Вручную**: `trimToSize()` копирует в новый массив точно под `size()`
+<!--ID: 1778175787858-->
+
+
+Q: В каких случаях нужна многопоточность для приложения (типы задач)?
+A: Есть 2 вида задач, для которых подойдет многопоточность:
+- CPU-bound задачи - долгие и сложные вычисления (например парсинг, сжатие видео, хэширование, криптография) - потоков нужно чуть больше чем количество ядер процессора. Если будет больше - будем тратить лишнее время на переключения потоков.
+- IO-bound задачи - задачи, которые ждут (Например запрос к стороннему сервису, запрос к БД) - потоков может быть сильно больше, но нельзя, чтобы все потоки забились на ожидание.
+<!--ID: 1778683004347-->
+
+
+Q: В чем минус синхронной обработки запросов?
+A:  При поступлении запроса в Tomcat на запрос выделяется поток и выполнение переходит в DispetcherServlet -> Controller. Если свободных потоков нет, запросы становятся в очередь. Если все потоки ожидают, тормозят, то со временем у нас будет все меньше и меньше свободных потоков и все запросы будут копиться в очереди. -> Новые запросы не обрабатываются и клиенты просто умирают по таймауту. 
+	
+`+` Если не настроить размер этой очереди, сервис вообще может упасть по `OutOfMemoryError`
+![[Pasted image 20260510125303.png]]
+<!--ID: 1778683004352-->
+
+
+Q: Где какие аннотации ставятся, если контроллер реализует интерфейс?
+A:   
+	
+| annotation                                 | `Interface`                      | `implementation`    |
+| ------------------------------------------ | -------------------------------- | ------------------- |
+| @Valid, @NotNull, @NotBlank, @Size         | ✅                                | ❌ (causes HV000151) |
+| @GetMapping, @PostMapping, @RequestMapping | ❌ (not picked up reliably)       | ✅                   |
+| @PathVariable, @RequestBody, @RequestParam | ❌                                | ✅                   |
+| @Transactional, @Cacheable, @Retryable     | ✅ (works with interface proxies) | ✅ (also works)      |
+
+A: Расскажи про пирамиду тестирования.
+Q:   
+![[Pasted image 20260527171948.png]]
+<!--ID: 1781024691491-->

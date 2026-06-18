@@ -18,6 +18,10 @@ Tags: [[Java Core]] [[Java Collections]]
 | `push(e)`        | `addFirst(e)`                 |
 | `pop()`          | `removeFirst()`               |
 | `peek()`         | `peekFirst()`                 |
+
+> [!warning] Note
+> `add()` в Deque добавляет в конец + выкидывает `IllegalStateException`.
+
 ### Реализации
 
 - ArrayDeque

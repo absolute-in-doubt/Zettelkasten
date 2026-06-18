@@ -3,7 +3,7 @@
 
 Status: #child
 
-Tags: [[Spring]]
+Tags: [[Spring Data JPA]] [[Spring]]
 
 ---
 # @Repository - Spring Data
@@ -77,6 +77,30 @@ public interface JpaRepository<T, ID> extends ListCrudRepository<T, ID>, ListPag
 >    peopleRepo.save(person);  
 >}
 > ```
+
+----
+### **Каскадирование в Spring Data**
+
+Каскадирование работает только  при загрузке Entity [[Кэширование - JPA|L1 cash]].
+
+```java
+userRepo.deleteById(userId);  // ❌ Bypasses JPA cascade - direct SQL DELETE
+```
+
+This executes a direct SQL DELETE statement without loading the entity or its relationships, so JPA cascade is ignored. The database foreign key constraint catches it.
+
+```java
+User user = userRepo.findById(userId).orElseThrow();
+userRepo.delete(user);  // ✅ JPA cascade works
+```
+	
+---
+##### **Why This Happens**
+
+- `deleteById(id)`→ Direct SQL:  `DELETE FROM users WHERE id = ?`
+	
+- `delete(entity)`→ JPA processes cascade → Deletes workouts first → Then deletes user
+
 
 ----
 #### [[@Repository - Spring Data - Flashcards|Link to flashcards]]

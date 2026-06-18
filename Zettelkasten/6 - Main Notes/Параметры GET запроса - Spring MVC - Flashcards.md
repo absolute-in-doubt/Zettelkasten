@@ -116,3 +116,22 @@ public String helloPage(@RequestParam("name") String name){
 	
 Также извлекать все типы параметров можно через `HttpServletRequest`.
 <!--ID: 1769524942013-->
+
+
+Q: Чем отличаются @PathParam и @PathVariable?
+A:   
+- `@PathVariable` — это **Spring**‑аннотация из модуля Spring Web; ей вы мапите часть пути из шаблона вида `/books/{isbn}` на аргумент метода контроллера.
+    
+```java
+@GetMapping("/books/{isbn}")
+public Book getBook(@PathVariable String isbn) { ... }
+```
+    
+- `@PathParam` — это аннотация из спецификации **JAX‑RS** (например, Jersey, RESTEasy). Она делает логически то же самое, но для JAX‑RS‑ресурсов, а не для Spring MVC‑контроллеров.
+	
+```java
+@GET
+@Path("/books/{isbn}")
+public Book getBook(@PathParam("isbn") String isbn) { ... }
+```
+<!--ID: 1771749608924-->

@@ -3,7 +3,7 @@
 
 Status:
 
-Tags:
+Tags: [[Jakarta Validation]]
 
 ---
 # Аннотации - Jakarta Validation

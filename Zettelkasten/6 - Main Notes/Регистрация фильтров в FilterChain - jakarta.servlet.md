@@ -28,13 +28,9 @@ Tags: [[Jakarta.servlet]] [[Java+]]
 ```
 
 
-### 2. Через аннотацию WebFilter
+### 2. Через аннотацию `@WebFilter` 
 
 ```java
-import jakarta.servlet.*;
-import jakarta.servlet.annotation.WebFilter;
-import java.io.IOException;
-
 @WebFilter("/*")
 public class LoggingFilter implements Filter {
 
@@ -50,6 +46,7 @@ public class LoggingFilter implements Filter {
     }
 }
 ```
+
 
 
 ### 3. Программная регистрация через `ServletContext`+`FilterRegistration`

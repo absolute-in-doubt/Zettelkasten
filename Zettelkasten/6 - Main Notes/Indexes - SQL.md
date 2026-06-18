@@ -26,11 +26,27 @@ Tags: [[SQL]]
 ```sql
 CREATE INDEX idx_email
     ON My_table (email_column);
+    
 ```
+
+
+### `INCLUDE`
+
+```sql
+CREATE INDEX idx_main_a_support_bc 
+ON table (a) INCLUDE (b, c);
+```
+
+- `a` — это **ключевой столбец**, по которому происходит сортировка и поиск;
+    
+- `b, c` — это **неключевые столбцы**, которые просто приклеены к листьям индекса.
+
+Их можно использовать в `SELECT` и в `WHERE` (через [[Организация доступа к данным - PostgreSQL#Index Only Scan|Index Only Scan]]), но они **не участвуют в логике поиска/сортировки индекса** и не влияют на уникальность
 
 #### [[Queries to system DBs - PostgreSQL#How to view existing indexes|How to view existing indexes in PostgreSQL]]
 
 
+---
 ### Удаление индексов
 
 ```sql

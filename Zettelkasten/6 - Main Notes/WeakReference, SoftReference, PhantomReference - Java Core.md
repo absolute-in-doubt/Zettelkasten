@@ -3,7 +3,7 @@
 
 Status:
 
-Tags:
+Tags: [[Java Core]]
 
 ---
 # WeakReference, SoftReference, PhantomReference - Java Core

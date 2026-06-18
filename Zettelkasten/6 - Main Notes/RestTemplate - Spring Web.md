@@ -39,13 +39,30 @@ String response = restTemplate.getForObject(
 
 ```
 
+##### Если нужны заголовки в GET запросе - используем метод `exchange()`:
+
+```java
+HttpHeaders headers = new HttpHeaders();  
+  
+headers.add("Authorization", "Bearer " + "3jh234g2vj34k22jh3g43");  
+  
+HttpEntity<Void> request = new HttpEntity<>(headers);  
+  
+  
+ResponseEntity<UserInfoResponseDto> response = restTemplate.exchange(                                                                                                                  src/main/java/com/innowise/orde +1 -1  
+        getUserUriUnformatted + userId,                                                                                                                                                src/main/java/com/innowise/ord +22 -8  
+        HttpMethod.GET,  
+        request,  
+        UserInfoResponseDto.class);
+```
+
+
 ## Методы
 
 - `T` ~={green}.getForObject(`String url, CLass<T> expectedReturnType`)=~ - для GET запросов
 
 - `T` ~={green}.postForObject(`String url, HttpEntity<P> request,  Class<T> expectedReturnType`)=~ - для отправки POST запросов.
 
-- 
 
 
 ----

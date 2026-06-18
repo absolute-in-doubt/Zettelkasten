@@ -25,6 +25,15 @@ Tags: [[Java Core]] [[Java Collections]]
 - ~={orange}Быстрая=~ работа:~={cyan} O(1) =~на вставку, удаление, поиск (в среднем).
 -  **под капотом - LinkedHashMap**
 
+>**~={red}?!=~** `HashSet` в Java обычно реализован **на базе `HashMap`**, где сам элемент Set хранится как ключ, а значение — это внутренняя заглушка.
+>
+>Эта заглушка в `HashSet` — обычно один и тот же статический объект `PRESENT`, который нужен просто как placeholder, потому что `Map` требует value
+>
+
+```java
+set.add(x)  ->  map.put(x, PRESENT)
+set.contains(x)  ->  map.containsKey(x)
+```
 
 ### Methods Notes:
 

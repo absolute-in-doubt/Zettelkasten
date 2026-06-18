@@ -15,7 +15,7 @@ Tags: [[Java+]]
 	
 - Представления: SSL/[[TLS]], MIME, кодировки (ASCII, JPEG и др.).
     
-- Сеансовый: RPC, NetBIOS sessions, PPTP.
+- Сеансовый: [[RPC & RMI - Legacy Java|RPC]], NetBIOS sessions, PPTP.
     
 - Транспортный: TCP, UDP, SCTP.
     

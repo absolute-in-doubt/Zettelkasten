@@ -29,20 +29,27 @@ Index: [[Java+]]
 - [[EntityManager - JPA]]
 - [[Transaction - JPA]]
 - [[Entity - JPA]]
+	- [[Денормализованные поля Entity - JPA]]
+	- [[Наследование JPA сущностей - JPA]]
+	- [[@Enumerated - JPA]]
 	- [[Composite PRIMARY KEY - Hibernate]]
-	- [[FK как PRIMARY KEY (@MapsId) - Hibernate]]
+	- [[FK как PRIMARY KEY (@MapsId) - Hibernate]] - @MapsId
+		-  [[кейс - FK является частью составного PK - JPA]]  
 - [[HQL запросы - JPA]]
 - [[JPQL syntax - JPA]]
 - [[JPQL запросы - JPA]]
+	- [[сбор JPQL запроса в DTO - JPA]]
 
 
 [[Relationships общее - JPA]]
 [[Examples on relationships - JPA]]
 - [[@OneToMany & @ManyToOne - JPA]]
+	
 - [[@OneToOne - JPA]]
 - [[@ManyToMany - JPA]]
 - [[Каскадирование - JPA]]
-- [[EntityGraph - JPA]]
+- [[@EntityGraph - JPA]]
+	- [[кейс @EntityGraph для ManyToMany joins - JPA]]
 - [[Lazy, Eager загрузка - JPA]]
 
 TL;DR: (по отношениям):
@@ -59,6 +66,8 @@ TL;DR: (по отношениям):
 [[@GenerationStrategy - JPA]]
 [[Mapping типов - JPA]] - Mapping
 
+
+### [[Кэширование]]
 
 
 ---

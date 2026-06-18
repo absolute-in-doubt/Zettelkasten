@@ -3,7 +3,7 @@
 
 Status:
 
-Tags:
+Tags: [[Docker]] [[Java+]]
 
 ---
 # union filesystems - Docker
@@ -43,7 +43,7 @@ United system
 
 ### Таким образом:
 
-- позволяет эффективнее использовать место на дискею~={cyan} (Many images share a common lower layer)=~
+- позволяет эффективнее использовать место на диске~={cyan} (Many images share a common lower layer)=~
 
 For example, if multiple containers from the same image are created on a single host, the container runtime only has to allocate a thin overlay specific to each container, while the underlying image layers can be shared.
 

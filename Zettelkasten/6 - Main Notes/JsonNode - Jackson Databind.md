@@ -3,7 +3,7 @@
 
 Status: #baby
 
-Tags: [[Java+]] [[Jackson Databind]]
+Tags: [[Java+]] [[Jackson]]
 
 ---
 # JsonNode - Jackson Databind
@@ -30,7 +30,7 @@ ObjectNode (class)   ArrayNode(class)
 
 
 - `JsonNode` ~={green}get(`String key`)=~ - ключ (из пары ключ значение)
-- `JsonNode`~={green} get(`int index`) =~- индекс, если этот JsonNode - массив
+- `JsonNode`~={green} get(`int index`) =~- индекс,~={red} если этот JsonNode - массив=~
 	Возвращает ветку по ключу в виде другой JsonNode
 	~={red}!!!=~ Если по ключу ничего нет -> возвращает ~={cyan}null ~={red}!!!=~
 

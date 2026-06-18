@@ -51,7 +51,7 @@ List<String> list = new ArrayList<>(c);
 ### Способы прохождения коллекций
 
 1. Aggregate operations => Stream API
-2.  for-each  ~={red} WARNING: не позволяет удалять элементы=~
+2.  for-each  ~={red} WARNING: не позволяет удалять и добавлять элементы=~
 3.  iterator
 
 > [!note]

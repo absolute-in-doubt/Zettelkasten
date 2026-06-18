@@ -15,7 +15,7 @@ Tags: [[Testing]] [[Spring]]
 - `@ContextConfiguration(classes = SpringConfig.class)` говорит, какую конфигурацию использовать (Java‑класс с `@Configuration`, XML и т.п.).
 
 
-~={purple}@SpringJUnitConfig  = @ExtendWith(SpringExtension.class) + @ContextConfiguration=~
+~={purple}@SpringJUnitConfig  = @ExtendWith(`SpringExtension.class`) + @ContextConfiguration=~
 
 
 

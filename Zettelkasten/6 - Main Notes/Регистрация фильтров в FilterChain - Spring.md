@@ -91,7 +91,7 @@ public class MyWebAppInitializer
 ---
 ## В Spring Boot
 
-#### 1. Кастомный фильтр
+#### 1. `FilterRegistrationBean`
 
 Достаточно указать @Component над своей реализацией фильтра - зарегать как bean. 
 
@@ -114,6 +114,42 @@ public class WebConfig {
         reg.addUrlPatterns("/*");
         reg.setOrder(1);
         return reg;
+    }
+}
+```
+
+
+
+### 2. Через аннотацию `@WebFilter` + `@ServletComponentScan`
+
+
+> [!note]
+> **@ServletComponentScan в Spring Boot включает автоматическое сканирование и регистрацию Servlet 3.0+ аннотаций (@WebServlet, @WebFilter, @WebListener) в embedded-контейнере (Tomcat/Jetty).** -  нужно, если хотим зарегать фильтра аннотацией из `jakarta.servlet`.
+
+
+```java
+@WebFilter("/*")
+public class LoggingFilter implements Filter {
+
+    @Override
+    public void doFilter(ServletRequest request,
+                         ServletResponse response,
+                         FilterChain chain)
+            throws IOException, ServletException {
+
+        System.out.println("Before servlet");
+        chain.doFilter(request, response);
+        System.out.println("After servlet");
+    }
+}
+```
+
+```java
+@SpringBootApplication
+@ServletComponentScan  // Сканирует текущий пакет и подпакеты
+public class MyApp {
+    public static void main(String[] args) {
+        SpringApplication.run(MyApp.class, args);
     }
 }
 ```

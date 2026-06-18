@@ -5,19 +5,20 @@
 2. [[Literals - SQL]]
 3. [[Built-in functions - SQL]]
 4. [[DISTINCT - SQL]]
-5. [[WHERE - SQL]]
+5. [[JOINs - SQL]]
+6. [[WHERE - SQL]]
 	- [[Basic Logical Operators - SQL]] 
 	- [[Other Logical Operators - SQL]]
 	- [[Regular expressions - SQL]]
-6. [[Sorting, ORDER BY operator - SQL]]
-7. [[Grouping, GROUP BY operator - SQL]]
+7. [[Sorting, ORDER BY operator - SQL]]
+8. [[Grouping, GROUP BY operator - SQL]]
 	-  [[Aggregate Functions - SQL]]
 	-  [[Operator HAVING - SQL]]
-8. [[Порядок выполнения SQL запроса]]
-9. [[Views - SQL]]
+9. [[Порядок выполнения SQL запроса]]
+10. [[Views - SQL]]
 
 
-10. [[Рекурсивные запросы - SQL]]
+11. [[Рекурсивные запросы - SQL]]
 
 [[Транзакции - PostgreSQL]]
 1. [[Pessimistic blocking - SQL]]
@@ -28,7 +29,7 @@
 1. [[Creating and deleting databases - SQL]]
 2. [[Creating and deleting tables - SQL]]
 	1. [[Updating tables -SQL]]
-3. [[Indexes - SQL]]
+3. [[INDEXes - SQL]]
 4. [[Column definition options (Constraints) - SQL]]
 	- [[Sequences & SERIALs - SQL]]
 	- [[PRIMARY KEY - SQL]]
@@ -38,7 +39,7 @@
 - [[UPDATE - SQL]]
 - [[DELETE - SQL]]
 	
-1. [[JOINs - SQL]]
+
 
 
 ### Postgres specifics

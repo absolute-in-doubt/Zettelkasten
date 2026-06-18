@@ -73,6 +73,17 @@ SELECT nextval('user_seq');  -- 50 (блок 1-50)
 SELECT nextval('user_seq');  -- 100 (блок 51-100)
 ```
 
+> [!warning] **Если используем `SEQUENCE` для генерации**
+> В скрипте создания таблицы НИКАК НЕ УКАЗЫВАЕМ стратегию генерации:
+> ```sql
+> CREATE SEQUENCE user_sequence START WITH 1 INCREMENT BY 50;
+>CREATE TABLE user (
+>    id BIGINT PRIMARY KEY,
+>    -- другие поля
+>);
+> ```
+
+
 ----
 #### [[@GenerationStrategy - JPA - Flashcards|Link to flashcards]]
 

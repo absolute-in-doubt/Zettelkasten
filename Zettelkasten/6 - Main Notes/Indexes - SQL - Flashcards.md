@@ -1,5 +1,5 @@
 
-Theory for the cards:  [[Indexes - SQL]]
+Theory for the cards:  [[INDEXes - SQL]]
 
 FILE TAGS: sql
 

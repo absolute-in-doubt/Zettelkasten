@@ -8,7 +8,9 @@ Tags: [[Patterns]]
 ---
 # Prototype - pattern
 
-используется для клонирования объекта
+Реализуется переопределением метода [[Object class - Java Core|clone() + Clonable]] marker interface.
+
+Используется для клонирования объекта.
 
 ~={red}!!!=~ ~={yellow}Реализация Prototype - сущность, которая умеет себя копировать.=~ ~={red}!!!=~
 

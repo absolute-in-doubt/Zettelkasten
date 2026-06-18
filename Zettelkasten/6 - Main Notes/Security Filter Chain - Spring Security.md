@@ -3,7 +3,7 @@
 
 Status:
 
-Tags: [[Spring]]
+Tags: [[Spring Security]] [[Spring]]
 
 ---
 # Security Filter Chain - Spring Security
@@ -16,7 +16,7 @@ Tags: [[Spring]]
 ```java
 @Bean
 @Order(SecurityProperties.BASIC_AUTH_ORDER)
-SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) therows Exception {
+SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
 	http.authorizationHttpRequest((requests) -> requests.anyRequest().authenticated); //purple filter
 	http.formLogin(withDefaults()); //sets up 3 green filters
 	http.httpBasic(withDefaults()); // pink filter

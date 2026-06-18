@@ -157,7 +157,7 @@ public class TestConfig {
 ---
 ## Аннотация @ActiveProfiles
 
-`@ActiveProfiles` используется **на тестовых классах**, чтобы указать, какие профили должны быть активны при загрузке `ApplicationContext` для интеграционных тестов.​
+`@ActiveProfiles` используется ~={orange}**на тестовых классах**=~, чтобы указать, какие профили должны быть активны при загрузке `ApplicationContext` для интеграционных тестов.​
 
 ```java
 @ExtendWith(SpringExtension.class)

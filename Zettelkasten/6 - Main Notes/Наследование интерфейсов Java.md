@@ -79,7 +79,7 @@ class C implements I1, I2 {
      @Override     
      public void hello() {
 	    System.out.println("Resolved"); 
-	} // ✅ }```
+	} // ✅ }
 ```
 
 ---

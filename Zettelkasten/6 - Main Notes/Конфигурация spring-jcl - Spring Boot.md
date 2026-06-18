@@ -3,10 +3,15 @@
 
 Status:
 
-Tags:
+Tags: [[Spring]]
 
 ---
 # Конфигурация spring-jcl - Spring Boot
+
+
+> [!note]
+> Конфигурация spring jcl ограничена. Например, в ней нельзя создать cusotm appenders, указать им имена и указать классы их реализации.
+> Для более точечной конфигурации ипользуются config файлы реализаций, например `logback-spring.xml`
 
 
 ### Простая конфигурация (application.properties)
@@ -54,6 +59,14 @@ logging.config=classpath:myconfig.properties
 
 
 ---
+### Настройка pattern для appender
+
+```yaml
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n"
+```
 
 
 ----

@@ -3,7 +3,7 @@
 
 Status:
 
-Tags: [[Spring]]
+Tags: [[Spring Boot]] [[Spring]]
 
 ---
 # application.properties - Spring Boot

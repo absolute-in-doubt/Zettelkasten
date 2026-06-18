@@ -9,37 +9,52 @@ Tags: [[Spring]]
 # Bean Lifecycle - Spring
 
 
-![[Pasted image 20260129101148.png]]
+![[Pasted image 20260513172432.png|697]]
 
-> [!warning] 
-> Если bean является singleton, то он создаётся изначально, как только поднимается контекст. А все прототайпы создаются в тот момент, когда они нужны.
+##### Создание бина
 
-
-> [!note] 
-> Каждый Bean может иметь user-defined init-метод и destroy-метод
-
-## Указание методов в [[ApplicationContext.xml file - Spring|ApplicationContext.xml]]
-
-```xml
-<bean id="musicBean" 
-	class="secret.boy.spring.demo.Music"
-	init-method="doMyInit"
-	destroy-method="doMyDestroy"/>
+```
+1. newInstance() ← конструктор
+2. postProcessAfterInstantiation() ← InstantiationAwareBeanPostProcessor
+3. populateBean() ← @Autowired, @Value ИНЪЕКТИТСЯ ЗДЕСЬ
+4. postProcessBeforeInitialization() ← BeanPostProcessor
+5. init() / @PostConstruct
+6. postProcessAfterInitialization()
 ```
 
-Регистрирует методы:
-```java
-... doMyInit(){...}
-... doMyDestroy(){...}
-```
+Подробнее:
+
+**1. Инстанцирование объекта**. Техническое начало жизни бина, работа конструктора его класса;  
+  
+**3. Установка свойств** из конфигурации бина, внедренее зависимостей.
+  
+**4. Нотификация aware-интерфейсов**. `BeanNameAware`, `BeanFactoryAware` и другие. Технически, выполняется системными подтипами `BeanPostProcessor`, и совпадает с шагом 4.
+  
+**4. Пре-инициализация** – метод `postProcessBeforeInitialization()` интерфейса `BeanPostProcessor`;  
+  
+**5. Инициализация.** Разные способы применяются в таком порядке:  
+**•** Метод бина с аннотацией `@PostConstruct` из стандарта JSR-250 (рекомендуемый способ);  
+**•** Метод `afterPropertiesSet()` бина под интерфейсом `InitializingBean`;  
+**•** Init-метод. Для отдельного бина его имя устанавливается в параметре определения `initMethod`. В xml-конфигурации можно установить для всех бинов сразу, с помощью `default-init-method`;  
+  
+**6. Пост-инициализация** – метод `postProcessAfterInitialization()` интерфейса `BeanPostProcessor`.
+    
+
+![[Pasted image 20260221191631.png]]
+
+##### Уничтожение бина
+
+**1.** Метод с аннотацией `@PreDestroy`;  
+**2.** Метод с именем, которое указано в свойстве `destroyMethod` определния бина (или в глобальном `default-destroy-method`);  
+**3.** Метод `destroy()` интерфейса `DisposableBean`.
 
 
-> [!warning]
-> Spring вызывает destroy метод только у Singleton бинов
 
----
+## SmartLifecycle (дополнительно)
 
-![[Pasted image 20251009204626.png]]
+- Фазы: RAW → INITIALIZED → SMART → REFRESHED → STARTED/STOPPED.
+    
+- `DefaultLifecycleProcessor` управляет start/stop по приоритету фаз (PHASE_NORMAL).
 
 ----
 #### [[Bean Lifecycle - Spring - Flashcards|Link to flashcards]]

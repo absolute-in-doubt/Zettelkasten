@@ -33,4 +33,4 @@ Tags: [[Spring]]
 ---
 ### References:
 
-- [[Factory method - pattern]]
+- [[Factory & Factory method- pattern]]

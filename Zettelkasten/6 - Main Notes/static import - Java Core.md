@@ -3,7 +3,7 @@
 
 Status:
 
-Tags:
+Tags: [[Java Core]]
 
 ---
 # static import - Java Core

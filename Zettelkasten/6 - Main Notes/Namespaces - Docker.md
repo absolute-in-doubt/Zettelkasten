@@ -3,7 +3,7 @@
 
 Status:
 
-Tags:
+Tags: [[Docker]] [[Java+]]
 
 ---
 # Namespaces - Docker

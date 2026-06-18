@@ -8,6 +8,10 @@ Tags: [[Spring]]
 ---
 # Bean scope
 
+
+![[Pasted image 20260513171844.png]]
+
+
 Можно явно указать в [[ApplicationContext.xml file - Spring|ApplicationContext.xml]].
 
 ```xml

@@ -114,6 +114,11 @@ BeanDefinitionRegistryPostProcessor.onPostProcess()
 Замена ${...} плейсхолдеров в BeanDefinition
 ```
 
+> [!warning]
+> - **PropertyPlaceholder (фаза 5)**: Замена плейсхолдеров **в метаданных BeanDefinition**. Например, `@Value("${app.name}")` → `@Value("myApp")`. Это происходит до создания бинов.​
+>    
+>- **@Value резолвинг (позже)**: Уже после создания экземпляра, в `populateBean()` через `AutowiredAnnotationBeanPostProcessor`. Здесь строка "myApp" преобразуется в реальное значение.
+
 
 #### 6. **registerBeanPostProcessors(beanFactory)**
 

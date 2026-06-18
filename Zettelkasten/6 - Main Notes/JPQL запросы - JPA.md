@@ -3,7 +3,7 @@
 
 Status:
 
-Tags:
+Tags: [[Hibernate & JPA]] 
 
 ---
 # JPQL запросы - JPA
@@ -92,7 +92,17 @@ List<User> users = em.createQuery(
 Методы `setFirstResult(int)` задают смещение, а `setMaxResults(int)` ограничивают количество возвращаемых записей, и работают как с JPQL, так и с Criteria‑ и частично native‑запросами.java.tutorialink+2​
 
 
+---
+### JOINs
+
+```java
+@Query("SELECT o FROM Order o LEFT JOIN FETCH o.item WHERE o.id = :orderId AND o.deleted = false")  
+Optional<Order> findByIdWithDeletedFalse(@Param("orderId") @NotNull Long id);
+```
+
+
 
 ---
 ### References:
 
+- [[Custom repository methods - Spring Data]]

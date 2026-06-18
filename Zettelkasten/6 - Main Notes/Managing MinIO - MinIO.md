@@ -47,7 +47,7 @@ docker network connect minio-net myminio_server
 
 
 
-Запуск клинета (отдельный Docker image):
+Запуск клиента (отдельный Docker image):
 
 ```bash
 docker run 
@@ -77,7 +77,7 @@ docker run --rm -it --network minio-net minio/mc ls
 
 Позволяет только создавать private buckets и добавлять в них файлы.
 
-Не позволяет сохдавать public buckets и управлять доступом.
+Не позволяет создавать public buckets и управлять доступом.
 
 ----
 #### [[Managing MinIO - MinIO - Flashcards|Link to flashcards]]

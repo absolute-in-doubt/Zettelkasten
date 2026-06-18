@@ -4,14 +4,21 @@
 
 1. [[Prototype - pattern]]
 2. [[SIngleton - pattern]]
-3. [[Factory method - pattern]]
-
+3. [[Factory & Factory method- pattern]]
+4. [[Abstract Factory - pattern]]
 
 ### Structural patterns
 
 1. [[Adapter (Wrapper) - pattern]]
 2. [[Flyweight - pattern]]
 3. [[Repository - pattern]]
+
+
+### Behavior patrerns
+
+1. [[Strategy - Pattern]]
+2. [[Proxy - Pattern]]
+
 
 
 ### Приколы
@@ -25,14 +32,13 @@
 
 1. [[MVC]]
 2. [[Луковичная архитектура]]
-
-
-### System Design
-
-1. [[Плюсы и минусы микросервисов]]
-2. [[Масштабирование сервисов, БД, брокеров]]
-
-3. [[Балансировка нагрузки + Sticky-маршрутизация на API Getaway]]
+3. [[Clean architecture]]
+4. [[InBox, OutBox patterns - Patterns]]
+	- [[InBox, OutBox implementation - Patterns]]
+	- [[кейс @TransactionalEventListener for OutBox - Patterns]]
+5. [[SAGA - System Design Patterns]]
+6. [[CQRS - System Design Patterns]]
+7. [[Event Sourcing - System Design Patterns]]
 
 
 ### Spring patterns
@@ -42,3 +48,7 @@
 
 - [[IoC Container]]
 	- [[DI Container]]
+
+
+---
+#### [[System Design]]

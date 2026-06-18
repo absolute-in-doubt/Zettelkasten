@@ -298,14 +298,14 @@ A: Да, т.к. этот класс находится в том же пакет
 Q:  Создастся ли корректно объект inner класса в методе дочернего класса (дочерний класс Enclosing класса A) в другом пакете, если Inner класс объявлен с модификатором protected и конструктор не задан (используется default)?
 ```java
 package different_package;
-class ChildSamePackage extends A{
+class ChildDiffPackage extends A{
 	void test() {
 		A a = new A();
-		ChildDifferentPackage.Inner inner = a.new Inner();
+		ChildDiffPackage.Inner inner = a.new Inner();
 	}
 }
 ```
-A: класс Inner - виден, т.к. ChildSamePackage наследует protected members у класса A.  А вот конструктор класса Inner в ChildSamePackage не виден, т.к. класс ChildSamePackage не является наследником Inner. => конструктор Inner() виден НЕ будет.
+A: класс Inner - виден, т.к. ChildDiffPackage наследует protected members у класса A.  А вот конструктор класса Inner в ChildDiffPackage не виден, т.к. класс ChildSamePackage не является наследником Inner. => конструктор Inner() виден НЕ будет.
 <!--ID: 1757496290043-->
 
 

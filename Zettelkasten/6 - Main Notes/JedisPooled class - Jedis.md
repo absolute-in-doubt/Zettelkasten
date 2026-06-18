@@ -3,7 +3,7 @@
 
 Status: #not_even_born 
 
-Tags: [[Redis + Jedis]] [[Java+]]
+Tags: [[Jedis]] [[Java+]]
 
 ---
 # JedisPooled class - Jedis

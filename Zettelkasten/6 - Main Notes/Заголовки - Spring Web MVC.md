@@ -3,7 +3,7 @@
 
 Status:
 
-Tags: [[Spring]]
+Tags: [[Spring Web MVC]] [[Spring]]
 
 ---
 # Чтение заголовков запроса

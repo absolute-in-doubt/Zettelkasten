@@ -4,7 +4,7 @@
 
 Status: #child - no flashcards needed
 
-Tags: [[Redis + Jedis]] [[Java+]]
+Tags: [[Jedis]] [[Java+]]
 
 ---
 # Настройка JedisPooled через GenericObjectPoolConfig

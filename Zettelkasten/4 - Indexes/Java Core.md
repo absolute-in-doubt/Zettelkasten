@@ -27,7 +27,7 @@
 	- [[Collections class]]
 	- [[ListIterator]]
 6. [[Queue Interface]]
-	- . [[Deque Interface]]
+	- [[Deque Interface]]
 7. [[Map Interface]]
 8. [[SortedMap Interface]]
 
@@ -52,9 +52,10 @@
 	-  [[Static Nested Classes Java]]
 4. [[Local classes Java]]
 5. [[Anonymous classes Java]]
+6. [[Record - Java]]
 
 > [!tip] Note
-> Начиная с Java 16, **все виды inner‑классов** (члены‑inner, локальные и анонимные) получили право объявлять обычные `static` члены;  
+> Начиная с Java 16, **все виды inner‑классов** (inner, static nested, локальные и анонимные) получили право объявлять обычные `static` members (fields, methods, static initializer blocks);  
 > 
 > **static nested классы** и до этого имели полные права на `static`, и продолжают их иметь.
 
@@ -73,6 +74,7 @@
 
 1. [[Что такое аннотации]]
 
+
 ### Under the hood
 [[Under the hood - Java|Link to the tag]]
 
@@ -80,6 +82,8 @@
     - [[clinit method - Java]]
 2. [[Алгоритм динамического связывания, vtable класса - Java Core]]
 3. [[Этапы выполнения Java кода - Java Core]]
+##### [[JMM]]
+
 
 ### Small important moments
 [[Small Important Moments Java|Link to the tag]]
@@ -98,11 +102,10 @@
 12. [[Порядок вызова конструкторов и initializer blocks - Java Core]]
 13. [[static import - Java Core]]
 14. [[WeakReference, SoftReference, PhantomReference - Java Core]]
-15. 
+
 
 ### Java Important Classes
 [[Java Important Classes|Link to the tag]]
-
 #### classes:
 
 1. [[Object class - Java Core]]

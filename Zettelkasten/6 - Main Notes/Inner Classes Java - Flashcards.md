@@ -224,7 +224,7 @@ Q: Возникнут ли ошибки при создании экземпля
 	}
 ```
 A: Возникнет ошибка в строке `SomeClass.Inner inner1 = new SomeClass().new Inner();` т.к. в классе SomeClass не доступен конструктор Inner() (т.к. он protected относительно класса Inner, а SomeClass - не подкласс Inner). Однако сам класс Inner он видит и в строчке `SomeClass.Inner inner2 = new SomeClass();` ошибки не возникнет.
->Доступ к полям `x, y, z` из Point4d запрещен, но они в нем есть:
+	
 >```
 >SomeClass
 >[Inner] - available 

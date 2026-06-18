@@ -29,10 +29,18 @@ deck.pollLast(element); //null - if deque is empty
 
 Q: Как получить указатель на элемент Deque без его удаления из коллекции? 
 A:  
+Кидает Exception:
 ```java
 Deque<Character> deck = new ArrayDeque<>(List.of('a', 'b'));
 deck.getFirst();
 deck.getLast();
+```
+	
+Не кидает Exception:
+```java
+Deque<Character> deck = new ArrayDeque<>(List.of('a', 'b'));
+deck.peekFirst();
+deck.peekLast();
 ```
 <!--ID: 1756824537782-->
 

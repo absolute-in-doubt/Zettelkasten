@@ -3,7 +3,7 @@
 
 Status: #baby - don't know if I should make flashcards
 
-Tags: [[Java+]] [[Git]]
+Tags: [[Git]] [[Java+]] 
 
 ---
 # Conventional commits - Git
@@ -107,3 +107,4 @@ Refs: #123
 ---
 ### References:
 
+- https://www.conventionalcommits.org/en/v1.0.0/

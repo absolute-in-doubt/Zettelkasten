@@ -52,6 +52,7 @@ Tags: [[Multithreading]] [[Java+]]
 Пример:
 
 - атомарные операции сравнения и установки (`compareAndSet`) в `Atomic*` классах, spincas-структуры, lock-free алгоритмы.
+- StampedLock
 
 Плюсы:
 

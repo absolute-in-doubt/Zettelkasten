@@ -3,7 +3,7 @@
 
 Status:
 
-Tags:
+Tags: [[H2 DB]] [[Базы данных]]
 
 ---
 # Подключение - H2 DB
@@ -62,9 +62,27 @@ jdbc.driverClassName=org.h2.Driver
 ```
 
 
-### Дальнейшие настройки - через Hibernate
+### Для Spring
 
-Пример:
+```yml
+spring:
+	datasource:  
+	  url: jdbc:h2:mem:testdb;MODE=PostgreSQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE  
+	  username: sa  
+	  password:  
+	  driver-class-name: org.h2.Driver  
+	  
+	jpa:  
+	  properties:  
+	    hibernate:  
+	      connection:  
+	        isolation: READ_COMMITTED  
+	      dialect: org.hibernate.dialect.H2Dialect  
+	      ddl-auto: create  
+	      show_sql: false  
+	liquibase:  
+	  enabled: false
+```
 
 
 ----

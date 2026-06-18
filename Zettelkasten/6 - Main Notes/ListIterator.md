@@ -6,7 +6,7 @@ Status: #child
 Tags: [[Java Core]] [[Java Collections]]
 
 ---
-# `ListIterator<E> extends Iterator<E>
+# `ListIterator<E> extends Iterator<E>`
 
 
 ### Эксклюзивные методы ListIterator:

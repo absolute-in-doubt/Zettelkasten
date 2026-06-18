@@ -1,5 +1,5 @@
 
-Index: [[Java+]]
+Index: [[CI & CD]] [[Java+]] 
 
 [[Bare metal vs VM vs Container - Docker]]
 
@@ -10,11 +10,20 @@ Linux Building Blocks:
 
 [[Docker Desktop Architecture]]
 
-[[Persistence - Docker]]
+- [[Network - Docker]]
 
+[[Dockerfile commands - Docker]]
+[[Multistage Dockerfile - Docker]]
+##### Commands:
+- [[Docker build process - Docker]]
+- [[Подключение к запущенному контейнеру - Docker]]
+[[Подключение к запущенному контейнеру - Docker]]
+- [[Persistence - Docker]]
 
-### Docker CLI commands
 
 - [[Basic commands - Docker]]
 
-[[docker run options]]
+- [[docker run options]]
+
+
+### [[Docker compose commands]]

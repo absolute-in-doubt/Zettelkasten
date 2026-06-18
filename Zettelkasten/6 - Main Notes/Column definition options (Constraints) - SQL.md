@@ -98,6 +98,9 @@ ALTER COLUMN username SET NOT NULL;
 -- Adding a default value
 ALTER TABLE Orders
 ALTER COLUMN status SET DEFAULT 'Pending';
+
+ALTER TABLE users 
+ALTER COLUMN password TYPE VARCHAR(255);
 ```
 
 Constraints can also be removed using the ALTER TABLE command:

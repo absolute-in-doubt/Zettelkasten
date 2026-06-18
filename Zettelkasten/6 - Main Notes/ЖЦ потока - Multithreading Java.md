@@ -3,7 +3,7 @@
 
 Status:
 
-Tags:
+Tags: [[Multithreading]]
 
 ---
 # ЖЦ потока - Multithreading Java

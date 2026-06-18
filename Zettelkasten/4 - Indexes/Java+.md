@@ -1,9 +1,12 @@
 
 - [[Giant flashcards on all topics]]
 
+- [[Interview fuck up questions]]
+
 ### Principles:
 
 - [[SOLID]]
+- [[DRY]]
 
 ### Protocols:
 
@@ -18,31 +21,9 @@
 
 
 
-### Http в Java:
-[[Http - Java|Link to the tag]]
+### [[Http - Java]]
 
-[[Работа с HTTP в Java - java.net.http]]:
-
-1. [[HttpClient class - Java]]
-	-  [[HttpClient.Builder - Java]]
-	
-2. [[HttpResponse - Java]]
-	- [[HttpResponse.BodyHandler - Java]]
-		- [[HttpResponse.BodyHandlers - Java]]
-	- [[HttpResponse.ResponseInfo - Java]]
-	- [[HttpResponse.BodySubscriber - Java]]
-		- BodySubscribers 
-		
-3. [[HttpRequest - Java]]
-	- [[HttpRequest.Builder - Java]]
-	- [[HttpRequest.BodyPublisher - Java]]
-		- [[HttpRequest.BodyPublishers - Java]]
-	
-4. Отправка HTTP запросов в Spring - [[RestTemplate - Spring Web]]
-	
-5. [[HttpSession vs Cookie - Java servlet API]]
-
-
+### [[OkHttp - Java]]
 
 
 ### [[Базы данных]]
@@ -52,7 +33,7 @@
 - [[реализация ConnectionPool]]
 
 ### [[DataSource]]
-
+- [[HikariDataSource]]
 
 ### [[Docker]]
 
@@ -66,12 +47,6 @@ Eclipse
 
 
 ### [[Git]]
-- [[Настройка Git credentials]]
-- [[Git stash]]
-- [[Branching - Git]]
-- [[Merge Conflicts - Git]]
-- [[Взаимодействия с remote repo - Git]]
-- [[Conventional commits - Git]]
 
 
 ### [[Gson]]
@@ -81,6 +56,9 @@ Eclipse
 
 
 ### [[Hibernate & JPA]]
+
+
+### [[Jakarta.CDI]]
 
 
 ### [[Jakarta Validation]]
@@ -98,6 +76,14 @@ Eclipse
 ### [[JDBC]]
 
 
+
+### [[Kafka]]
+
+
+
+### [[Keycloak]]
+
+
 ### [[Logging]]
 
 
@@ -105,13 +91,32 @@ Eclipse
 - проброс портов, доступ к локально хостимым сайтам извне и т.д.
 
 
+### [[Lombok]]
+
+
 ### [[Maven]]
+
+
+
+### [[MapStruct]]
 
 
 ### [[Multithreading]]
 
 
-### [[Redis + Jedis]]
+
+### [[Observability]]
+
+
+### [[Redis]]
+- [[Jedis]]
+- [[Redisson]]
+
+
+### [[Resilience4j]]
+
+
+### [[Stream API]]
 
 
 ### [[SSH]]
@@ -124,5 +129,8 @@ Eclipse
 ### [[Tablesaw]]
 
 
+
 ### [[Testing]]
 
+
+### [[Veolcity (Apache Velocity)]]

@@ -3,7 +3,7 @@
 
 Status:
 
-Tags:
+Tags: [[Docker]] [[Java+]]
 
 ---
 # Persistence - Docker
@@ -20,7 +20,7 @@ Tags:
 
 ![[Pasted image 20260113164758.png]]
 
-`tmpfs mount` (нет на картинке) - обычные директории контейнера. СОдержимое удаляется при остановке контейнера.~={cyan} (in memory)=~
+`tmpfs mount` (нет на картинке) - обычные директории контейнера. Содержимое удаляется при остановке контейнера.~={cyan} (in memory)=~
 
 `Volume` - data stored within LinuxVM (managed by Docker)
 
@@ -29,6 +29,18 @@ Tags:
 - ~={cyan}(For `bind mounts` performance can be much slower as it works between two systems ~={red}=> в приоритете использование=~ `Volumes`)=~
 - Удобно для разработки (кодим прямо в `bind mounts` и запускаем код в контейнере) 
 
+
+##### Commands TL;DR
+
+```bash
+docker run -it --rm -v /host-path:/docker-path:ro <image_name>
+```
+
+- `/host-path` - путь к директории на Linux хосте (или WIndows, если это bind mount)
+
+- `/docker-path` - путь, по которому директория будет доступна в контейнере
+
+- `:ro` - **необязательный постфикс** - нужен для того, чтобы контейнер мог только читать из папки **(read only)**
 
 ---
 ### Создание Volume mounts:

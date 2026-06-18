@@ -12,6 +12,15 @@ Tags: [[Testing]] [[Java+]]
 
 ~={green}verify(`T mock`)=~ - верификация, что определённое поведение произошло один раз
 
+```java
+Mockito.verify(paymentCardRepository).findById(paymentCard.getId());
+```
+	
+- **Проверяет**, что метод **`findById(paymentCard.getId())`** был **вызван ровно один раз** на мок-объекте `paymentCardRepository`.
+	
+- Если метод **не был вызван** или был вызван **несколько раз**, тест **упадёт с ошибкой**.
+
+
 ~={green}verify(`T mock, VerificationMode mode`) =~- верификация, что определенное поведение произошло ни разу / определённое число раз:
 
 ```java
@@ -28,7 +37,6 @@ verify(mock, atMost(3)).someMethod("was called at most 3 times");
 
 
 ~={green}verifyNoInteractions(`Object ...mocks`)=~ - верифицирует, что с этими моками не было никаких взаимодействий
-
 
 
 

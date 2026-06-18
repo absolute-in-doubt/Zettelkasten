@@ -3,7 +3,7 @@
 
 Status:
 
-Tags: [[Spring]] [[Spring Boot]]
+Tags: [[Spring Boot]] [[Spring]] 
 
 ---
 # CommandLineRunner - Spring Boot
@@ -46,6 +46,9 @@ public class MyCommandLineRunner implements CommandLineRunner {
     }
 }
 ```
+
+
+---
 ## ApplicationRunner
 
 - Интерфейс: `org.springframework.boot.ApplicationRunner`.

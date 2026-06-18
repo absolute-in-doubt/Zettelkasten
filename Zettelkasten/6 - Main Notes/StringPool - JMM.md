@@ -20,7 +20,7 @@ String hi = "hello";
 Creation via literal (e.g., `String hi = "hello";`) checks the pool: if a matching value exists, it reuses the reference; otherwise it creates a new one in the pool.
 
 > [!warning]
-> Создание объекта через `new String("...")` всегда создаёт НОВЫЙ объект в StringPool
+> Создание объекта через `new String("...")` всегда создаёт НОВЫЙ объект String - **НЕ ПОМЕЩАЯ ЕГО В String Pool**
 
 
 StringPool - пример паттерна [[Flyweight - pattern|Flyweight]]
@@ -33,11 +33,9 @@ StringPool - пример паттерна [[Flyweight - pattern|Flyweight]]
 >
 
 ---
-### Метод new String("...").intern()
+### Метод .intern()
 
-Заставляет искать строку сначала в StringPool, и только если нет - создавать новую.
-
-Делает создание строки конструктором эквивалентным обычной инициализации литералом.
+метод `intern()` привяжет литерал к String pool и **возвратит привязанное значение**
 
 
 

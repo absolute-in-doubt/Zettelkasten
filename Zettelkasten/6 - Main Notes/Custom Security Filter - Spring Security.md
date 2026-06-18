@@ -3,7 +3,7 @@
 
 Status:
 
-Tags:
+Tags: [[Spring Security]] [[Spring]]
 
 ---
 # Custom Security Filter - Spring Security

@@ -38,6 +38,16 @@ WHERE datistemplate = false;
     - Обычно при создании новой БД она копируется с `template1`.
 
 
+---
+### Просмотре информации о таблицах БД
+
+```SQL
+SELECT table_name
+FROM information_schema.tables
+WHERE table_schema NOT IN ('information_schema', 'pg_catalog');
+```
+
+
 ## Просмотр информации о таблицах
 
 ```sql
@@ -66,7 +76,7 @@ WHERE table_name = 'users';
 ## How to view existing indexes
 
 ```sql
-SELECT indexname, indexdef
+SELECT tablename, indexname, indexdef
 FROM pg_indexes
 WHERE tablename = 'users';
 ```

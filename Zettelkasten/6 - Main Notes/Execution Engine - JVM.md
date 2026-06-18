@@ -13,7 +13,7 @@ Tags: [[JMM]] [[Java Core]]
 #### Компоненты Execution Engine
 - Interpreter
 - [[JIT, Code cache space - JMM|JIT Compiler]]
-- [[Garbage Collector - JMM|Garbage Collector]]
+- Низкоуровневые механизмы работы с потоками и синхронизацией.
 
 
 **Interpreter**

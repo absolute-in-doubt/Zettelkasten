@@ -3,7 +3,7 @@
 
 Status: #child - no flashcards needed
 
-Tags: [[Redis + Jedis]] [[Java+]]
+Tags: [[Jedis]] [[Java+]]
 
 ---
 # UnifiedJedis class - Jedis

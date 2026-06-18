@@ -1,5 +1,5 @@
 
-Theory for the cards: [[Excutor & ExecutorService - Multithreading Java]]
+Theory for the cards: [[Executor & ExecutorService - Multithreading Java]]
 
 FILE TAGS: java_interview multithreading
 

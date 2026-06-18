@@ -3,7 +3,7 @@
 
 Status: #baby 
 
-Tags: [[Spring]]
+Tags: [[Spring]] [[Jakarta.servlet]]
 
 ---
 # Filter - Spring
@@ -15,6 +15,19 @@ Tags: [[Spring]]
 - Prevent downstream (следующие по [[Security Filter Chain - Spring Security#Порядок применения Security Filters|порядку в Filter Chain]]) `Filter` instances or the `Servlet` from being invoked. In this case, the `Filter` typically writes the `HttpServletResponse`.
 
 -  Modify the `HttpServletRequest` or `HttpServletResponse` used by the downstream `Filter` instances and the `Servlet`.
+
+```java
+@Component
+public class CustomFilter implements Filter {
+    @Override
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) 
+            throws java.io.IOException, jakarta.servlet.ServletException {
+        // Логика до: логирование, проверка заголовков
+        chain.doFilter(request, response);  // Передача дальше
+        // Логика после: очистка
+    }
+}
+```
 
 ---
 ## Use cases:
@@ -55,11 +68,17 @@ public class MySpringMVCDispatcherServletInitializer extends AbstractAnnotationC
 
 ### В Spring Boot
 
-Этот класс инициализации DispatcherServlet не нужен, его автоматически сконфигурирует Spring Boot. А для добавления фильтров, их достаточно прописать в [[application.properties - Spring Boot#Добавление фильтра к Dispatcher servlet|application.properties]]
+Этот класс инициализации DispatcherServlet не нужен, его автоматически сконфигурирует Spring Boot. А default filters для добавления фильтров, их достаточно прописать в [[application.properties - Spring Boot#Добавление фильтра к Dispatcher servlet|application.properties]]
+
+### [[Регистрация фильтров в FilterChain - jakarta.servlet|Регистрация custom фильтров]]
+
+
+
+
 
 
 ----
-#### [[Filter - Spring - Flashcards|Link to flashcards]]
+#### [[Filter - jakarta.servlet - Flashcards|Link to flashcards]]
 
 
 

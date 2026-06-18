@@ -31,9 +31,13 @@ Tags: [[Java+]]  [[Http - Java]]
 		- BodySubscribers 
 		
 3. [[HttpRequest - Java]]
+	- [[HttpRequest.Builder - Java]]
 	- [[HttpRequest.BodyPublisher - Java]]
 		- [[HttpRequest.BodyPublishers - Java]]
-
+	
+4. Отправка HTTP запросов в Spring - [[RestTemplate - Spring Web]]
+	
+5. [[HttpSession vs Cookie - Java servlet API]]
 
 
 ----

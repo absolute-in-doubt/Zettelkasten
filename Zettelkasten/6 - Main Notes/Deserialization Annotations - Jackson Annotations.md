@@ -3,7 +3,7 @@
 
 Status: #baby
 
-Tags: [[Java+]] [[Jackson Annotations]]
+Tags: [[Java+]] [[Jackson]]
 
 ---
 # Deserialization Annotations - Jackson Annotations

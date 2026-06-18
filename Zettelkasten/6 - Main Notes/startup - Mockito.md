@@ -23,7 +23,7 @@ Tags: [[Testing]] [[Java+]]
 
 ~={purple}@Mock=~ - ставится на объекте "болванке".
 
-~={purple}@InjectMocks=~ - ставистся на объекте, который владеет этим mock-ом
+~={purple}@InjectMocks=~ - ставится на объекте, который владеет этим mock-ом
 
 ```java
 @ExtendWith(MockitoExtension.class)  

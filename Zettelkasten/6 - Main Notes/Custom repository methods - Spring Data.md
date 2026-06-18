@@ -36,7 +36,10 @@ public interface PeopleJpaRepository extends JpaRepository<Person, Integer> {
 Пример:
 ```java
 @Query("SELECT u FROM User u WHERE u.login = :login AND u.hashedPassword = :hashedPassword")  
-Optional<User> findByLoginAndHashedPassword(@Param("login") String login, @Param("hashedPassword") String hashedPassword);
+Optional<User> findByLoginAndHashedPassword(
+	@Param("login") String login, 
+	@Param("hashedPassword") String hashedPassword
+);
 ```
 
 #### Если возвращает более 1:

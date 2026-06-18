@@ -3,18 +3,18 @@
 
 Status:
 
-Tags: [[Spring]]
+Tags: [[Spring Security]] [[Spring]]
 
 ---
 # UserDetailsService - Spring Security
 
 Его реализация автоматически подтягивается Spring Security для валидации и аутентификации пользователей.
 
-Пример реализации (тут только одни метод, но вообще их много):
+Пример реализации (тут только один метод, но вообще их много):
 
 ```java
 @Service
-public class PersonDetailService implements UserDetailService {
+public class PersonDetaisService implements UserDetailsService {
 
 	private final PeopleRepository repository;
 	

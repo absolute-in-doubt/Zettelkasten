@@ -46,7 +46,8 @@ this.beanDefinitionNames.add(beanName);
 
 ```java
 /** Map of bean definition objects, keyed by bean name */
-private final Map<String, BeanDefinition> beanDefinitionMap = new ConcurrentHashMap<String, BeanDefinition>(64);
+private final Map<String, BeanDefinition> beanDefinitionMap = 
+	new ConcurrentHashMap<String, BeanDefinition>(64);
 ```
 
  В этой map у нас ID бина соответствует его декларации, в которую входит:

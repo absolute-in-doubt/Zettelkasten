@@ -3,7 +3,7 @@
 
 Status:
 
-Tags: [[Patterns]]
+Tags: [[System Design]] [[Patterns]]
 
 ---
 # Sticky-маршрутизация на API Getaway
@@ -24,6 +24,9 @@ Tags: [[Patterns]]
     
 - Random  
     Каждый запрос уходит на случайный инстанс. Просто, иногда используется как резервный или в очень простых сценариях.
+	
+- **Geographical**
+	Запрос отправляется на географически ближайший инстанс ([[CDN - System Design|CDN]])
 
 
 ---
@@ -55,7 +58,7 @@ Sticky‑сессии нужны, если сервис **stateful**: важно
 > Липкие сессии (IP hash, cookie‑stickiness) нужны в stateful‑сценариях, но они усложняют отказоустойчивость, поэтому по возможности сервисы делают stateless.
 
 ----
-#### [[Sticky-маршрутизация на API Getaway - Flashcards|Link to flashcards]]
+#### [[Балансировка нагрузки + Sticky-маршрутизация на API Getaway - Flashcards|Link to flashcards]]
 
 
 

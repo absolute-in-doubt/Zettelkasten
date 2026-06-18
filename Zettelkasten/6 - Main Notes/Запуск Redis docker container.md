@@ -3,7 +3,7 @@
 
 Status: #adult 
 
-Tags: [[Redis + Jedis]] [[Java+]]
+Tags: [[Jedis]] [[Java+]]
 # Запуск Redis docker container
 
 ```bash

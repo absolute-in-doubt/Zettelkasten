@@ -10,7 +10,10 @@ Index: [[Java Core]]
 > байткод = код инструкций JVM
 
 
-1. [[ClassLoader - JMM]]
+1. [[Detailed Initialization Procedure - Java]]
+    - [[clinit method - Java]]
+2. [[ClassLoader - JMM]]
+
 2. [[StringPool - JMM]]
 3. [[PCR - JMM]]
 4. [[Heap - JMM]]
@@ -27,3 +30,6 @@ Index: [[Java Core]]
 - [[Execution Engine - JVM]]
 
 #### Подробнее с примерами байткода (для JVM 7): https://habr.com/ru/articles/739338/
+
+---
+- [[Multithreading]]

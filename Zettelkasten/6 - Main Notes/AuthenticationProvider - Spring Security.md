@@ -3,7 +3,7 @@
 
 Status:
 
-Tags: [[Spring]]
+Tags: [[Spring Security]] [[Spring]]
  
 ---
 # AuthenticationProvider - Spring Security

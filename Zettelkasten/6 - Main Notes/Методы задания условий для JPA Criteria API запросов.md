@@ -74,3 +74,4 @@ Tags: [[Hibernate & JPA]] [[Java+]]
 ### References:
 
 - [[JPA Criteria API]]
+- [[Specification - Spring Data]]

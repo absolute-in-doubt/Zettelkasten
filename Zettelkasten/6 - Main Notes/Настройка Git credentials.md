@@ -3,7 +3,7 @@
 
 Status: #child
 
-Tags: [[Java+]]
+Tags: [[Git]] [[Java+]]
 
 ---
 # Настройка Git credentials
@@ -57,4 +57,4 @@ git --system --list
 ---
 ### References:
 
-- [[Git]]
+- [[Изменение, удаление коммитов & откат изменений - Git]]

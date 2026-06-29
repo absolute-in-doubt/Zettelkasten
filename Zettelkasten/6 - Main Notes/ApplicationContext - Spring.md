@@ -149,9 +149,9 @@ env.acceptsProfiles("prod");
 
 ---
 
-# 5. MessageSource
+# 5. MessageSource 
 
-Поддержка i18n.
+Поддержка internationalization  ([[i18n - ApplicationContext - Spring]])
 
 Например:
 

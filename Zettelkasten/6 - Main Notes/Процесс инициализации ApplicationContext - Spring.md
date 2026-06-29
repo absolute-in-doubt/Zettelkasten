@@ -3,7 +3,7 @@
 
 Status:
 
-Tags: [[Spring]]
+Tags: [[Spring Core]] [[Spring]]
 
 ---
 # Процесс инициализации ApplicationContext - Spring

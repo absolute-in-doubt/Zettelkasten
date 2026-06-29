@@ -17,13 +17,14 @@ Index: [[SQL]]  [[Базы данных]] [[Java+]]
 
 [[PostgreSQL - обзор архитектуры]]
 
+- [[Организация доступа к данным - PostgreSQL]]
 - [[Очистка { AUTOVACUUM } + очистка индексов - PostgreSQL]]
 - [[Диспетчер журналов (WAL) - PostgreSQL]]
 - [[Карта свободного пространства & карта видимости  - PostgreSQL]]
 - [[Пайплайн запроса, EXPLAIN, EXPLAIN ANALYZE - PostgreSQL]]
 	- [[EXPLAIN, EXPLAIN ANALYZE на практике - PostgreSQL]]
 
-
+- [[JOIN strategies - PostgreSQL]]
 
 8. [[Многоверсионность и Конкурентность - PostgreSQL]]
 9. [[Хранение данных - PostgreSQL]]
@@ -43,8 +44,7 @@ Index: [[SQL]]  [[Базы данных]] [[Java+]]
 - [[Индексы - PostgreSQL]]
 	- [[Типы индексов - PostgreSQL]]
 	- [[Частичные индексы - PostgreSQL]]
-	- [[Организация доступа к данным - PostgreSQL]]
-	- [[JOIN strategies - PostgreSQL]]
+
 
 
 

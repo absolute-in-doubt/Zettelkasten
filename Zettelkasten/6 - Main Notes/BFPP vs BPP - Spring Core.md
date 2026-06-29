@@ -8,9 +8,6 @@ Tags: [[Spring Core]] [[Spring]]
 ---
 # BFPP vs BPP - Spring Core
 
-Это один из самых важных вопросов для понимания жизненного цикла Spring.
-
-Коротко:
 
 - **BeanFactoryPostProcessor (BFPP)** работает с **метаданными бинов (`BeanDefinition`) до создания объектов**.
     
@@ -52,8 +49,8 @@ BeanPostProcessor
 готовый бин
 ```
 
----
 
+---
 # BeanFactoryPostProcessor
 
 Интерфейс:
@@ -390,15 +387,17 @@ registry.registerBeanDefinition(...)
 
 # Запомнить можно так
 
-||BeanFactoryPostProcessor|BeanPostProcessor|
-|---|---|---|
-|Работает с|`BeanDefinition`|объектом бина|
-|Когда|до создания бина|после создания бина|
-|Может менять scope|✅|❌|
-|Может менять класс бина|✅|❌ (слишком поздно)|
-|Может создавать прокси|❌|✅|
-|Используется для|конфигурации контейнера|модификации экземпляров|
-|Примеры|`ConfigurationClassPostProcessor`, `PropertySourcesPlaceholderConfigurer`|`AutowiredAnnotationBeanPostProcessor`, `AnnotationAwareAspectJAutoProxyCreator`|
+
+|                         | BeanFactoryPostProcessor                                                  | BeanPostProcessor                                                                |
+| ----------------------- | ------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| Работает с              | `BeanDefinition`                                                          | объектом бина                                                                    |
+| Когда                   | до создания бина                                                          | после создания бина                                                              |
+| Может менять scope      | ✅                                                                         | ❌                                                                                |
+| Может менять класс бина | ✅                                                                         | ❌ (слишком поздно)                                                               |
+| Может создавать прокси  | ❌                                                                         | ✅                                                                                |
+| Используется для        | конфигурации контейнера                                                   | модификации экземпляров                                                          |
+| Примеры                 | `ConfigurationClassPostProcessor`, `PropertySourcesPlaceholderConfigurer` | `AutowiredAnnotationBeanPostProcessor`, `AnnotationAwareAspectJAutoProxyCreator` |
+
 
 Одной фразой:
 

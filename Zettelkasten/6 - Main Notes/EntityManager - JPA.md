@@ -96,7 +96,7 @@ Passport passport = entityManager,find(Passport.class, person.getId()); //пер
 > entityMAnager.getTransaction().commit();
 > ```
 
-- `T`~={green}getReference(`Class<T> entityClass, Object primaaryKey`) =~- ==lazily== версия find -> делает запрос на получение объекта только тогда, когда он используется в коде. Но в пределах транзакции.
+- `T`~={green}getReference(`Class<T> entityClass, Object primaryKey`) =~- ==lazily== версия find -> делает запрос на получение объекта только тогда, когда он используется в коде. Но в пределах транзакции.
 
 
 - `Query` ~={green}createQuery(`String HQLQuery`)=~ - создаёт TypedQuery

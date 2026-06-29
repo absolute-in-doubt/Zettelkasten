@@ -18,7 +18,7 @@ Namespaces оборачивают ресурс в абстракцию. Таки
 
 1. В namespace id процессов начинается с 1, т.е. может быть процесс с id=1, несмотря на то, что во всей системе процессов сотни. Т.е. это процесс с `id=<namespace_name>:1`
 
-2. Root user from the inside of the containermay map to the user from an outside system (и этот внешний user не обязан быть root).
+2. Root user from the inside of the container may map to the user from an outside system (и этот внешний user не обязан быть root).
 
 ----
 #### [[Namespaces - Docker - Flashcards|Link to flashcards]]

@@ -8,25 +8,23 @@
 - [[SOLID]]
 - [[DRY]]
 
-### Protocols:
+### [[Networks]]
 
-- [[OSI модель]]
 
-- [[HTTP]]
-	- [[Виды HTTP запросов]]
-	- [[REST standard]]
-- [[TLS]]
 
 - [[curl tool]]
 
 
 
-### [[Http - Java]]
+### [[Http - Java native]]
 
 ### [[OkHttp - Java]]
 
 
 ### [[Базы данных]]
+
+
+### [[Cryptography]]
 
 
 ### ConnectionPool
@@ -47,6 +45,10 @@ Eclipse
 
 
 ### [[Git]]
+
+
+
+### [[GitLab CI]]
 
 
 ### [[Gson]]

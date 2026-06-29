@@ -47,7 +47,7 @@ Producer → Topic → Consumer Group "order-queue" (1 Consumer)
 
 
 ---
-### Publisher - Subscriber 
+### Publisher - Subscriber  (Partition per Consumer)
 
 
 ![[Pasted image 20260201132123.png]]
@@ -63,6 +63,20 @@ Producer → Topic → Consumer Group "news-processors"
 - **Логика**: Каждый Consumer в группе видит только те сообщения, которые попали в его partition, который он читает.
     
 - **Пример**: Обработка новостей, событий, логов
+
+
+---
+# Corner cases
+
+
+### 1 partition - 2 Consumers
+
+Один Consumer будет простаивать
+
+---
+### 2 partitions - 1 Consumer
+
+Один Consumer будет читать из двух партиций
 
 
 ---

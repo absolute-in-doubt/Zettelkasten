@@ -77,6 +77,8 @@ The order is predefined:
 ~={orange}The lower order - the higher priority=~
 
 
+`AuthorizationFilter` в Spring Security отвечает за **авторизацию**, то есть проверяет, имеет ли уже аутентифицированный пользователь право выполнить конкретный запрос.
+
 ----
 #### [[Security Filter Chain - Spring Security - Flashcards|Link to flashcards]]
 

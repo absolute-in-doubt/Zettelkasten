@@ -28,4 +28,4 @@ Tags: [[Java+]]
 ---
 ### References:
 
-- [[HTTP]]
+- [[HTTP 1.1 & HTTP 2 - Networks]]

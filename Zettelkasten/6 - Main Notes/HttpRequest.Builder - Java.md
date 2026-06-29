@@ -3,7 +3,7 @@
 
 Status: #baby 
 
-Tags: [[Java+]] [[Http - Java]]
+Tags: [[Java+]] [[Http - Java native]]
 
 ---
 # HttpRequest.Builder - Java

@@ -33,6 +33,28 @@ logging:
     org.hibernate: "error"
 ```
 
+#### Пример:
+
+```yaml
+spring:
+	application:
+		name: "api-getaway"
+	cloud:
+		getaway:
+			httpserver:
+				wiretap: true
+			httpclient:
+				wiretap: true
+				
+logging:
+	level:
+		org.springframework.cloud.getaway: DEBUG
+		org.springframework.http.server.reactive: DEBUG
+		org.springframework.web.reactive: DEBUG
+		org.springframework.boot.autoconfigure.web: DEBUG
+		reactor.netty: DEBUG 
+```
+
 
 #### Пример установки outut file:
 

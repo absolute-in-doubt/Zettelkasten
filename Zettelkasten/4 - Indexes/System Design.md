@@ -2,6 +2,9 @@
 [[General Flashcards - System Design]]
 
 
+[[Полный алгоритм разработки дизайна приложения - SYstem Design]]
+- [[Сбор требований - System Design]]
+
  [[Плюсы и минусы микросервисов]]
 
 

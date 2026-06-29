@@ -14,9 +14,27 @@ But there’s an important limitation:
 
 > Spring can only resolve circular dependencies for **singleton beans with setter/field injection**, not constructor injection.
 
+
+
+### **📌 Summary**
+
+Spring resolves circular dependencies using:
+
+- 3-level cache system
+    
+- early object exposure (ObjectFactory)
+    
+- partial bean instances
+    
+- proxies (if needed)
+
+But only for:
+
+> singleton + non-constructor injection cases
+
 ---
 
-# 🔥 1. The classic circular dependency
+### 1. The classic circular dependency
 
 ```java
 @Service
@@ -39,9 +57,9 @@ B → A
 
 This looks impossible — but Spring resolves it.
 
----
 
-# 🧠 2. Key idea: “partially constructed beans”
+---
+### 2. Key idea: “partially constructed beans”
 
 Spring breaks bean creation into stages:
 
@@ -53,9 +71,10 @@ Spring breaks bean creation into stages:
 5. Put into singleton cache
 ```
 
----
 
-# 🧩 3. The 3-level singleton cache
+---
+### 3. The 3-level singleton cache 
+([[Как хранятся бины в ApplicationContext (DefaultListableBeanFactory) - Spring Core]])
 
 Spring uses:
 
@@ -65,15 +84,14 @@ earlySingletonObjects    // partially created beans
 singletonFactories       // factories for early references
 ```
 
----
 
-# ⚙️ 4. Step-by-step resolution
+---
+### 4. Step-by-step resolution
 
 Let’s trace `A → B → A`.
 
----
 
-## Step 1: Create A
+#### Step 1: Create A
 
 ```text
 createBean(A)
@@ -89,7 +107,7 @@ singletonFactories.put("A", () -> getEarlyReference(A))
 
 ---
 
-## Step 2: Inject B into A
+#### Step 2: Inject B into A
 
 Spring sees:
 
@@ -99,7 +117,7 @@ A needs B → create B
 
 ---
 
-## Step 3: Create B
+#### Step 3: Create B
 
 ```text
 instantiate B
@@ -109,7 +127,7 @@ Now B needs A.
 
 ---
 
-## Step 4: A is not ready → check caches
+#### Step 4: A is not ready → check caches
 
 Spring tries:
 
@@ -127,7 +145,7 @@ A early reference created
 
 ---
 
-## Step 5: Inject A into B
+#### Step 5: Inject A into B
 
 Now B gets **early A reference**.
 
@@ -139,7 +157,7 @@ B.a = earlyA
 
 ---
 
-## Step 6: Finish B
+#### Step 6: Finish B
 
 ```text
 B fully initialized → put into singletonObjects
@@ -147,7 +165,7 @@ B fully initialized → put into singletonObjects
 
 ---
 
-## Step 7: Finish A
+#### Step 7: Finish A
 
 Now B is ready, so:
 
@@ -158,7 +176,7 @@ A fully initialized → singletonObjects
 
 ---
 
-# 🧠 Final result
+### Final result
 
 ```text
 A → B → A (cycle resolved via early reference)
@@ -166,37 +184,24 @@ A → B → A (cycle resolved via early reference)
 
 ---
 
-# ⚠️ 5. Why constructor injection fails
+> [!warning]
+> Constructor injection fails
+>
+>This does NOT work:
+>
+>```java
+>@Service
+>class A {
+>    A(B b) {}
+>}
+>
+>@Service
+>class B {
+>	B(A a) {}
+>}
+>```
+>It will cause `BeanCurrentlyInCreationException`.
 
-This does NOT work:
-
-```java
-@Service
-class A {
-    A(B b) {}
-}
-```
-
-Why?
-
-Because:
-
-```text
-constructor must be completed BEFORE bean exists
-```
-
-So Spring cannot:
-
-- create “half A”
-    
-- expose early reference
-    
-
-Result:
-
-```text
-BeanCurrentlyInCreationException
-```
 
 ---
 
@@ -277,48 +282,6 @@ Circular dependencies are usually considered bad design, but Spring supports the
     
 - setter injection was historically common
     
-
----
-
-# 🧠 Mental model
-
-Think of Spring like:
-
-```text
-"I'll give you a placeholder of A,
-so B can be created,
-and later I'll finish A"
-```
-
----
-
-# 📌 Summary
-
-Spring resolves circular dependencies using:
-
-- 3-level cache system
-    
-- early object exposure (ObjectFactory)
-    
-- partial bean instances
-    
-- proxies (if needed)
-    
-
-But only for:
-
-> singleton + non-constructor injection cases
-
----
-
-If you want, I can also show:
-
-- exact source-level flow in `AbstractAutowireCapableBeanFactory`
-    
-- how `@Lazy` breaks the cycle cleanly
-    
-- or why constructor injection is considered best practice despite this feature
-
 
 ----
 #### [[Circular dependencies - Spring Core - Flashcards|Link to flashcards]]

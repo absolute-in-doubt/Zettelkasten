@@ -36,4 +36,4 @@ Tags:
 ---
 ### References:
 
-- [[OSI модель]]
+- [[OSI модель - Networks]]

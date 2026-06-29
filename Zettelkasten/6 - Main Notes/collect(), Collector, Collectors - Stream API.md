@@ -68,7 +68,7 @@ joining(delimiter) → String с разделителем
 summingInt(Long/Double) → числовая сумма
 averagingInt()     → OptionalDouble среднее
 summarizingInt()   → IntSummaryStatistics (min/max/avg/count/sum)
-counting()         → Long количество[web:31][web:36]
+counting()         → Long количество
 ```
 
 

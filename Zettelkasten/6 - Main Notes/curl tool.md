@@ -42,5 +42,5 @@ curl --request GET
 ---
 ### References:
 
-- [[HTTP]]
+- [[HTTP 1.1 & HTTP 2 - Networks]]
 - [[Виды HTTP запросов]]

@@ -3,7 +3,7 @@
 
 Status: #baby - ещё flashcards по отправке запросов бы
 
-Tags: [[Java+]]  [[Http - Java]]
+Tags: [[Java+]]  [[Http - Java native]]
 
 ---
 # HttpClient class - Java

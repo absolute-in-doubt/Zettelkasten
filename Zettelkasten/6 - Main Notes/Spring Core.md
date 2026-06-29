@@ -5,8 +5,12 @@ Spring Context:
 [[ЖЦ контекста - Spring]]
 
 - [[ApplicationContext - Spring]]
+	- [[Как хранятся бины в ApplicationContext (DefaultListableBeanFactory) - Spring Core]] - bean maps
+	- [[i18n - ApplicationContext - Spring]] - internationalization
+
 [[Процесс инициализации ApplicationContext - Spring]]
 	- [[Подробнее про BeanDefinitionReaders - Spring]]
+
 [[ClasspathXmlApplicationContext - Spring]]   - initing context with XML
 [[AnnotationConfigApplicationContext - Spring]] - with annotations
 	- [[Про использование BeanPostProcessor - Spring]]

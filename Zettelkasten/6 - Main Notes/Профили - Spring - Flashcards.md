@@ -36,33 +36,30 @@ A: Никакой не будет
 Q: Как мы обычно указываем, какой профиль использовать при запуске? Можно ли использовать сразу несколько профилей?
 A:  Использовать можно несколько профилей. Указываем их через запятую.
 	
-1. В `application.properties`: 
+1. **Через переменную окружения** — наиболее распространённый способ для Docker/Kubernetes/CI/CD:
 	
-```properties
-spring.profiles.active=prod
+```env
+SPRING_PROFILES_ACTIVE=prod
 ```
 	
-2. Программно (main class) **Spring Boot**
+2. **В `application.yml`/`application.properties`**:
 	
-```java
-@SpringBootApplication
-public class Application {
-    public static void main(String[] args) {
-        SpringApplication app = new SpringApplication(Application.class);
-        app.setAdditionalProfiles("prod", "dev");  // Добавляет к активным
-        app.run(args);
-    }
-}
+```yaml
+spring:  
+	profiles:    
+		active: dev
 ```
 	
+Но этот способ используют реже, поскольку он жёстко привязывает приложение к конкретному профилю.
 	
-3. Через System properties
+Для продакшена профиль чаще всего задают **в окружении (environment variables) или через параметры запуска**, а не в коде и не в конфигурационных файлах. 
 	
-```java
-System.setProperty("spring.profiles.active", "prod");
-SpringApplication.run(Application.class, args);
-```
+	
+> Обычно активный Spring Profile задают вне приложения — через переменные окружения, JVM-параметры или аргументы командной строки. Это позволяет запускать один и тот же артефакт в разных окружениях без изменения кода.
 <!--ID: 1769523506919-->
+
+
+
 
 
 

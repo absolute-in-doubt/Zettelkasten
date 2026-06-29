@@ -3,7 +3,7 @@
 
 Status: #adult 
 
-Tags: [[Java+]]  [[Http - Java]]
+Tags: [[Java+]]  [[Http - Java native]]
 
 ---
 # Работа с HTTP в Java - java.net.http
@@ -76,5 +76,5 @@ public class Sender {
 ---
 ### References:
 
-- [[HTTP]]
+- [[HTTP 1.1 & HTTP 2 - Networks]]
 - [[curl tool]]

@@ -3,7 +3,7 @@
 
 Status:
 
-Tags:
+Tags: [[Spring Core]] [[Spring]]
 
 ---
 # Создание Spring-aware proxy в BPP - Spring

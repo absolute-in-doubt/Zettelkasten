@@ -3,7 +3,7 @@
 
 Status:
 
-Tags: [[Spring]]
+Tags: [[Spring Core]] [[Spring]]
 
 ---
 # Профили - Spring
@@ -26,47 +26,28 @@ Tags: [[Spring]]
 Это избавляет от «if‑ов по окружению» в коде и выносит различия в конфигурацию.
 
 
-> [!warning] 
-> Настройку профилей надо выполнить до загрузки контекста, поэтому, например в Spring Web MVC это делается в web.xml, или классе, который его заменяет.
-> 
-> Вот пример:
-> ```java
-> public class MySpringMVCDispatcherServletInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {  
-  >
->    @Override  
->    public void onStartup(ServletContext servletContext) throws ServletException {  
->        // сначала вызываем стандартную инициализацию  
->        super.onStartup(servletContext);  
->  
->        // задаём активный профиль  
->        servletContext.setInitParameter("spring.profiles.active", "dev");  
->        // или несколько профилей:  
->        // servletContext.setInitParameter("spring.profiles.active", "dev,testdb");    }  
->      
->    @Override  
->    protected Class<?>[] getRootConfigClasses() {  
->        return null;  
->    }  
->  
->    @Override  
->    protected Class<?>[] getServletConfigClasses() {  
->        return new Class[] {SpringConfig.class};  
->    }  
->  
->    @Override  
->    protected String[] getServletMappings() {  
->        return new String[] {"/"};  
->    }  
->}
-> ```
-> 
-> Пример записи в web.xml:
-> ```xml
-> <context-param>
->    <param-name>spring.profiles.active</param-name>
->    <param-value>dev</param-value>
-></context-param>
-> ```
+### Как установить профиль для запуска
+
+1. **Через переменную окружения** — наиболее распространённый способ для Docker/Kubernetes/CI/CD:
+
+```env
+SPRING_PROFILES_ACTIVE=prod
+```
+
+2. **В `application.yml`/`application.properties`**:
+
+```yaml
+spring:  
+	profiles:    
+		active: dev
+```
+
+Но этот способ используют реже, поскольку он жёстко привязывает приложение к конкретному профилю.
+
+Для продакшена профиль чаще всего задают **в окружении (environment variables) или через параметры запуска**, а не в коде и не в конфигурационных файлах. 
+
+
+> Обычно активный Spring Profile задают вне приложения — через переменные окружения, JVM-параметры или аргументы командной строки. Это позволяет запускать один и тот же артефакт в разных окружениях без изменения кода.
 
 
 ### Доп способы настройки профилей

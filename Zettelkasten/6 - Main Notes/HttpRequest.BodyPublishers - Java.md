@@ -3,7 +3,7 @@
 
 Status: #child 
 
-Tags: [[Java+]] [[Http - Java]]
+Tags: [[Java+]] [[Http - Java native]]
 
 ---
 # HttpRequest.BodyPublishers - Java

@@ -8,199 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "770f0bcfb1f61a14",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "6 - Main Notes/кейс custom Spring Data repository for EntityGraph with ManyToMany - Spring Data.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "кейс custom Spring Data repository for EntityGraph with ManyToMany - Spring Data"
-            }
-          },
-          {
-            "id": "1c52052450ec336f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "6 - Main Notes/OAuth2AuthorizationServerConfigurer - Spring Security.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "OAuth2AuthorizationServerConfigurer - Spring Security"
-            }
-          },
-          {
             "id": "4cd69420224bc6c6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "6 - Main Notes/WireMock.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "WireMock"
-            }
-          },
-          {
-            "id": "bca506da35a895a1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "6 - Main Notes/Индексы - PostgreSQL.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Индексы - PostgreSQL"
-            }
-          },
-          {
-            "id": "85cdef2ea30afc74",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "6 - Main Notes/Базы данных.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Базы данных"
-            }
-          },
-          {
-            "id": "85d1e3f921c12c45",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "4 - Indexes/Java+.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Java+"
-            }
-          },
-          {
-            "id": "a7e966fc93180fc1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "6 - Main Notes/Interview fuck up questions.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Interview fuck up questions"
-            }
-          },
-          {
-            "id": "7e0a6e754cfbf514",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "4 - Indexes/Java+.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Java+"
-            }
-          },
-          {
-            "id": "ca5ae81bfe2d3686",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -224,12 +32,12 @@
             }
           },
           {
-            "id": "6de6e96552972226",
+            "id": "a7e966fc93180fc1",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6 - Main Notes/Наследование JPA сущностей - JPA.md",
+                "file": "6 - Main Notes/Deserialization Annotations - Jackson Annotations.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -244,11 +52,131 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Наследование JPA сущностей - JPA"
+              "title": "Deserialization Annotations - Jackson Annotations"
+            }
+          },
+          {
+            "id": "d27e09c1340a819a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "6 - Main Notes/Schema validation - Mongo DB.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Schema validation - Mongo DB"
+            }
+          },
+          {
+            "id": "cb856b717847e6f5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "6 - Main Notes/Создание скрипта миграции - Mongock.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Создание скрипта миграции - Mongock"
+            }
+          },
+          {
+            "id": "fad6aeee4aa5d47a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "6 - Main Notes/ECH - Networks - Flashcards.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "ECH - Networks - Flashcards"
+            }
+          },
+          {
+            "id": "2c328b7dd89f1b6a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "6 - Main Notes/TLS - Networks.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "TLS - Networks"
+            }
+          },
+          {
+            "id": "e71d2ce5ea979843",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "6 - Main Notes/Cryptography.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Cryptography"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -305,7 +233,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 222.5110321044922
+    "width": 200
   },
   "right": {
     "id": "7fe10d33a2dbb90c",
@@ -397,44 +325,45 @@
       "obsidian-to-anki-plugin:Obsidian_to_Anki - Scan Vault": false
     }
   },
-  "active": "bca506da35a895a1",
+  "active": "e71d2ce5ea979843",
   "lastOpenFiles": [
-    "2 - Source Materials/Pasted image 20260404121712.png",
-    "2 - Source Materials/Pasted image 20260404121658.png",
-    "2 - Source Materials/Pasted image 20260326170531.png",
-    "2 - Source Materials/Pasted image 20260405093238.png",
-    "2 - Source Materials/Pasted image 20260405092951.png",
-    "2 - Source Materials/Pasted image 20260404190716.png",
-    "2 - Source Materials/Pasted image 20260404161745.png",
-    "2 - Source Materials/Pasted image 20260507180608.png",
-    "2 - Source Materials/Pasted image 20260507180454.png",
-    "2 - Source Materials/Pasted image 20260514074413.png",
-    "2 - Source Materials/Pasted image 20260513171844.png",
-    "3 - Tags/PostgreSQL DB.md",
-    "6 - Main Notes/Типы индексов - PostgreSQL.md",
-    "6 - Main Notes/Базы данных.md",
-    "6 - Main Notes/Индексы - БД.md",
-    "6 - Main Notes/Способы хранения данных - БД.md",
-    "6 - Main Notes/ACID principles - БД.md",
-    "6 - Main Notes/Pessimistic blocking - SQL.md",
-    "6 - Main Notes/Optimistic blocking - SQL.md",
-    "6 - Main Notes/Многоверсионность и Конкурентность - PostgreSQL.md",
-    "6 - Main Notes/Карта свободного пространства & карта видимости  - PostgreSQL.md",
-    "6 - Main Notes/Диспетчер журналов (WAL) - PostgreSQL.md",
-    "6 - Main Notes/Очистка { AUTOVACUUM } + очистка индексов - PostgreSQL.md",
-    "6 - Main Notes/PostgreSQL - обзор архитектуры.md",
-    "6 - Main Notes/PostgreSQL - Enum types.md",
-    "6 - Main Notes/PostgreSQL - JSON types.md",
-    "6 - Main Notes/Протокол коммуникации с БД (Under the hood) - Postgres.md",
-    "4 - Indexes/SQL.md",
-    "6 - Main Notes/INDEXes - SQL.md",
-    "6 - Main Notes/PostgreSQL - String data types.md",
-    "3 - Tags/Multithreading.md",
-    "6 - Main Notes/Other Logical Operators - SQL.md",
-    "6 - Main Notes/INSERT - SQL.md",
-    "6 - Main Notes/Порядок выполнения SQL запроса.md",
-    "6 - Main Notes/JOINs - SQL.md",
-    "6 - Main Notes/DISTINCT - SQL.md",
+    "2 - Source Materials/Pasted image 20260626114319.png",
+    "2 - Source Materials/Pasted image 20260626113911.png",
+    "2 - Source Materials/Pasted image 20260621183255.png",
+    "2 - Source Materials/Pasted image 20260621175540.png",
+    "2 - Source Materials/Pasted image 20260619172109.png",
+    "2 - Source Materials/Pasted image 20260619164041.png",
+    "2 - Source Materials/Pasted image 20260619163852.png",
+    "6 - Main Notes/Digital signatures & Assymetric encryption - Cryptography.md",
+    "6 - Main Notes/Cryptography.md",
+    "6 - Main Notes/Overview - Cryptography.md",
+    "6 - Main Notes/Overview - Cryptography - Flashcards.md",
+    "6 - Main Notes/Encoding vs Encryption vs Hashing - Cryptography.md",
+    "6 - Main Notes/Assymetric encryption - Cryptography - Flashcards.md",
+    "6 - Main Notes/ECH - Networks - Flashcards.md",
+    "6 - Main Notes/ECH - Networks.md",
+    "6 - Main Notes/Создание скрипта миграции - Mongock.md",
+    "6 - Main Notes/TLS - Networks.md",
+    "6 - Main Notes/TLS - Networks - Flashcards.md",
+    "3 - Tags/Networks.md",
+    "Pasted image 20260628182223.png",
+    "Pasted image 20260628181902.png",
+    "Pasted image 20260628181356.png",
+    "4 - Indexes/Java+.md",
+    "6 - Main Notes/NAT - Networks.md",
+    "6 - Main Notes/NAT - Networks - Flashcards.md",
+    "6 - Main Notes/HTTP 1.1 & HTTP 2 - Networks.md",
+    "6 - Main Notes/HTTP - Flashcards.md",
+    "6 - Main Notes/OSI модель - Networks.md",
+    "6 - Main Notes/OSI модель - Flashcards.md",
+    "6 - Main Notes/UDP - Networks.md",
+    "6 - Main Notes/UDP - Networks - Flashcards.md",
+    "6 - Main Notes/Message path through the TCP over IP layers - Network.md",
+    "6 - Main Notes/TCP - Networks.md",
+    "6 - Main Notes/TCP - Networks - Flashcards.md",
+    "Pasted image 20260628134444.png",
+    "6 - Main Notes/Message path through the TCP over IP layers - Network - Flashcards.md",
+    "Message path through the TCP",
     "desktop.ini"
   ]
 }

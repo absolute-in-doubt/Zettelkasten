@@ -4,6 +4,7 @@
 [[Окружения - CI&CD]]
 
 
+#### [[GitLab CI]]
 
 
 ### [[Kubernetes]]

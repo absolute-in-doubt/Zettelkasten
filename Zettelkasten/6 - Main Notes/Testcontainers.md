@@ -26,6 +26,28 @@ Index: [[Testing]] [[Java+]]
 </dependency>
 ```
 
+Или со Spring Boot:
+
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-testcontainers</artifactId>
+    <scope>test</scope>
+</dependency>
+<dependency>  
+    <groupId>org.testcontainers</groupId>  
+    <artifactId>testcontainers-junit-jupiter</artifactId>  
+    <scope>test</scope>  
+</dependency>  
+<dependency>  
+    <groupId>org.testcontainers</groupId>  
+    <artifactId>testcontainers-postgresql</artifactId>  
+    <scope>test</scope>  
+</dependency>
+```
+
+
+- [[@ServiceConnection - Testcontainers]] - основной способ работы с тестконтейнерами сейчас (меньше ебли с настройкой)
 
 - [[Основные аннотации - Testcontainers]]
 	- [[configuration class - Testcontainers]] - TestcontainersConfiguration class

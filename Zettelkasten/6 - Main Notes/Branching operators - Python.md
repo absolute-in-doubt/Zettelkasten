@@ -21,7 +21,20 @@ else:
 ```
 
 
+### match
 
+```python
+def handle_command(cmd: str):
+    match cmd:
+        case "start":
+            print("Starting...")
+        case "stop":
+            print("Stopping...")
+        case "restart":
+            print("Restarting...")
+        case _:
+            print(f"Unknown command: {cmd}")
+```
 
 ----
 #### [[Branching operators - Python - Flashcards|Link to flashcards]]

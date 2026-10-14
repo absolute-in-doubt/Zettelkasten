@@ -43,8 +43,8 @@ Spring Framework
 - [[Spring - expressions]] - SpEL
 - [[Spring Context]]
 
-**[[Spring Scheduling]]**
-
+**[[Spring Scheduling]]** - @Async
+ 
 **[[Caffeine + Spring Cache]]**
 
 **[[Logging in Spring + Spring Boot]]**

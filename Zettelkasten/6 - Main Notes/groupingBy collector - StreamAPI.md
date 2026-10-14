@@ -3,7 +3,7 @@
 
 Status:
 
-Tags:
+Tags: [[Stream API]] [[Java+]]
 
 ---
 # groupingBy collector - StreamAPI
@@ -16,7 +16,7 @@ Tags:
 Map<K, List<T>> result = stream.collect(Collectors.groupingBy(classifier));
 ```
 
-Где `classifier` — функция `Function<? super T, ? extends K>`, определяющая ключ группы. По умолчанию значения собираются в `List`.projava-code.github+1
+Где `classifier` — функция `Function<? super T, ? extends K>`, определяющая ключ группы. **По умолчанию значения собираются в `List`.**
 
 **Пример:**
 

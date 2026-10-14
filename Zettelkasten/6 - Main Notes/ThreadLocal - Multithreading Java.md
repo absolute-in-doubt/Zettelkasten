@@ -61,6 +61,57 @@ new Thread(new MyRunnable()).start();  // CTX виден во всём run()
 ```
 
 
+---
+### ~={orange}Какие могут быть проблемы при использовании ThreadLocal в реактивных системах?=~
+
+
+Главная проблема: **`ThreadLocal` привязан к потоку, а в реактивном программировании выполнение одной операции может переходить между разными потоками.**
+
+Например, в WebFlux/Reactor:
+
+```java
+String userId = ...;
+threadLocal.set(userId);
+
+return Mono.just("data")
+    .publishOn(Schedulers.boundedElastic())
+    .map(x -> threadLocal.get()); // может быть null
+```
+
+### Основные проблемы
+
+- **Потеря контекста** — `ThreadLocal.get()` может вернуть `null`, потому что continuation (продолжение - другая лямбда, выполняется на другом потоке) выполняется на другом потоке.
+    
+- **Утечка контекста между запросами** — если забыть `remove()`, значение может остаться в worker-потоке и потенциально быть увидено следующей задачей.
+    
+- **Непредсказуемость при thread hopping** — `publishOn`, `subscribeOn`, `flatMap`, scheduler'ы и т.д. могут менять поток выполнения.
+    
+- **Сложно отлаживать** — поведение зависит от scheduler'ов и конкретного места переключения потоков.
+    
+- **Нарушение изоляции request context** — нельзя считать, что `ThreadLocal` автоматически соответствует текущему HTTP-запросу.
+
+
+### Что использовать вместо этого
+
+В Reactor обычно используют **Reactor Context**:
+
+```java
+return Mono.just("data")
+    .contextWrite(ctx -> ctx.put("userId", userId))
+    .flatMap(x ->
+        Mono.deferContextual(ctx -> {
+            String userId = ctx.get("userId");
+            return ...;
+        })
+    );
+```
+
+`Context` привязан не к `Thread`, а к **reactive execution/subscription**.
+
+
+> `ThreadLocal` плохо подходит для reactive, потому что reactive pipeline может переключаться между потоками. Значение ThreadLocal при этом теряется или может случайно протечь в другой execution. В Reactor для request context обычно используют Reactor Context.
+
+
 
 ----
 ## Реальные use cases (упрощённо)

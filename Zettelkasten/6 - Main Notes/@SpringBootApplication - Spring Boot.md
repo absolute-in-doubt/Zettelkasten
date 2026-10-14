@@ -22,6 +22,32 @@ Tags: [[Spring Boot]] [[Spring]]
 > Класс с аннотацией ~={purple}@SpringBootApplication=~ должен находиться в корне проекта.
 > Или придётся вручную настраивать сканирование пакетов.
 
+
+---
+### Настройка автоконфигурации
+
+При помощи `exclude` property в аннотации можно исключить ненужные автоконфигурации подключаемых стартеров:
+
+```java
+@SpringBootApplication(
+    excludeName = {
+        "com.example.FirstAutoConfiguration",
+        "com.example.SecondAutoConfiguration"
+    }
+)
+```
+
+Хотя чище это делать через yaml файл:
+
+```yaml
+spring:
+  autoconfigure:
+    exclude:
+      - com.mycustomstarter.configurations.FirstAutoConfiguration
+      - com.mycustomstarter.configurations.SecondAutoConfiguration
+```
+
+
 ----
 #### [[setup - Spring Boot - Flashcards|Link to flashcards]]
 

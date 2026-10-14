@@ -3,6 +3,10 @@ Index: [[Java+]]
 
 FILE TAGS: interview_fuckups java_interview
 
+
+- [[Диагностика OutOfMemoryException - JVM Diagnostics & Monitoring - Flashcards]]
+
+
 Q: Расскажи про иерархию исключений в Java.
 A:    
 ![[Pasted image 20260224142601.png]]
@@ -194,6 +198,24 @@ A:
 | `readOnly`                      | `boolean`            | Только чтение (`false` по умолчанию). `readOnly=true` - оптимизация для SELECT.​                          |
 | `rollbackFor` / `noRollbackFor` | `Class<Throwable>[]` | Исключения для отката/неотката (по умолчанию `RuntimeException`, `Error`).​                               |
 <!--ID: 1773745478392-->
+
+
+A:  `propagation` в `@Transactional` определяет, как метод участвует в транзакции:
+	
+- `REQUIRED` — использовать текущую транзакцию или создать новую.
+    
+- `REQUIRES_NEW` — всегда создавать новую, текущую приостанавливается.
+    
+- `MANDATORY` — метод должен вызываться внутри существующей транзакции.
+    
+- `SUPPORTS` — использовать текущую транзакцию, если она есть.
+    
+- `NOT_SUPPORTED` — выполнять без транзакции.
+    
+- `NEVER` — запрет на выполнение внутри транзакции.
+    
+- `NESTED` — вложенная транзакция через savepoint внутри текущей.
+<!--ID: 1791903527180-->
 
 
 
@@ -519,3 +541,481 @@ List<Integer> list = List.of(1, 2, 3);int sum = list.stream()              .mapT
 ```
 	
 <!--ID: 1782209701011-->
+
+Q: Что такое маркерный интерфейс?
+A: Маркерный интерфейс - это интерфейс без методов и констант, который служит «меткой» для класса. По этой метке компилятор, JVM или библиотечный код может определить, поддерживает ли объект определённую возможность.
+	
+Примеры:
+	
+`java.io.Serializable` — наиболее известный маркерный интерфейс:
+	
+```java
+import java.io.Serializable;
+	
+public class UserSession implements Serializable {
+    private String username;
+}
+```
+	
+Реализация `Serializable` указывает механизмам Java, что объект разрешено сериализовать:
+	
+```java
+ObjectOutputStream output =
+        new ObjectOutputStream(new FileOutputStream("session.bin"));
+	
+output.writeObject(new UserSession());
+```
+	
+Если передать объект, не реализующий `Serializable`, будет выброшено `NotSerializableException`.
+	
+При этом сериализация имеет дополнительные правила: например, поля должны быть сериализуемыми либо помечены `transient`.
+	
+---
+`java.lang.Cloneable` сообщает методу `Object.clone()`, что поверхностное клонирование объекта разрешено:
+	
+```java
+public class Account implements Cloneable {
+    private int balance;
+	
+    @Override
+    public Account clone() {
+        try {
+            return (Account) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError(e);
+        }
+    }
+}
+```
+	
+Без `Cloneable` вызов `super.clone()` приводит к `CloneNotSupportedException`.
+	
+Однако `Cloneable` не считается особенно удачным современным API:
+	
+- клонирование выполняется поверхностно;
+    
+- вложенные изменяемые объекты не копируются автоматически;
+    
+- контракт `clone()` неудобен;
+    
+- возможны ошибки с `final`-полями и наследованием.
+    
+На практике часто предпочтительнее копирующий конструктор:
+	
+```java
+public Account(Account source) {
+    this.balance = source.balance;
+}
+```
+	
+---
+`java.util.RandomAccess` — маркер для списков, поддерживающих эффективный произвольный доступ по индексу:
+	
+```java
+List<Integer> list = new ArrayList<>();
+	
+if (list instanceof RandomAccess) {
+    // Можно рассчитывать на быстрый list.get(i)
+}
+```
+	
+`ArrayList` реализует `RandomAccess`, а `LinkedList` — нет. Библиотеки Java могут выбирать разные алгоритмы обработки списка в зависимости от этой метки.
+<!--ID: 1789801605767-->
+
+Q: Как упорядочиваются элементы в HashMap при построении дерева?
+A: BinaryTree обычно строится с помощью метода `compareTo(Object obj)` интерфейса `Comparable`. Но `HashMap` не требует, чтобы ключи реализовывали `Comparable`. Поэтому алгоритм балансировки дерева такой:
+	
+1. Сначала делается попытка сравнить хэши ключей
+	
+2. Если хэши равны и оба ключа реализуют `Comparable`, то для сравнения вызывается метод `compareTo()`
+	
+3. Если ключи не реализуют `Comparable`, то сравнение происходит с помощью метода `tieBreakOrder()`, в котором
+	
+    - сначала будет совершена попытка сравнить ключи через названия их классов (`getClass().getName()`)
+	
+    - если ключи являются экземплярами одного класса, то сравниваться будут результаты метода `System.identityHashCode()
+<!--ID: 1790059197497-->
+
+
+Q: В чем разница между Collections.synchronizedMap() и ConcurrentHashMap?
+A: `Collections.synchronizedMap()` — это обычная `Map`, обёрнутая общим монитором. `ConcurrentHashMap` изначально спроектирован для конкурентного доступа и обычно обеспечивает значительно лучшую масштабируемость при работе нескольких потоков.
+	
+Методы `Collections.synchronizedMap()` синхронизируются на одном общем объекте. Поэтому одновременно с map фактически работает только один поток.
+	
+**Итерация**
+	
+Для `synchronizedMap` синхронизации отдельных методов недостаточно. Итерация состоит из нескольких шагов, поэтому её нужно защищать вручную:
+	
+```java
+Map<String, Integer> map =
+        Collections.synchronizedMap(new HashMap<>());
+	
+synchronized (map) {
+    for (Map.Entry<String, Integer> entry : map.entrySet()) {
+        System.out.println(entry);
+    }
+}
+```
+	
+Без `synchronized (map)` другой поток может изменить коллекцию во время обхода, и итератор может выбросить `ConcurrentModificationException`. Документация Java прямо требует синхронизировать доступ к collection views при итерации.
+	
+В `ConcurrentHashMap` итераторы являются weakly consistent: они не создают полноценный snapshot, могут отражать часть изменений, произошедших во время обхода, но не выбрасывают `ConcurrentModificationException` из-за таких изменений:
+	
+```java
+ConcurrentHashMap<String, Integer> map =
+        new ConcurrentHashMap<>();
+	
+for (Map.Entry<String, Integer> entry : map.entrySet()) {
+    System.out.println(entry);
+}
+```
+	
+---
+**Compound-операции**
+	
+Проблема есть не только в отдельных `get()` и `put()`, а в последовательностях операций.
+	
+Потенциально небезопасный вариант:
+	
+```java
+if (!map.containsKey(key)) {
+    map.put(key, value);
+}
+```
+	
+Даже если отдельные вызовы потокобезопасны, последовательность «проверить и добавить» не является атомарной: два потока могут одновременно не найти ключ и оба вызвать `put`.
+	
+С `ConcurrentHashMap` следует использовать специальные методы:
+	
+```java
+ConcurrentHashMap<String, Integer> map =
+        new ConcurrentHashMap<>();
+	
+map.putIfAbsent("counter", 0);
+	
+map.compute("counter", (key, oldValue) ->
+        oldValue == null ? 1 : oldValue + 1);
+        
+ConcurrentHashMap<String, User> cache =
+        new ConcurrentHashMap<>();
+	
+User user = cache.computeIfAbsent(userId, id -> loadUser(id));
+```
+	
+---
+**Что выбрать**
+	
+Используйте `ConcurrentHashMap`, если:
+	
+- map одновременно читают и изменяют несколько потоков;
+    
+- важна производительность при конкуренции;
+    
+- нужны `computeIfAbsent`, `merge`, `putIfAbsent`;
+    
+- не нужны `null`-ключи и `null`-значения;
+    
+- нужна безопасная итерация без обязательной блокировки всей map.
+    
+	
+Используйте `Collections.synchronizedMap()`, если:
+	
+- уже есть конкретная реализация `Map`, которую нужно обернуть;
+    
+- конкуренция небольшая;
+    
+- нужна простая синхронизация всей коллекции;
+    
+- важно сохранить поведение или порядок исходной map;
+    
+- требуется поддержка `null`, которую предоставляет backing map.
+<!--ID: 1790059197516-->
+
+Q: Расскажи, что такое рефлексия и приведи самые известные примеры ее использования
+A: **Рефлексия в Java** — это механизм, позволяющий во время выполнения исследовать классы и работать с их полями, методами, конструкторами и аннотациями.
+	
+- Получение информации об аннотациях для проксирования в BPP в Spring
+	
+- Создание объекта по имени класса: `Class.forName("com.example.User").getDeclaredConstructor().newInstance()`.
+- Получение информации о классе: `clazz.getName()`, `clazz.getSuperclass()`, `clazz.getInterfaces()`.
+- Получение и анализ методов: `clazz.getDeclaredMethods()`.
+- Вызов метода динамически: `method.invoke(object, args)`.
+- Чтение и изменение полей: `field.get(object)`, `field.set(object, value)`.
+- Создание объектов через конструкторы: `clazz.getDeclaredConstructor(...).newInstance(...)`.
+- Чтение аннотаций: `method.getAnnotation(MyAnnotation.class)`.
+- Реализация dependency injection во фреймворках: поиск полей или конструкторов с `@Autowired`.
+- Сериализация и десериализация объектов.
+- Работа ORM с сущностями и полями, например Hibernate.
+- Создание прокси и реализация AOP-механизмов.
+- Написание тестовых фреймворков, mock-объектов и инспекторов классов.
+<!--ID: 1790059197524-->
+
+
+Q: Что такое ThreadLocal?
+A: **ThreadLocal** в Java — обертка для хранения **thread-local переменных**: каждый поток видит **свою изолированную копию** значения, без синхронизации.
+	
+Даёт возможность создавать static переменные, которые будут хранить значение уникальное для этого потока, таким образом, если класс используется в двух потоках, в этой static переменной будет свое значение для каждого потока и не будет race conditions.
+<!--ID: 1790262381297-->
+
+
+Q: Какие могут быть проблемы при использовании ThreadLocal в реактивных системах?
+A:  `ThreadLocal` плохо подходит для reactive, потому что reactive pipeline может переключаться между потоками. Значение ThreadLocal при этом теряется или может случайно протечь в другой execution.
+	
+В Reactor обычно используют **Reactor Context**:
+	
+```java
+return Mono.just("data")
+    .contextWrite(ctx -> ctx.put("userId", userId))
+    .flatMap(x ->
+        Mono.deferContextual(ctx -> {
+            String userId = ctx.get("userId");
+            return ...;
+        })
+    );
+```
+	
+`Context` привязан не к `Thread`, а к **reactive execution/subscription**.
+	
+---
+**Проблемы, возникающие при использовании ThreadLocal в реактивной среде:**
+	
+- **Thread hopping**
+    
+    ```
+    Request A
+       ↓
+    Thread-1 → Thread-2 → Thread-5
+    ```
+    
+    `ThreadLocal` теряется при переходе между потоками.
+    
+- **Thread pool reuse**
+    
+    ```
+    Request A → Thread-1
+                   ↓
+               ThreadLocal=A
+                   ↓
+               pool
+                   ↓
+    Request B → Thread-1
+                   ↓
+               ThreadLocal=A  ← stale data
+    ```
+<!--ID: 1790059197531-->
+
+Q: Какие знаешь виды JIT?
+A:    
+- **C1 (Client Compiler)** — быстрый JIT-компилятор, небольшие накладные расходы, делает относительно простые оптимизации.
+    
+- **C2 (Server Compiler)** — более тяжёлый, но выполняет агрессивные оптимизации: inlining, escape analysis, loop optimizations и т.д.
+    
+- **Tiered Compilation** — комбинация C1 + C2. Обычно современная JVM работает именно так:
+    
+    ```text
+    Bytecode
+        ↓
+    Interpreter
+        ↓
+    C1 → быстрый JIT
+        ↓
+    C2 → глубокая оптимизация горячего кода
+    ```
+    
+	
+---
+**В современных JDK**
+	
+Основные варианты:
+	
+- **HotSpot C1/C2** — стандартный вариант OpenJDK.
+    
+- **Graal JIT** — альтернативный высокоуровневый JIT-компилятор; может использоваться как замена C2 в соответствующих конфигурациях JVM.
+    
+> В HotSpot есть C1 и C2. C1 быстро компилирует код с базовыми оптимизациями, C2 дольше компилирует, но выполняет более глубокие оптимизации. В режиме Tiered Compilation они работают вместе.
+<!--ID: 1790262381306-->
+
+
+Q: Что такое AOT?
+A: **AOT (Ahead-Of-Time compilation)** — это компиляция кода **до запуска программы**.
+	
+```text
+Обычная JVM:
+	
+Java → bytecode → JVM → JIT → native machine code
+                         ↑
+                    во время работы
+	
+AOT:
+	
+Java → native machine code
+       ↑
+   до запуска
+```
+	
+| JIT                                              | AOT                                         |
+| ------------------------------------------------ | ------------------------------------------- |
+| Компилирует во время выполнения                  | Компилирует до запуска                      |
+| Может анализировать реальное поведение программы | Не видит runtime-поведение                  |
+| Может делать runtime-оптимизации                 | Меньше возможностей для runtime-оптимизаций |
+| Есть warm-up                                     | Практически нет JIT warm-up                 |
+| Компиляция потребляет CPU во время работы        | Компиляция происходит заранее               |
+	
+**Пример:**
+	
+Классический пример современного AOT — **GraalVM Native Image**:
+	
+```text
+Java/Spring application
+        ↓
+   Native Image
+        ↓
+     binary
+        ↓
+    запуск
+```
+	
+Получается нативный executable, которому **не нужна полноценная JVM для запуска**.
+	
+Это особенно полезно для:
+	
+- быстрых startup time;
+    
+- serverless;
+    
+- контейнеров;
+    
+- приложений, где важны небольшие memory footprint и latency на старте.
+    
+Но есть компромисс: **JIT может оптимизировать программу на основе реального поведения во время работы**, поэтому для долгоживущих приложений JIT зачастую имеет преимущества.
+	
+> AOT компилирует приложение в машинный код до запуска, а JIT делает это во время выполнения. AOT даёт быстрый startup и меньше runtime overhead, а JIT может использовать информацию о фактическом поведении программы для более агрессивных оптимизаций.
+<!--ID: 1790262381311-->
+
+
+Q: Какой GC подойдет, если нужна минимальная задержка/максимальная пропускная способность/баланс
+A:  
+**Для минимальной задержки (latency):**
+	
+Пример: высоконагруженный API/торговая система, где важнее, чтобы каждый запрос укладывался, например, в `10–20 ms`, чем максимальная общая производительность CPU.
+	
+- ZGC, поскольку у него очень короткие паузы (менее 1-10 мс). Но есть ограничение по heap (от 8 МБ до 16 ТБ).
+- Или Sheennandoah GC - паузы тоже менее 10 мс (чуть больше в среднем), но не зависят от размера кучи.
+	
+---
+**Для максимальной пропускной способности:**
+	
+Пример: batch-обработка миллионов записей/ETL, где допустимы длинные паузы, но важно обработать **максимум данных за единицу времени**.
+	
+- Parallel GC - лучший throughput, несколько потоков, минимум накладных расходов.
+	
+---
+**Баланс:**
+	
+Пример: обычный backend-сервис с большим heap, где одновременно важны и приемлемые latency, и хороший общий throughput, например REST-сервис интернет-магазина.
+	
+- G1 GC - хороший баланс, но ниже throughput, чем у Prallel GC
+	
+---
+**Почему длинная пауза не всегда противоречит throughput**
+	
+Условно:
+	
+```text
+Parallel GC:
+99% времени → приложение работает
+1% → длинная GC-пауза
+        ↓
+высокий общий throughput
+```
+	
+Если приложение **batch-oriented**, пауза сама по себе не страшна: пользователь не ждёт ответа в этот момент.
+	
+А для latency-sensitive приложения:
+	
+```text
+ZGC:
+GC работает преимущественно concurrent
+        ↓
+короткие Stop-The-World паузы
+        ↓
+стабильное время ответа
+```
+
+Q: Можно ли создать singleton одного типа дважды?
+A: Да. **Singleton — это ограничение на количество экземпляров в конкретном контексте/контейнере, а не запрет на несколько объектов одного типа.**
+	
+В Spring, например, можно иметь два singleton-bean одного класса:
+	
+```java
+@Bean
+MyService service1() { return new MyService(); }
+	
+@Bean
+MyService service2() { return new MyService(); }
+```
+	
+Здесь будет **2 singleton-bean**, но каждый из них создаётся ровно один раз.  
+То есть: **singleton ≠ один экземпляр класса**, а **один экземпляр конкретного bean definition в контейнере**.
+<!--ID: 1790347764726-->
+
+Q: Как в Spring происходит регистрация @Bean объектов из @Configuration? 
+A: BeanDefinitionReader регистрирует как бины именно сами Configuration классы, а вот парсинг содержимого и регистрация @Bean как BeanDefinitions выполняется отдельным BFPP:
+	
+```
+@Configuration class
+       ↓
+BeanDefinitionReader
+       ↓
+регистрирует BeanDefinition самого Configuration-класса
+       ↓
+ConfigurationClassPostProcessor
+       ↓
+парсит @Configuration
+       ├── @ComponentScan
+       ├── @Import
+       ├── @ImportResource
+       └── @Bean
+              ↓
+      регистрирует дополнительные BeanDefinitions
+              ↓
+        BeanFactory создаёт объекты
+```
+<!--ID: 1791903527188-->
+
+
+
+Q: Расскажи, какие HTTP методы являются идемпотентными, а какие - нет.
+	A: 
+- **GET** — idempotent
+    
+- **HEAD** — idempotent
+    
+- **OPTIONS** — idempotent
+    
+- **TRACE** — idempotent
+    
+- **PUT** — idempotent
+    
+- **DELETE** — idempotent
+    
+- **POST** — **not idempotent**
+    
+- **PATCH** — **not necessarily idempotent** (зависит от реализации)
+    
+- **CONNECT** — **not idempotent**
+
+Q: Будет ли откатываться @Transactional в случае выброса Exception? 
+A: Нет, @Transactional, если не указаны `rollbackFor` откатывается только для unchecked исключний
+<!--ID: 1791903527194-->
+
+
+Q: В чем разница VIEW и MATERIALIZED VIEW в Postgres?
+
+Q: В чем разница между VACUM и VACUM FULL?
+
+Q: Расширение CAP теоремы
+
+Q: Как инициализируется подключение по WebSocket
+
+Q: Назови коды и статусы HTTP по группам

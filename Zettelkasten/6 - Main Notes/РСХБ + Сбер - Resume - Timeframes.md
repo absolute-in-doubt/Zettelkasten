@@ -1,5 +1,5 @@
 
-Tags: [[РСХБ + Сбер - Resume]] [[BrandNew - Legend]] [[HR параша]]
+Tags: [[РСХБ + Сбер - Resume]] [[BrandNew (РСХБ + СБЕР) - Legend]] [[HR параша]]
 
 
 # РСХБ-Интех (июль 2022 — сентябрь 2024)

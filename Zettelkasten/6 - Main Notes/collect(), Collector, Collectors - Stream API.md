@@ -56,7 +56,7 @@ toMap(key, value) → Map<K,V>
 toConcurrentMap() → thread-safe Map
 ```
 
-Группировка:
+Группировка: ([[groupingBy collector - StreamAPI]])
 ```
 groupingBy(classifier) → Map<K, List<T>> groupingBy(classifier, toList()) → Map<K, List<T>> (явно)
 ```

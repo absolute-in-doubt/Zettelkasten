@@ -32,11 +32,13 @@
 7. [[Map Interface]]
 8. [[SortedMap Interface]]
 
-
+ребят вы че
 ### Collection implementations
 1. [[LinkedList implementation - Java Core]]
 2. [[HashMap implementation - Java Core]]
 	 - [[ConcurrentHashMap - Java Core]]
+	- [[Collections.synchronizedMap() vs ConcurrentHashMap - Java Core]]
+
 
 ##### Collections Time Complexity
 1. [[List implementations- Time Complexity]]
@@ -121,6 +123,7 @@
 #### IO/NIO
 
 - [[IO - Java Core]]
+	- [[Scanner vs BufferedStreamReader - Java Core]]
 - [[File class - Java Core]]
 - NIO
 - [[Path class - Java Core]]

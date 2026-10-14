@@ -127,6 +127,44 @@ service GreetingService { //Сервис, ответственный за обр
 > [!warinng]
 > Плагин не работает, если в пути есть кириллица
 
+
+---
+### Reserved
+
+Было:
+
+```java
+message Example {
+
+	string name = 1;
+	string nold_field = 2
+}
+```
+
+Стало:
+
+```java
+message Example {
+
+	string name = 1;
+	string new_field = 2;
+}
+```
+
+Если изменить поле переназначив ему индекс сарого поля, новое поле  будет десериализовано в старое поле на сервисе, где не поменяли контракт. Чтобы такого не происходило - используем reserved:
+
+
+```java
+
+message Example {
+
+	reserved 2;
+	reserved "old_field"
+	
+	string name = 1;
+}
+```
+
 ----
 #### [[proto файлы - gRPC - Flashcards|Link to flashcards]]
 

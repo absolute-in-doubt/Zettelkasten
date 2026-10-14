@@ -7,6 +7,8 @@ Tags: [[HR параша]]
 [[4 years - Raiffeisen + RSHB - Resume Draft (Most recent)]]
 
 
+### [[4 years - Raiffeise + RSHB - Speech]]
+
 ### [[4 years - Raiffeisen + RSHB - Flashcards]]
 
 # Диаграмы проекта

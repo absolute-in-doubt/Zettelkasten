@@ -18,7 +18,7 @@ Tags: [[CSS]] [[Frontend]]
 |                     | id                          | for specific places     | `<h1 id="specific-header>...</h1>`             |
 |                     | class                       | для multiple-time usage | `<div class="repeated-element">...</div>`      |
 | **least powerfull** | element selector (html тег) |                         | Пример задания CSS для него: `h2:{ color:red } |
-|                     |                             |                         |                                                |
+
 
 
 

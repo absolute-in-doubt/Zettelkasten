@@ -22,5 +22,18 @@ Index: [[Spring]]
 - [[BeanPostProcessor proxifying vs Spring Aspects - Spring AOP]]
 
 
+### `org.aopalliance:aopalliance`
+
+Подзависимость Spring AOP. В Spring Boot подтягивается через:
+
+```
+spring-boot-starter-aop
+```
+
+- [[MethodInvoсation - Spring AOP Alliance]]
+- [[MethodInterceptor - Spring AOP Alliance]]
+
+
+
 ---
 - [[Spring Core]] - про BPP

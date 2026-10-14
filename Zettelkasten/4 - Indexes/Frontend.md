@@ -10,3 +10,8 @@
 ### [[CSS]] 
 
 
+Парсинг:
+
+- [[XPath & parsing - Frontend]]
+	- [[XPath - Frontend]] - без хуйни, но можно бы дополнить
+	- 

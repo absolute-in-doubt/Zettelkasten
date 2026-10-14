@@ -1,5 +1,5 @@
 
-Tags: [[РСХБ + Сбер - Resume]] [[BrandNew - Legend]] [[HR параша]]
+Tags: [[РСХБ + Сбер - Resume]] [[BrandNew (РСХБ + СБЕР) - Legend]] [[HR параша]]
 
 
 # Analytical metrics aggregator service for the platform of corporate lending platform

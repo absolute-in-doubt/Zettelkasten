@@ -1,5 +1,5 @@
 
-Tag: [[HR параша]] [[BrandNew - Legend]]
+Tag: [[HR параша]] [[BrandNew (РСХБ + СБЕР) - Legend]]
 
 
 ### [[РСХБ + Сбер - Resume - Flascards]]

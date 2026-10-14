@@ -9,6 +9,68 @@ Tags: [[Kafka]]
 # Конфигурация - Kafka
 
 
+
+```
+Kafka
+│
+├── Broker / Cluster
+│   ├── node.id
+│   ├── listeners
+│   ├── advertised.listeners
+│   ├── replication
+│   ├── min.insync.replicas
+│   ├── unclean.leader.election
+│   ├── retention defaults
+│   ├── log.dirs
+│   ├── log.segment.*
+│   ├── network / IO threads
+│   └── KRaft controller
+│
+├── Topic
+│   ├── partitions
+│   ├── replication.factor
+│   ├── retention.ms
+│   ├── retention.bytes
+│   ├── cleanup.policy
+│   ├── min.insync.replicas
+│   ├── compression.type
+│   └── segment.*
+│
+├── Producer
+│   ├── acks
+│   ├── retries
+│   ├── enable.idempotence
+│   ├── batch.size
+│   ├── linger.ms
+│   ├── compression.type
+│   └── delivery.timeout.ms
+│
+├── Consumer
+│   ├── group.id
+│   ├── enable.auto.commit
+│   ├── auto.offset.reset
+│   ├── max.poll.records
+│   ├── max.poll.interval.ms
+│   ├── session.timeout.ms
+│   ├── heartbeat.interval.ms
+│   ├── fetch.min.bytes
+│   └── max.partition.fetch.bytes
+│
+├── Consumer Group
+│   ├── partition assignment
+│   ├── rebalance
+│   └── group coordinator
+│
+└── Security
+    ├── SSL/TLS
+    ├── SASL
+    └── ACL
+```
+
+
+
+---
+
 **server.properties для Kafka KRaft (комбинированный узел)**
 
 ```properties

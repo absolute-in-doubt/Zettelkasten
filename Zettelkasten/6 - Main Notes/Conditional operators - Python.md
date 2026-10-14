@@ -67,3 +67,4 @@ result4 = result1 or result2 and not result3
 ---
 ### References:
 
+- [[Branching operators - Python]]

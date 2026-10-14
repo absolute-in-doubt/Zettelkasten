@@ -3,12 +3,15 @@
 - [[Final check questions]]
 - [[Interview fuck up questions]]
 
+
+### [[Interview revisions]]
+
 ### Principles:
 
 - [[SOLID]]
 - [[DRY]]
 
-### [[Networks]]
+### [[Networks]] - REST & GraphQL r here (for some reason)
 
 
 
@@ -78,12 +81,23 @@ Eclipse
 ### [[JDBC]]
 
 
+### [[JMM]]
+
+
+### [[JOOQ]]
+
+
+### [[JVM Diagnostics & Monitoring]]
+
 
 ### [[Kafka]]
 
 
 
 ### [[Keycloak]]
+
+
+### [[LangChain4j]]
 
 
 ### [[Logging]]

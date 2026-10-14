@@ -22,7 +22,7 @@ Q: Можно ли здесь вызвать метод m1? Почему?
 ```java
 	package one;
 	
-	class Parent{
+	public class Parent{
 		 protected void m1(){...};
 	}
 	

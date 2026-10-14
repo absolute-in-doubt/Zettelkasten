@@ -1,5 +1,5 @@
 
-Theory for the cards: [[РСХБ + Сбер - Resume]] [[BrandNew - Legend]] [[HR параша]]
+Theory for the cards: [[РСХБ + Сбер - Resume]] [[BrandNew (РСХБ + СБЕР) - Legend]] [[HR параша]]
 
 FILE TAGS:  RSHB_Sber_HR
 

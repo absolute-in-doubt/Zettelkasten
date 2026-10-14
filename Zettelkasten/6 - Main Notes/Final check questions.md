@@ -40,6 +40,8 @@ Index: [[Java+]]
 
 - What are the primary differences between REST and gRPC regarding transport protocols and data serialization? 
 
+### ***
+
 - When should a developer choose SOAP over REST for an enterprise application? 
 
 - Explain the ""stateless"" principle of RESTful services. 

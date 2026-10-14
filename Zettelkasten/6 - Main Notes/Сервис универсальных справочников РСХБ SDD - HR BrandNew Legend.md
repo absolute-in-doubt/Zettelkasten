@@ -1,5 +1,5 @@
 
-Tag: [[Россельхозбанк - Свой бизнес]] [[BrandNew - Legend]] 
+Tag: [[Россельхозбанк - Свой бизнес]] [[BrandNew (РСХБ + СБЕР) - Legend]] 
 # Service Definition Document
 
 

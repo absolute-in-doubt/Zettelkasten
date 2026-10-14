@@ -8,7 +8,7 @@ Tags: [[Python]]
 ---
 # IO - Python
 
-### Output
+#### Output
 
 ```python
 print('Hello', 'end', 73, Flase, end="|")  
@@ -18,7 +18,7 @@ print('Hello', end="\n") # переведет на новую строку
 ```
 
 
-### Input
+#### Input
 
 
 ```python
@@ -27,6 +27,10 @@ name = input('Name: ')
 # Outputs:
 # Name: <User inputs test value here>
 ```
+
+---
+
+### [[File - Python]]
 
 ----
 #### [[IO - Python - Flashcards|Link to flashcards]]

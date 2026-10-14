@@ -33,7 +33,9 @@ Index: [[Java+]]
 
 
 	- [[Виды HTTP запросов]]
+	- [[SOAP protocol]]
 	- [[REST standard]]
+		-  [[Единый формат ошибок & Spring ProblemDetail (RFC 9457)]]
 - [[TLS]]
 
-
+### [[GraphQL]]

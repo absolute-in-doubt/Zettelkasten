@@ -25,7 +25,28 @@ Index [[Spring Data Access]]: [[Spring]]
 	- [[@PageableDefault - Spring Data]]
 
 
-
+```yaml
+spring:  
+  application:  
+    name: userservice  
+ 
+  jpa:  
+    hibernate:  
+      ddl-auto: validate  
+    properties:  
+      hibernate:  
+        connection:  
+          isolation: READ_COMMITTED  
+        dialect: org.hibernate.dialect.PostgreSQLDialect  
+        show_sql: false  
+  datasource:  
+    url: ${POSTGRES_URL}  
+    username: ${POSTGRES_USER}  
+    password: ${POSTGRES_PASSWORD}  
+  liquibase:  
+    change-log: classpath:db/changelog/db.changelog-master.yaml  
+    enabled: true
+```
 
 ---
 

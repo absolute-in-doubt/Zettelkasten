@@ -43,8 +43,15 @@ Behavioural principles:
 
 
 
-[[Конфигурация - Kafka]]
+[[Конфигурация - Kafka]] - скорее про env для развертывания в K8S
 	- [[Ретраи Producer - Конфигурация - Kafka]]
+
+- [[Конфигурация Broker - Kafka]]
+- [[Конфигурация Topic - Kafka]]
+- [[Кoнфигурация Producer - Kafka]]
+- [[Конфигурация Consumer - Kafka]]
+
+[[Ньюансы конфигурации - Kafka]]
 
 #### Schema Registry
 

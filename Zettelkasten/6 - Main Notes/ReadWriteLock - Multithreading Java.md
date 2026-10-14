@@ -10,7 +10,7 @@ Tags: [[Multithreading]] [[Java+]]
 
 `ReadWriteLock` — интерфейс из `java.util.concurrent.locks`, предоставляющий **две связанные блокировки**: `readLock()` для **многократного конкурентного чтения** и `writeLock()` для **эксклюзивной записи**. 
 
-Основная реализация — `ReentrantReadWriteLock`
+**~={orange}Основная реализация — `ReentrantReadWriteLock`=~**
 
 
 ### Основная идея (аналогично [[StampedLock - Multithreading Java|StampedLock]])

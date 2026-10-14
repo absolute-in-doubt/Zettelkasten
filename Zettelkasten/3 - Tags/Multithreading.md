@@ -25,6 +25,7 @@ Index: [[Java+]]
 
 - [[optimistic & pessimistic locks - Multithreading Java]]
 - [[Deadlock & LiveLock - Multithreading Java]]
+	- [[Обнаружение Deadlocks через Thread Dump]]
 
 
 
@@ -32,3 +33,5 @@ Index: [[Java+]]
 ### References
 
 https://codewitharyan.com/system-design/low-level-design
+
+- [[JMM]]

@@ -23,7 +23,7 @@ Spring Context:
 Spring Beans:
 [[Spring Bean]]
 	- [[Bean scope - Spring]]
-	- [[Bean Lifecycle - Spring]]
+	- [[Bean Lifecycle - Spring]] - ЖЦ бина
 	- [[Bean factory method - Spring]]
 
 

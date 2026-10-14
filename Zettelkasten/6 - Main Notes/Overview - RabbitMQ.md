@@ -10,9 +10,9 @@ Tags: [[RabbitMQ]] [[Java+]]
 
 ![[Pasted image 20260707093751.png]]
 
-**~={red}?!=~** RabbitMQ реализует push модель: он сам пашит сообщения консюмерам.
+**~={red}?!=~** RabbitMQ реализует push модель: он сам пушит сообщения консюмерам.
 
-RabbitMQ реализует synchronous-like communication, поскольку при получении event он сразу пшит его консбмеру, который в ответ обязан прислать ACK.
+RabbitMQ реализует synchronous-like communication, поскольку при получении event он сразу пушит его консюмеру, который в ответ обязан прислать ACK.
 
 Можем получить асинхронность убрав ACK, сделав fire and forget.
 

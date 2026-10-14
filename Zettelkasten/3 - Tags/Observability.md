@@ -15,6 +15,12 @@ Observability - three pillars:
 ### [[Prometheus]]
 
 
+#### [[JVM Diagnostics & Monitoring]]
+
+
+### [[OpenTelemetry]]
+
+
 ---
 ### [[Common Flashcards on Observability]]
 

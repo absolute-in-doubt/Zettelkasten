@@ -3,7 +3,7 @@
 
 Status:
 
-Tags: [[Системный анализ]]
+Tags: [[SA & BA]]
 
 ---
 # C4 diagram

@@ -10,6 +10,8 @@ Index: [[Spring]]
 
 [[Spring Batch overview]]
 
+- [[За и Против - Spring Batch]]
+
 [[Job - Spring Batch]]
 - [[Запуск Job - Spring Batch]]
 - [[JobInstance & scheduling - Spring Batch]]

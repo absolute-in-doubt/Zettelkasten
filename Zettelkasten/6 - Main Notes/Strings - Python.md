@@ -136,7 +136,16 @@ greeting = 'Hello'
 name = 'Michael'
 
 message = '{}, {}. Welcome!'.format(greeting, name)
+
+
+yes_votes = 42_572_654
+total_votes = 85_705_149
+percentage = yes_votes / total_votes
+'{:-9} YES votes  {:2.2%}'.format(yes_votes, percentage)
+# ' 42572654 YES votes  49.67%'
 ```
+
+- `{:2.2%}` - prints `percentage` multiplied by 100, with 2 decimal places and followed by a percent sign
 
 
 **F-strings** - позволяют упростить форматирование

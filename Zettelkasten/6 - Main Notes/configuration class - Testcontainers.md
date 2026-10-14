@@ -11,7 +11,6 @@ Tags: [[Testcontainers]] [[Testing]]
 ```java
 @TestConfiguration(proxyBeanMethods = false)  
 @TestPropertySource(locations = "classpath:application-test.yaml")
-@Testcontainers  
 public class TestcontainersConfiguration {  
       
   
@@ -36,27 +35,28 @@ public class TestcontainersConfiguration {
 > [!warning]
 > Контейнеры, сконфигурированные в отдельном `@TestConfiguration` классе, **не будут автоматически запускаться** для всех тестов, помеченных `@Testcontainers`.
 
-
-## Почему?
-
-### 1. ~={purple}@Testcontainers=~ на классе
-
-Аннотация `@Testcontainers` на классе `TestcontainersConfiguration` означает, что контейнеры будут запускаться **только для тестов, которые явно используют этот конфигурационный класс** (например, через `@Import` или `@ContextConfiguration`).
-
-### 2. ~={purple}@Testcontainers=~ на тестовом классе
-
-Если тестовый класс помечен `@Testcontainers`, но **не импортирует** `TestcontainersConfiguration`, то контейнеры из конфигурации **не запустятся**.
-
-### 3. **Как сделать, чтобы контейнеры запускались для всех тестов?**
-
-Нужно **явно подключить конфигурацию** к тестовому классу, например:
+~={pink}Надо ли аннотировать @Testcontainers и класс конфигурации и класс теста, куда он импортируется через @Import?=~
+	_Нет, **`@Testcontainers` нужно ставить только на тестовый класс**, а не на класс конфигурации с контейнерами._
 
 ```java
-@Testcontainers
+@TestConfiguration(proxyBeanMethods = false)
+class TestcontainersConfiguration {
+
+    @Bean
+    @ServiceConnection
+    PostgreSQLContainer<?> postgresContainer() {
+        return new PostgreSQLContainer<>("postgres:16-alpine");
+    }
+}
+```
+
+```java
 @SpringBootTest
+@Testcontainers
 @Import(TestcontainersConfiguration.class)
-public class MyIntegrationTest {
-    // Теперь контейнеры из TestcontainersConfiguration будут запущены
+class MyIntegrationTest {
+
+    // тесты...
 }
 ```
 

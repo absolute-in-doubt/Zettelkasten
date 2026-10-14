@@ -183,7 +183,30 @@ public class DefaultSingletonBeanRegistry implements SingletonBeanRegistry, Disp
 - `earlySingletonObjects` — пусто
     
 - `singletonFactories` — пусто
-    
+
+> [!tip] Note
+> BeanDefinitionReader регистрирует как бины именно сами Configuration классы, а вот парсинг содержимого и регистрация @Bean как BeanDefinitions выполняется отдельным BFPP:
+>	
+>```
+>@Configuration class
+>       ↓
+>BeanDefinitionReader
+>       ↓
+>регистрирует BeanDefinition самого Configuration-класса
+>       ↓
+>ConfigurationClassPostProcessor
+>       ↓
+>парсит @Configuration
+>       ├── @ComponentScan
+>       ├── @Import
+>       ├── @ImportResource
+>       └── @Bean
+>              ↓
+>      регистрирует дополнительные BeanDefinitions
+>              ↓
+>        BeanFactory создаёт объекты
+>```
+
 
 ---
 

@@ -7,7 +7,7 @@ Index: [[Spring]]
 - [[@EnableAutoConfiguration - Spring Boot]]
 
 
-- [[Spring Boot starters]]
+- [[Spring Boot starters ]]- Как создать собственный Spring Boot Starter + Parent starter
 - [[application.properties - Spring Boot]]
 
 

@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6 - Main Notes/WITH - SQL.md",
+                "file": "6 - Main Notes/Views - SQL.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "WITH - SQL"
+              "title": "Views - SQL"
             }
           },
           {
@@ -151,8 +151,7 @@
               "title": "XPath & parsing - Frontend"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -303,8 +302,11 @@
       "obsidian-to-anki-plugin:Obsidian_to_Anki - Scan Vault": false
     }
   },
-  "active": "4e778e79e4829778",
+  "active": "952413f70622f4b1",
   "lastOpenFiles": [
+    "4 - Indexes/SQL.md",
+    "6 - Main Notes/WITH - SQL.md",
+    "7 - Work/Analysis1 - SA & BA.md",
     "2 - Source Materials/Pasted image 20261013174822.png",
     "2 - Source Materials/Pasted image 20261012124524.png",
     "2 - Source Materials/Pasted image 20261011110550.png",
@@ -315,12 +317,9 @@
     "2 - Source Materials/Pasted image 20261010112656.png",
     "2 - Source Materials/Pasted image 20260930112643.png",
     "2 - Source Materials/Pasted image 20261010112606.png",
-    "2 - Source Materials/Pasted image 20261010112516.png",
     "7 - Work",
     "4 - Indexes/SA & BA.md",
     "6 - Main Notes/Системный анализ в целом.md",
-    "6 - Main Notes/WITH - SQL.md",
-    "4 - Indexes/SQL.md",
     "6 - Main Notes/SELECT - SQL.md",
     "6 - Main Notes/Stream API.md",
     "6 - Main Notes/collect(), Collector, Collectors - Stream API.md",
@@ -333,7 +332,6 @@
     "6 - Main Notes/Scanner vs BufferedStreamReader - Java Core.md",
     "6 - Main Notes/Scanner vs BufferedStreamReader - Java Core - Flashcards.md",
     "6 - Main Notes/IO - Java Core.md",
-    "7 - Work/Analysis1 - SA & BA.md",
     "6 - Main Notes/Ликбез по энергосистеме - BA собес.md",
     "6 - Main Notes/UML диаграмма классов.md",
     "6 - Main Notes/BPMN диаграмма.md",
